@@ -1,0 +1,33 @@
+<!--
+  This template loads for the 'tab.adopt' state (app.js)
+-->
+<ion-view>
+<!-- <pane side-menu-content drag-content="false"> -->
+  <ion-content class='adoptBack' scroll="false" has-tabs="false">
+
+  <div class='aboutPage'>
+	 	<a id="unMenu3" class="button button-clear button-icon icon ion-arrow-return-left" href="#/app/login"></a>
+	 	<i id='adoptPic' class="icon ion-ios7-people"></i>
+<br>
+<div class="card">
+  <div class="item item-text-wrap">
+    Sorry, we couldn't verify that you were a student at the school you selected, and this app is for student eyes only. If you are a student at one of our schools, enter your personal, valid university email address here, or go back and try a different university.
+  </div>
+</div>
+
+<div class="list">
+
+  <div class="item item-input-inset">
+  	 <!-- Email Address: <input type="text" ng-model="form.emailaddress"> -->
+    <label class="item-input-wrapper">
+      <input type="text" ng-model="emailEntry" placeholder="Email">
+    </label>
+    <button class="button button-small" ng-click="submitForm(emailEntry)">
+      Submit
+    </button>
+  </div>
+
+</div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,549 @@
+/* Your app's CSS, go crazy, make it your own */
+
+/*.ionic-logo {
+  display: block;
+  margin: 15px auto;
+  width: 96px;
+  height: 96px;
+}
+
+.item-body > p {
+    margin-top: 0;
+    margin-bottom: 4px;
+}*/
+
+/* Your app's CSS, go crazy, make it your own */
+
+/*a.item:after, button.item:after, .item a[href].item-content:after, .item[ng-click] a.item-content:after {
+	display:none !important;
+}*/
+/*
+.ionic-logo {
+  display: block;
+  margin: 15px auto;
+  width: 96px;
+  height: 96px;
+}*/
+
+/*#cardHead h3{
+	bottom: 4px;
+}*/
+
+
+
+.card .item-divider{
+	/*font-style: bold;*/
+	background-color: beige;
+}
+.card .item-text-wrap{
+	background-color: white;
+}
+
+/*#cardID{
+	padding-left: 42px;
+	padding-right: 42px;
+	margin-left: 15px;
+}*/
+/*#eventsPageBorder{
+	background-color: black;
+}*/
+/*
+html {
+  background-image: url("../images/transBackground.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}*/
+
+
+
+
+/*border-image-source: url("../images/shadowEvents.png");*/
+#wholeEventsPage{
+	/*margin-top: 3px;*/
+	padding-top:30.725px;
+	background-color: gray;
+	top:0;
+		background-image: url("../images/transBackground.png");
+		z-index: 1;
+		background-size: cover;
+		background-position: center;
+		/*top: 20px;*/
+	/*	border-style: solid;
+		border-top: thick double transparent;*/
+
+		height: 100%;
+/*	width: 80%;*/
+
+/*		bottom-border: 0px;
+*/
+}
+
+/*.view{
+	margin-bottom: 6px;
+}*/
+
+#unLogo{
+	 position:fixed;
+	 background-image: url("../images/UNLogoApp.png");
+	 background-repeat: no-repeat;
+	 background-size: 90.9397% 45%;
+	 background-position: center;
+	 height: 50%;
+	 width: 100%;
+	 /*width: 100%;*/
+	 /*height:  50%;*/
+	 top: -39.7px;
+	/* padding-top: 4%;*/
+	 z-index: 20;
+	 max-width:100%;
+	 max-height: 40%;
+	 margin: 0;
+	 text-align: center;
+
+	/* padding-left: 11%;
+	 	padding-right: 2.5%;*/
+}
+
+
+
+#eventWrapper {
+	/*margin-right: 0px;*/
+/*	margin-left: 0px;
+	margin-right: 0px;
+	/*	margin-top:57px;*/
+/*	padding-right: 0px;*/
+	border: none;
+	top:25px;
+	opacity: .8;
+	text-align: center;
+	border-radius: 10%;
+	border-style: inset;
+	margin: 10px;
+	background-image: url("../images/transBackground.png");
+	background-size: auto;
+	background-position: center;
+	z-index: 5;
+	position: relative;
+}
+
+
+
+#eventWrapper hr{
+
+/*	bottom: 10px;*/
+	margin-bottom: 15px;
+	border-color: black;
+
+}
+
+#eventWrapper h3{
+	color:white;
+	font-style: italic;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
+	font-family: 'Gafata', sans-serif;
+}
+
+#adoptHead{
+	color:white;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
+	font-family: 'Gafata', sans-serif;
+	text-align: center;
+}
+
+#adoptSub{
+	color:white;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
+	font-family: 'Gafata', sans-serif;
+	text-align: center;
+}
+
+.submitBtn{
+	padding-left: 2.5%;
+	padding-right: 2.5%;
+}
+
+#adoptPic{
+	padding-left: 25%;
+	padding-right: 25%;
+	padding-top: 15%;
+	font-size: 180px;
+	color:white;
+
+}
+
+#adoptPic2{
+	margin: auto;
+	padding-left: 28%;
+	padding-right: 25%;
+	padding-top: 15%;
+	font-size: 180px;
+	color:white;
+
+}
+
+#eventWrapper p{
+	font-size: 14px;
+	color: silver;
+}
+
+#eventWrapper button{
+	color: white;
+}
+
+#eventList{
+	margin: auto;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 95px;
+/*	padding-top: 15px;*/
+	height: 568px;
+	width: 100%;
+	text-align: center;
+	padding-top: 25%;
+	overflow: auto;
+	overflow-scrolling: auto;
+	-webkit-overflow-scrolling: touch;
+/*	z-index: 2;*/
+	/*position: absolute;*/
+
+}
+
+/*#eventList #eventWrapper:last-child {
+	padding-bottom: 8%;
+}*/
+
+
+#wholeEventsPage .item-body{
+	margin: auto;
+	padding: auto;
+	border:1px solid black;
+	text-align: center;
+	z-index: 0;
+}
+
+#wholeEventsPage .item-content{
+	text-align: center;
+	padding-left: 0px;
+	padding-right: 0px;
+	width: 90%;
+
+}
+
+/*.ng-binding{
+	vertical-align: center;
+}*/
+
+/*#eventListingInfo {
+	opacity:.9 !important;
+	z-index: 5 !important;
+}*/
+
+/*single event listing
+/*#eventListWrapper{
+	position: relative;
+	background-color: blue;
+/*  background: #fff;*/
+/*	padding-left: 7%;*/
+/*}*/
+
+
+/*#eventListImg{
+	max-height: 200px;
+	max-width: 200px;
+}*/
+
+
+.fade-bar {
+  height: 20px;
+  width: 10%;
+  position: fixed;
+  z-index: 999;
+  opacity: 0;
+  background-color: #000;
+}
+
+.front{
+	z-index: 999;
+}
+
+#unMenu{
+	float: left;
+	z-index: 999;
+	height:0;
+	width:5%;
+	padding-right: 7%;
+	padding-left: 7%;
+	padding-top: 3.5%;
+	max-width: 8%;
+	color: black;
+	position: absolute;
+	right:5%;
+}
+
+#unMenu3{
+	float: left;
+	z-index: 999;
+	height:0;
+	width:5%;
+	padding-right: 7%;
+	padding-left: 7%;
+	padding-top: 3.5%;
+	max-width: 8%;
+	color: black;
+	position: absolute;
+	left:0px;
+}
+
+#unMenu2{
+	float: left;
+	z-index: 999;
+	height:0;
+	width:5%;
+	top:3%;
+	padding-right: 7%;
+	padding-left: 7%;
+	padding-top: 1%;
+	max-width: 8%;
+	color: white;
+	position: absolute;
+	right:6.5%;
+}
+
+.full-image {
+	position: relative;
+	margin-top: 8%;
+	max-width: 63%;
+	max-height: 145px;
+	border-radius: 55%;
+	/*border-top: 0px;*/
+	/*border-image: url("../images/transimg.gif");*/
+/*	border: 0px;*/
+	border-style: inset;
+
+/*	border-top-width: 10px;*/
+	border-width: 8px;
+	border-color: silver;
+}
+
+#wholeEventsPage .item{
+	width: 100%;
+	height: 100%;
+	padding-right: 0px;
+	margin-right: 0px;
+	border: none;
+	background-image: url("../images/transimg.gif");
+	background-position: center;
+	background-repeat: repeat;
+
+}
+
+.item-complex{
+	padding-right: 0px;
+	margin-right: 0px;
+}
+
+#helpBtn{
+	float: left;
+	padding-left: 3.2%;
+	padding-top: 7.4%;
+	color: blue;
+
+}
+
+#eventBtn{
+	float: left;
+	padding-left: 3.2%;
+	padding-top: 7.4%;
+	color: blue;
+
+}
+
+.ion-android-note{
+	vertical-align: center;
+}
+
+button{
+	margin-top: -2.2px;
+	z-index: 999;
+}
+
+#expandedEvent{
+
+	background-color: gray;
+	background-image: url("../images/outsideMesh.png");
+	background-size: cover;
+	background-position: auto auto;
+
+	position: relative;
+	font-size: 11px;
+	/*color:red;*/
+	overflow: auto;
+	overflow-scrolling: auto;
+	-webkit-overflow-scrolling: touch;
+	top:0;
+	/*bottom:0;*/
+
+}
+.adoptBack{
+	background-color: gray;
+	background-image: url("../images/outsideMesh.png");
+	background-size: cover;
+
+	background-position: auto auto;
+}
+
+.adoptBtn{
+	padding-left: 10%;
+	padding-right: 10%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.adoptBtnLong{
+	padding-left: 10%;
+	padding-right: 10%;
+	width: 90%;
+	margin-left: 5%;
+	font-family: 'Gafata', sans-serif;
+}
+
+
+#expandedEvent .topBtn{
+	font-size: 44px;
+	color: black;
+	text-align: center;
+	vertical-align: center;
+	top:5px;
+	border:6px solid black;
+	border-top: thick double;
+	border-left: thick double;
+	border-right: thick double;
+	/*border-bottom: 0px;*/
+	border-color: transparent;
+
+	/*padding-left: 5%;
+	padding-right: 5px;
+	padding-top: 5%;*/
+}
+
+
+#expandedEvent .list {
+	opacity: .6;
+	color: gray;
+
+}
+
+.bottomIcon{
+	left: 0px;
+}
+
+
+
+#expandedEvent p:last-child{
+	padding-bottom: 8%;
+}
+
+#expandedEvent p{
+	font-size: 20px;
+	text-align: center;
+
+	font-family: 'Alegreya Sans', sans-serif;
+	font-weight: bold;
+	padding-left: 5%;
+	padding-right: 5%;
+
+}
+/*#eventDesc{
+		color: black;
+}*/
+
+#expandedEvent .item-text-wrap{
+	font-size: 13px;
+	color:black;
+font-family: 'Gafata', sans-serif;
+}
+
+#singleEventContent{
+	margin: auto;
+	/*margin-top: 0px;*/
+/*	padding-left: 30px;
+	padding-right: 30px;*/
+	padding-bottom: 30px;
+	/*margin-bottom: -48px;*/
+/*	padding-top: 15px;*/
+	height: 100%;
+	width: 100%;
+
+	/*text-align: center;*/
+}
+
+.leftShift{
+	float: left;
+}
+
+
+#singleEventContent img{
+	max-height: 250px;
+	max-width: 100%;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5%;
+	/*margin: auto;
+	padding: auto;*/
+/*	text-align: center;
+	vertical-align: cen
+/*	margin-left: 36px; */
+}
+
+/*#singleEventContent .icon{
+	font-size: 15px
+}*/
+
+#shareBtnId{
+	float: right;
+	/*font-size: 5px;*/
+	/*right:10px;*/
+}
+
+#eventLink{
+	float:left;
+	/*max-height: 70%;
+	max-width: 60px;*/
+}
+
+/*.my-animate .ng-enter,
+.my-animate .ng-leave {
+  transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  position: relative;
+  display: block;
+}*/
+/*.my-animate .ng-enter.ng-enter-active,
+.my-animate .ng-leave {
+  opacity: 1;
+  top: 0;
+  height: 30px;
+}
+.my-animate .ng-leave.ng-leave-active,
+.my-animate .ng-enter {
+  opacity: 0;
+  top: -50px;
+  height: 0px;
+}*/
+.schoolPage h1{
+	font-family: 'Alegreya Sans', sans-serif;
+	color: white;
+	font-weight: bold;
+}
+
+.schoolPage a{
+	font-size: 18px;
+	font-family: 'Audiowide', cursive;
+	float: left;
+}
+
+/*<link href="css/ionicons.css" rel="stylesheet" type="text/css" media="screen" />*/

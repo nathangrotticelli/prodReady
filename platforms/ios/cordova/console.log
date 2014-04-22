@@ -1,0 +1,41 @@
+2014-04-22 03:08:50.374 U Nightlife[13025:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 03:08:50.793 U Nightlife[13025:70b] Unlimited access to network resources
+2014-04-22 03:08:50.805 U Nightlife[13025:70b] Fix applied for database locations?: YES
+2014-04-22 03:08:53.258 U Nightlife[13025:70b] [CDVTimer][statusbar] 328.746021ms
+2014-04-22 03:08:53.259 U Nightlife[13025:70b] [CDVTimer][TotalPluginStartup] 329.725027ms
+2014-04-22 03:08:53.524 U Nightlife[13025:70b] Resetting plugins due to page load.
+2014-04-22 03:08:55.169 U Nightlife[13025:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/86C90C06-9B3B-4672-935A-804102AB4A13/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 03:09:03.918 U Nightlife[13025:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-04-22 03:09:04.114 U Nightlife[13025:70b] THREAD WARNING: ['InAppBrowser'] took '496.034180' ms. Plugin should use a background thread.
+2014-04-22 03:09:43.367 U Nightlife[13025:70b] Alert Shown.
+2014-04-22 03:09:43.386 U Nightlife[13025:70b] THREAD WARNING: ['Console'] took '18.093018' ms. Plugin should use a background thread.
+2014-04-22 03:09:44.930 U Nightlife[13025:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-04-22 03:09:45.185 U Nightlife[13025:70b] Warning: Attempt to dismiss from view controller <MainViewController: 0xe15c510> while a presentation or dismiss is in progress!
+2014-04-22 03:09:54.906 U Nightlife[13025:70b] Alert Shown.
+2014-04-22 03:09:54.930 U Nightlife[13025:70b] THREAD WARNING: ['Console'] took '24.038086' ms. Plugin should use a background thread.
+2014-04-22 03:10:05.251 U Nightlife[13025:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-04-22 03:10:05.265 U Nightlife[13025:70b] THREAD WARNING: ['InAppBrowser'] took '16.756104' ms. Plugin should use a background thread.
+2014-04-22 03:10:05.500 U Nightlife[13025:70b] Warning: Attempt to dismiss from view controller <MainViewController: 0xe15c510> while a presentation or dismiss is in progress!
+2014-04-22 03:10:10.820 U Nightlife[13025:70b] Alert Shown.
+2014-04-22 03:10:10.842 U Nightlife[13025:70b] THREAD WARNING: ['Console'] took '21.494873' ms. Plugin should use a background thread.
+2014-04-22 03:10:37.430 U Nightlife[13025:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-04-22 03:10:37.444 U Nightlife[13025:70b] THREAD WARNING: ['InAppBrowser'] took '17.701904' ms. Plugin should use a background thread.
+2014-04-22 03:10:39.496 U Nightlife[13025:70b] Alert Shown.
+2014-04-22 03:14:46.987 U Nightlife[13269:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 03:14:47.043 U Nightlife[13269:70b] Unlimited access to network resources
+2014-04-22 03:14:47.166 U Nightlife[13269:70b] [CDVTimer][statusbar] 94.772995ms
+2014-04-22 03:14:47.167 U Nightlife[13269:70b] [CDVTimer][TotalPluginStartup] 95.286012ms
+2014-04-22 03:14:47.229 U Nightlife[13269:70b] Resetting plugins due to page load.
+2014-04-22 03:14:47.683 U Nightlife[13269:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 03:14:47.778 U Nightlife[13269:70b] THREAD WARNING: ['Device'] took '14.930908' ms. Plugin should use a background thread.
+2014-04-22 03:16:14.995 U Nightlife[13490:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 03:16:15.018 U Nightlife[13490:70b] Unlimited access to network resources
+2014-04-22 03:16:15.066 U Nightlife[13490:70b] [CDVTimer][statusbar] 8.517027ms
+2014-04-22 03:16:15.066 U Nightlife[13490:70b] [CDVTimer][TotalPluginStartup] 9.002030ms
+2014-04-22 03:16:15.146 U Nightlife[13490:70b] Resetting plugins due to page load.
+2014-04-22 03:16:15.503 U Nightlife[13490:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 03:16:19.387 U Nightlife[13490:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-04-22 03:16:19.389 U Nightlife[13490:70b] THREAD WARNING: ['InAppBrowser'] took '63.947754' ms. Plugin should use a background thread.
+2014-04-22 03:16:21.367 U Nightlife[13490:70b] webView:didFailLoadWithError - -999: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-04-22 03:16:56.868 U Nightlife[13490:70b] Alert Shown.
+2014-04-22 03:17:12.468 U Nightlife[13490:70b] Received memory warning.

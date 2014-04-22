@@ -1,0 +1,49 @@
+<!--
+  This template loads for the 'tab.pet-detail' state (app.js)
+  'pet' is a $scope variable created in the PetCtrl controller (controllers.js)
+  The PetCtrl pulls data from the Pets service (service.js)
+  The Pets service returns an array of pet data
+-->
+<ion-view>
+
+	  <ion-content class='expandedEvent' padding="false">
+	  <p>
+	  <a id='eventLink'class="topBtn" href="#/tab/events" animation="slide-right-left-ios7">
+	   <i class="icon ion-arrow-return-left"></i>
+	 	</a>
+	  <a id="shareBtnId" ng-click="shareBtn('Check this event from the U Nightlife App!', singleEvent.name, singleEvent.cover, singleEvent.location)" class="topBtn">
+	      <i class="icon ion-share"></i>
+	 	</a>
+	 </p>
+	 <br> <br>
+	  		<div id='singleEventContent'>
+	    		<img src="{{singleEvent.cover}}">
+	    		<br>
+
+
+	    		<p>{{ singleEvent.name }}</p>
+	    		<div class="list card">
+						  <div class="item item-divider item-icon-left">
+						  	<i class="icon ion-clipboard"></i>
+						    Event Description:
+						  </div>
+
+						  <div class="item item-text-wrap">
+
+						    {{ singleEvent.description}}
+						  </div>
+
+					  	<div class="item item-icon-left item-divider">
+			    			<i class="icon ion-ios7-location"></i>
+			    			{{ singleEvent.location }}</div>
+
+			    		<div class="item item-icon-left item-divider">
+			    			<i class="icon ion-android-clock"></i>
+			    			{{ singleEvent.start_time }}</div>
+					</div>
+
+	 			 </div>
+
+
+  </ion-content>
+</ion-view>
