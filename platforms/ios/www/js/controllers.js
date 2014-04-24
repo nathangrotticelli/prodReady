@@ -20,6 +20,10 @@ angular.module('sociogram.controllers', ['ionic'])
     })
 
     .controller('LoginCtrl', function ($scope, $ionicPopup, $http, $location, OpenFB, $state, $stateParams, PetService) {
+	analytics.trackView('Login Screen');
+
+    	// window.plugins.flurry.logEvent('Login');
+
 //     	var introPopup = function(){
 // 	$ionicPopup.alert({
 // 							// alert('Hi '+userName);
@@ -44,7 +48,7 @@ angular.module('sociogram.controllers', ['ionic'])
 
         // alert(emailEntry);
         loginTryEmail = emailEntry.toLowerCase();
-	 if (schoolItem.schoolName=='Central Florida'||schoolItem.schoolName=='Michigan State'||schoolItem.schoolName=='University of Michigan'||schoolItem.schoolName=='University of Hawaii'||schoolItem.schoolName=='Central Michigan'){
+	 if (schoolItem.schoolName=='Central Florida'||schoolItem.schoolName=='George Washington University'||schoolItem.schoolName=='Oneonta'||schoolItem.schoolName=='Michigan State'||schoolItem.schoolName=='University of Michigan'||schoolItem.schoolName=='University of Hawaii'||schoolItem.schoolName=='Central Michigan'){
 			 	if((loginTryEmail==='ngrotti1@binghamton.edu'||loginTryEmail.indexOf(schoolItem.emailEnding)>-1&&loginTryEmail.length>schoolItem.emailLength)){
 			 		schoolFriendCount=301;
 			 			$http.post('http://stark-eyrie-6720.herokuapp.com/userPost',
@@ -151,12 +155,20 @@ var eventPopulater = function(listOfAllEvents){
 
 				 	 			schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time=startMonth+"/"+startDay+"/"+startYear;
 				 	 		}
-				 	 		var startMonth = schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time.split('/')[1];
+				 	 		var startDay = schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time.split('/')[1];
 								var startYear = schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time.split('/')[2];
-				 	 			var startDay = schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time.split('/')[0];
-
+				 	 			var startMonth = schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time.split('/')[0];
+				 	 			// alert(startDay);
+				 	 			// alert(startMonth);
+				 	 			// alert(startYear);
+				 	 			// alert(schoolItem.schoolEvents[schoolEventsInAnArray[i]].name);
+				 	 			// alert(schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time);
+				 	 			// alert(currentMonth);
+				 	 			// alert('start month:'+startMonth+'is bigger then '+currentMonth);
+				 	 			// 	alert('start day:'+startDay+'is bigger then '+currentDay);
+				 	 			// 		alert('start year:'+startYear+'is bigger then '+currentYear);
 								if (startMonth>=currentMonth&&startDay>=currentDay&&startYear>=currentYear){
-
+									// alert('event added to yourevents');
 									yourEvents[schoolEventsInAnArray[i]] = schoolItem.schoolEvents[schoolEventsInAnArray[i]];
 								}
 						 }
@@ -251,6 +263,8 @@ var eventPopulater = function(listOfAllEvents){
 									schoolFriendCount = 0;
 									firstNameLetter = result.name[0].toLowerCase();
 									$scope.showAlert('Welcome to the U Nightlife app. We use your social graph to make sure your a student, customize your event display to include your private events, and share all the public events you know about with the rest of your school. This process may take a few seconds (15+ possibly) but it\'s worth it. You should know all the options for your nightlife.');
+									$location.path('/app/loading');
+									analytics.trackView('Loading');
 
 			            // alert('Hi '+userName);
 
@@ -281,6 +295,9 @@ var eventPopulater = function(listOfAllEvents){
 										startMonth = singleEvent.start_time.split('-')[1];
 						 	 			startDay = singleEvent.start_time.split('-')[2].split('T')[0];
 						 	 			startYear = singleEvent.start_time.split('-')[0];
+						 	 			// alert('startMonth equal to: '+startMonth);
+						 	 			// 	alert('startDay equal to: '+startDay);
+						 	 			// 	alert('startyear equal to: '+startYear);
 
 						 	 		if (startMonth>=currentMonth&&startDay>=currentDay&&startYear>=currentYear){
 						 	 			singleEvent.start_time=startMonth+"/"+startDay+"/"+startYear;
@@ -308,6 +325,7 @@ var eventPopulater = function(listOfAllEvents){
 	// alert('made it past ep');
     	// OpenFB.logout();
     	$location.path('/app/login2');
+    	analytics.trackView('Login2 Screen');
     }
     else{
     		$http.post('http://stark-eyrie-6720.herokuapp.com/userPost',
@@ -321,6 +339,7 @@ var eventPopulater = function(listOfAllEvents){
 					  userEmail: userEmail,
 					  school: schoolItem.schoolName}
 					  )
+    			// alert(yourEvents);
 					  PetService.setEvents(yourEvents);
 					  $location.path('/app/person/me/feed');
 
@@ -354,56 +373,60 @@ var eventPopulater = function(listOfAllEvents){
 
     })
 
-    .controller('ShareCtrl', function ($scope, OpenFB) {
+    // .controller('ShareCtrl', function ($scope, OpenFB) {
 
-        $scope.item = {};
+    //     $scope.item = {};
 
-        $scope.share = function () {
-            OpenFB.post('/me/feed', $scope.item)
-                .success(function () {
-                    $scope.status = "This item has been shared on OpenFB";
-                })
-                .error(function(data) {
-                    $scope.showAlert("Oops! There was an error! Contact us at UNRepTeam@gmail.com if this keeps happening. "+data.error.message);
-                });
-        };
+    //     $scope.share = function () {
+    //         OpenFB.post('/me/feed', $scope.item)
+    //             .success(function () {
+    //                 $scope.status = "This item has been shared on OpenFB";
+    //             })
+    //             .error(function(data) {
+    //                 $scope.showAlert("Oops! There was an error! Contact us at UNRepTeam@gmail.com if this keeps happening. "+data.error.message);
+    //             });
+    //     };
 
-    })
+    // })
 
-    .controller('ProfileCtrl', function ($scope, OpenFB) {
-        OpenFB.get('/me').success(function (user) {
-            $scope.user = user;
-        });
-    })
+    // .controller('ProfileCtrl', function ($scope, OpenFB) {
+    //     OpenFB.get('/me').success(function (user) {
+    //         $scope.user = user;
+    //     });
+    // })
 
-    .controller('PersonCtrl', function ($scope, $stateParams, OpenFB) {
-        OpenFB.get('/' + $stateParams.personId).success(function (user) {
-            $scope.user = user;
-        });
-    })
+    // .controller('PersonCtrl', function ($scope, $stateParams, OpenFB) {
+    //     OpenFB.get('/' + $stateParams.personId).success(function (user) {
+    //         $scope.user = user;
+    //     });
+    // })
 
-    .controller('FriendsCtrl', function ($scope, $stateParams, OpenFB) {
-        OpenFB.get('/' + $stateParams.personId + '/friends', {limit: 50})
-            .success(function (result) {
-                $scope.friends = result.data;
-            })
-            .error(function(data) {
-                $scope.showAlert("Oops! There was an error! Contact us at UNRepTeam@gmail.com if this keeps happening. "+data.error.message);
-            });
-    })
+    // .controller('FriendsCtrl', function ($scope, $stateParams, OpenFB) {
+    //     OpenFB.get('/' + $stateParams.personId + '/friends', {limit: 50})
+    //         .success(function (result) {
+    //             $scope.friends = result.data;
+    //         })
+    //         .error(function(data) {
+    //             $scope.showAlert("Oops! There was an error! Contact us at UNRepTeam@gmail.com if this keeps happening. "+data.error.message);
+    //         });
+    // })
 
-    .controller('MutualFriendsCtrl', function ($scope, $stateParams, OpenFB) {
-        OpenFB.get('/' + $stateParams.personId + '/mutualfriends', {limit: 50})
-            .success(function (result) {
-                $scope.friends = result.data;
-            })
-            .error(function(data) {
-                $scope.showAlert("Oops! There was an error! Contact us at UNRepTeam@gmail.com if this keeps happening. "+data.error.message);
-            });
-    })
+    // .controller('MutualFriendsCtrl', function ($scope, $stateParams, OpenFB) {
+    //     OpenFB.get('/' + $stateParams.personId + '/mutualfriends', {limit: 50})
+    //         .success(function (result) {
+    //             $scope.friends = result.data;
+    //         })
+    //         .error(function(data) {
+    //             $scope.showAlert("Oops! There was an error! Contact us at UNRepTeam@gmail.com if this keeps happening. "+data.error.message);
+    //         });
+    // })
     .controller('PetDetailCtrl', function($scope, $stateParams, PetService) {
   // "Pets" is a service returning mock data (services.js)
 		  $scope.singleEvent = PetService.getSingle();
+		  analytics.trackView('Ind. Event: '+$scope.singleEvent.name);
+
+
+		  // window.plugins.flurry.logEvent('Event Detail'+$scope.singleEvent);
 
 			$scope.shareBtn = function(a,b,c,d){
 				window.plugins.socialsharing.share(a,b,c,d);
@@ -413,6 +436,8 @@ var eventPopulater = function(listOfAllEvents){
 		})
 
     .controller('FeedCtrl', function ($scope,$state, $stateParams, OpenFB, PetService, $location, $ionicLoading) {
+    	 analytics.trackView('Event Feed');
+    	// window.plugins.flurry.logEvent('Event Feed');
 
     	// $http({method: 'GET', url: 'http://stark-eyrie-6720.herokuapp.com/userGet'}).success
     	// $scope.events = PetService.all(); //equal to event array located in services

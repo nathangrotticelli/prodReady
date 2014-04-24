@@ -4,6 +4,7 @@ angular.module('sociogram', ['ionic', 'openfb', 'sociogram.controllers','sociogr
 
         OpenFB.init('1474435556106076');
 
+
         // $ionicPlatform.ready(function () {
         //     if (window.StatusBar) {
         //         StatusBar.styleDefault();
@@ -11,6 +12,7 @@ angular.module('sociogram', ['ionic', 'openfb', 'sociogram.controllers','sociogr
         // });
 
         $rootScope.$on('$stateChangeStart', function(event, toState) {
+
             if (toState.name !== "app.login" && toState.name !== "app.logout" && !$window.sessionStorage['fbtoken']) {
                 $state.go('app.login');
                 event.preventDefault();
@@ -105,6 +107,15 @@ angular.module('sociogram', ['ionic', 'openfb', 'sociogram.controllers','sociogr
 				      views: {
 				        'menuContent': {
 				          templateUrl: 'templates/login2.html',
+				          controller: 'LoginCtrl'
+				        }
+				      }
+				    })
+				     .state('app.loading', {
+				      url: '/loading',
+				      views: {
+				        'menuContent': {
+				          templateUrl: 'templates/loading.html',
 				          controller: 'LoginCtrl'
 				        }
 				      }

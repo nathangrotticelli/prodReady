@@ -12,6 +12,7 @@
     margin-bottom: 4px;
 }*/
 
+
 /* Your app's CSS, go crazy, make it your own */
 
 /*a.item:after, button.item:after, .item a[href].item-content:after, .item[ng-click] a.item-content:after {
@@ -82,29 +83,144 @@ html {
 
 /*.view{
 	margin-bottom: 6px;
-}*/
-
-#unLogo{
-	 position:fixed;
+/*}*/
+/*media="screen and (device-height: 600px)*/
+@media (device-height:480px) {
+	#unMenu2{
+	float: left;
+	z-index: 999;
+	height:0;
+	width:5%;
+	/*top:3%;*/
+	/*padding-right: 7%;*/
+	padding-left: 7%;
+	padding-top: 1%;
+	/*iphone 4 change*/
+	padding-right: 10%;
+	top:.5%;
+	max-width: 8%;
+	color: white;
+	position: absolute;
+	right:6.5%;
+}
+	#unLogo{
+		background-size: 83% 54%;
+		position:fixed;
 	 background-image: url("../images/UNLogoApp.png");
 	 background-repeat: no-repeat;
-	 background-size: 90.9397% 45%;
+	 /*background-size: 90.9397% 45%;*/
 	 background-position: center;
 	 height: 50%;
 	 width: 100%;
-	 /*width: 100%;*/
-	 /*height:  50%;*/
+	 /*iphone 4 change*/
+	 /*background-size: 83% 54%;*/
 	 top: -39.7px;
-	/* padding-top: 4%;*/
+
+	 z-index: 20;
+	 max-width:100%;
+	 max-height: 40%;
+	 margin: 0;
+	 text-align: center;
+	}
+	#eventList{
+	margin: auto;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 95px;
+/*	padding-top: 15px;*/
+	/*height: 568px;*/
+	height: 480px;
+	/*iphone 4 change*/
+	width: 100%;
+	text-align: center;
+	padding-top: 25%;
+	overflow: auto;
+	overflow-scrolling: auto;
+	-webkit-overflow-scrolling: touch;
+/*	z-index: 2;*/
+	/*position: absolute;*/
+
+}
+.aboutPage{
+	/*iphone 4 change*/
+	height:480px;
+	padding-bottom: 30px;
+	overflow: auto;
+	overflow-scrolling: auto;
+	-webkit-overflow-scrolling: touch;
+}
+ }
+
+ @media (device-height:568px) {
+ 	#unMenu2{
+	float: left;
+	z-index: 999;
+	height:0;
+	width:5%;
+	top:3%;
+	padding-right: 7%;
+	padding-left: 7%;
+	padding-top: 1%;
+	/*iphone 4 change*/
+	/*padding-right: 10%;*/
+	/*top:.5%;*/
+	max-width: 8%;
+	color: white;
+	position: absolute;
+	right:6.5%;
+}
+	#unLogo{
+	 background-size: 90.9397% 45%;
+	 	 padding-top: 4%;
+	position:fixed;
+	 background-image: url("../images/UNLogoApp.png");
+	 background-repeat: no-repeat;
+	 /*background-size: 90.9397% 45%;*/
+	 background-position: center;
+	 height: 50%;
+	 width: 100%;
+	 /*iphone 4 change*/
+	 /*background-size: 83% 54%;*/
+	 top: -39.7px;
+
 	 z-index: 20;
 	 max-width:100%;
 	 max-height: 40%;
 	 margin: 0;
 	 text-align: center;
 
-	/* padding-left: 11%;
-	 	padding-right: 2.5%;*/
+
+	}
+	#eventList{
+	margin: auto;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 95px;
+/*	padding-top: 15px;*/
+	height: 568px;
+	/*height: 480px;*/
+	/*iphone 4 change*/
+	width: 100%;
+	text-align: center;
+	padding-top: 25%;
+	overflow: auto;
+	overflow-scrolling: auto;
+	-webkit-overflow-scrolling: touch;
+/*	z-index: 2;*/
+	/*position: absolute;*/
+
 }
+.aboutPage{
+	/*iphone 4 change*/
+	height:100%;
+	padding-bottom: 30px;
+	/*margin-bottom:10px;*/
+	overflow: auto;
+	overflow-scrolling: auto;
+	-webkit-overflow-scrolling: touch;
+}
+ }
+
 
 
 
@@ -137,6 +253,7 @@ html {
 	border-color: black;
 
 }
+
 
 #eventWrapper h3{
 	color:white;
@@ -193,24 +310,6 @@ html {
 
 #eventWrapper button{
 	color: white;
-}
-
-#eventList{
-	margin: auto;
-	padding-left: 30px;
-	padding-right: 30px;
-	padding-bottom: 95px;
-/*	padding-top: 15px;*/
-	height: 568px;
-	width: 100%;
-	text-align: center;
-	padding-top: 25%;
-	overflow: auto;
-	overflow-scrolling: auto;
-	-webkit-overflow-scrolling: touch;
-/*	z-index: 2;*/
-	/*position: absolute;*/
-
 }
 
 /*#eventList #eventWrapper:last-child {
@@ -297,21 +396,6 @@ html {
 	color: black;
 	position: absolute;
 	left:0px;
-}
-
-#unMenu2{
-	float: left;
-	z-index: 999;
-	height:0;
-	width:5%;
-	top:3%;
-	padding-right: 7%;
-	padding-left: 7%;
-	padding-top: 1%;
-	max-width: 8%;
-	color: white;
-	position: absolute;
-	right:6.5%;
 }
 
 .full-image {

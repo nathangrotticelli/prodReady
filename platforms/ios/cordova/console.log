@@ -39,3 +39,203 @@
 2014-04-22 03:16:21.367 U Nightlife[13490:70b] webView:didFailLoadWithError - -999: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
 2014-04-22 03:16:56.868 U Nightlife[13490:70b] Alert Shown.
 2014-04-22 03:17:12.468 U Nightlife[13490:70b] Received memory warning.
+2014-04-22 16:52:57.966 U Nightlife[758:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 16:52:58.077 U Nightlife[758:70b] Unlimited access to network resources
+2014-04-22 16:52:59.667 U Nightlife[758:70b] [CDVTimer][statusbar] 255.473971ms
+2014-04-22 16:52:59.668 U Nightlife[758:70b] [CDVTimer][TotalPluginStartup] 256.124020ms
+2014-04-22 16:52:59.751 U Nightlife[758:70b] Resetting plugins due to page load.
+2014-04-22 16:53:01.746 U Nightlife[758:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 16:57:15.961 U Nightlife[923:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 16:57:15.968 U Nightlife[923:70b] Unlimited access to network resources
+2014-04-22 16:57:15.992 U Nightlife[923:70b] [CDVTimer][statusbar] 7.801950ms
+2014-04-22 16:57:15.992 U Nightlife[923:70b] [CDVTimer][TotalPluginStartup] 8.302033ms
+2014-04-22 16:57:16.003 U Nightlife[923:70b] Resetting plugins due to page load.
+2014-04-22 16:57:16.313 U Nightlife[923:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 16:59:16.430 U Nightlife[1083:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 16:59:16.437 U Nightlife[1083:70b] Unlimited access to network resources
+2014-04-22 16:59:16.460 U Nightlife[1083:70b] [CDVTimer][statusbar] 7.601976ms
+2014-04-22 16:59:16.460 U Nightlife[1083:70b] [CDVTimer][TotalPluginStartup] 8.087993ms
+2014-04-22 16:59:16.471 U Nightlife[1083:70b] Resetting plugins due to page load.
+2014-04-22 16:59:17.351 U Nightlife[1083:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 16:59:49.085 U Nightlife[1236:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 16:59:49.092 U Nightlife[1236:70b] Unlimited access to network resources
+2014-04-22 16:59:49.114 U Nightlife[1236:70b] [CDVTimer][statusbar] 7.484972ms
+2014-04-22 16:59:49.115 U Nightlife[1236:70b] [CDVTimer][TotalPluginStartup] 7.990956ms
+2014-04-22 16:59:49.190 U Nightlife[1236:70b] Resetting plugins due to page load.
+2014-04-22 16:59:49.450 U Nightlife[1236:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 17:00:03.832 U Nightlife[1387:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 17:00:03.839 U Nightlife[1387:70b] Unlimited access to network resources
+2014-04-22 17:00:03.864 U Nightlife[1387:70b] [CDVTimer][statusbar] 9.800017ms
+2014-04-22 17:00:03.865 U Nightlife[1387:70b] [CDVTimer][TotalPluginStartup] 10.532022ms
+2014-04-22 17:00:03.875 U Nightlife[1387:70b] Resetting plugins due to page load.
+2014-04-22 17:00:04.143 U Nightlife[1387:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 17:01:05.864 U Nightlife[1541:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 17:01:05.871 U Nightlife[1541:70b] Unlimited access to network resources
+2014-04-22 17:01:05.901 U Nightlife[1541:70b] [CDVTimer][statusbar] 9.763002ms
+2014-04-22 17:01:05.902 U Nightlife[1541:70b] [CDVTimer][TotalPluginStartup] 10.473013ms
+2014-04-22 17:01:05.980 U Nightlife[1541:70b] Resetting plugins due to page load.
+2014-04-22 17:01:06.237 U Nightlife[1541:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 17:01:20.581 U Nightlife[1690:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 17:01:20.587 U Nightlife[1690:70b] Unlimited access to network resources
+2014-04-22 17:01:20.611 U Nightlife[1690:70b] [CDVTimer][statusbar] 8.049965ms
+2014-04-22 17:01:20.612 U Nightlife[1690:70b] [CDVTimer][TotalPluginStartup] 8.574963ms
+2014-04-22 17:01:20.687 U Nightlife[1690:70b] Resetting plugins due to page load.
+2014-04-22 17:01:20.961 U Nightlife[1690:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 17:01:37.380 U Nightlife[1841:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 17:01:37.386 U Nightlife[1841:70b] Unlimited access to network resources
+2014-04-22 17:01:37.409 U Nightlife[1841:70b] [CDVTimer][statusbar] 7.366002ms
+2014-04-22 17:01:37.410 U Nightlife[1841:70b] [CDVTimer][TotalPluginStartup] 8.253992ms
+2014-04-22 17:01:37.486 U Nightlife[1841:70b] Resetting plugins due to page load.
+2014-04-22 17:01:37.819 U Nightlife[1841:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/person/me/feed
+2014-04-22 17:02:04.635 U Nightlife[1990:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 17:02:04.642 U Nightlife[1990:70b] Unlimited access to network resources
+2014-04-22 17:02:04.667 U Nightlife[1990:70b] [CDVTimer][statusbar] 7.471025ms
+2014-04-22 17:02:04.667 U Nightlife[1990:70b] [CDVTimer][TotalPluginStartup] 7.960021ms
+2014-04-22 17:02:04.678 U Nightlife[1990:70b] Resetting plugins due to page load.
+2014-04-22 17:02:04.984 U Nightlife[1990:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 17:02:19.327 U Nightlife[2139:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 17:02:19.335 U Nightlife[2139:70b] Unlimited access to network resources
+2014-04-22 17:02:19.365 U Nightlife[2139:70b] [CDVTimer][statusbar] 8.580029ms
+2014-04-22 17:02:19.366 U Nightlife[2139:70b] [CDVTimer][TotalPluginStartup] 9.055018ms
+2014-04-22 17:02:19.449 U Nightlife[2139:70b] Resetting plugins due to page load.
+2014-04-22 17:02:19.726 U Nightlife[2139:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 17:02:33.821 U Nightlife[2289:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 17:02:33.827 U Nightlife[2289:70b] Unlimited access to network resources
+2014-04-22 17:02:33.851 U Nightlife[2289:70b] [CDVTimer][statusbar] 8.446991ms
+2014-04-22 17:02:33.852 U Nightlife[2289:70b] [CDVTimer][TotalPluginStartup] 9.028971ms
+2014-04-22 17:02:33.928 U Nightlife[2289:70b] Resetting plugins due to page load.
+2014-04-22 17:02:34.189 U Nightlife[2289:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 17:02:42.763 U Nightlife[2438:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 17:02:42.770 U Nightlife[2438:70b] Unlimited access to network resources
+2014-04-22 17:02:42.799 U Nightlife[2438:70b] [CDVTimer][statusbar] 9.615958ms
+2014-04-22 17:02:42.800 U Nightlife[2438:70b] [CDVTimer][TotalPluginStartup] 10.284960ms
+2014-04-22 17:02:42.877 U Nightlife[2438:70b] Resetting plugins due to page load.
+2014-04-22 17:02:43.176 U Nightlife[2438:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 17:02:53.023 U Nightlife[2438:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-04-22 17:02:53.067 U Nightlife[2438:70b] THREAD WARNING: ['InAppBrowser'] took '393.029785' ms. Plugin should use a background thread.
+2014-04-22 17:03:01.303 U Nightlife[2438:70b] Alert Shown.
+2014-04-22 17:04:49.257 U Nightlife[2592:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 17:04:49.264 U Nightlife[2592:70b] Unlimited access to network resources
+2014-04-22 17:04:49.290 U Nightlife[2592:70b] [CDVTimer][statusbar] 9.586036ms
+2014-04-22 17:04:49.290 U Nightlife[2592:70b] [CDVTimer][TotalPluginStartup] 10.285974ms
+2014-04-22 17:04:49.366 U Nightlife[2592:70b] Resetting plugins due to page load.
+2014-04-22 17:04:49.968 U Nightlife[2592:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/person/me/feed
+2014-04-22 17:04:57.953 U Nightlife[2592:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-04-22 17:04:57.956 U Nightlife[2592:70b] THREAD WARNING: ['InAppBrowser'] took '19.425049' ms. Plugin should use a background thread.
+2014-04-22 17:04:59.944 U Nightlife[2592:70b] Alert Shown.
+2014-04-22 17:05:13.821 U Nightlife[2592:70b] ERROR: http://errors.angularjs.org/1.2.12/$compile/ctreq?p0=<div class="scroll-refresher" pulling-text="Pull to refresh..." on-refresh="doRefresh()" pulling-icon="ion-arrow-down-c" refreshing-icon="ion-loading-d">4ionicScroll&p1=ionRefresher
+2014-04-22 17:05:13.822 U Nightlife[2592:70b] ERROR: http://errors.angularjs.org/1.2.12/$compile/ctreq?p0=<div class="scroll-refresher" pulling-text="Pull to refresh..." on-refresh="doRefresh()" pulling-icon="ion-arrow-down-c" refreshing-icon="ion-loading-d">4ionicScroll&p1=ionRefresher
+2014-04-22 17:05:13.822 U Nightlife[2592:70b] ERROR: http://errors.angularjs.org/1.2.12/$compile/ctreq?p0=<div class="scroll-refresher" pulling-text="Pull to refresh..." on-refresh="doRefresh()" pulling-icon="ion-arrow-down-c" refreshing-icon="ion-loading-d">4ionicScroll&p1=ionRefresher
+2014-04-22 17:05:13.823 U Nightlife[2592:70b] ERROR: http://errors.angularjs.org/1.2.12/$compile/ctreq?p0=<div class="scroll-refresher" pulling-text="Pull to refresh..." on-refresh="doRefresh()" pulling-icon="ion-arrow-down-c" refreshing-icon="ion-loading-d">4ionicScroll&p1=ionRefresher
+2014-04-22 17:06:12.568 U Nightlife[2748:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 17:06:12.576 U Nightlife[2748:70b] Unlimited access to network resources
+2014-04-22 17:06:12.599 U Nightlife[2748:70b] [CDVTimer][statusbar] 7.490039ms
+2014-04-22 17:06:12.600 U Nightlife[2748:70b] [CDVTimer][TotalPluginStartup] 8.000970ms
+2014-04-22 17:06:12.676 U Nightlife[2748:70b] Resetting plugins due to page load.
+2014-04-22 17:06:12.926 U Nightlife[2748:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 17:06:14.117 U Nightlife[2748:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-04-22 17:06:14.120 U Nightlife[2748:70b] THREAD WARNING: ['InAppBrowser'] took '20.086182' ms. Plugin should use a background thread.
+2014-04-22 17:06:16.415 U Nightlife[2748:70b] Alert Shown.
+2014-04-22 17:08:28.262 U Nightlife[2904:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 17:08:28.269 U Nightlife[2904:70b] Unlimited access to network resources
+2014-04-22 17:08:28.294 U Nightlife[2904:70b] [CDVTimer][statusbar] 7.454991ms
+2014-04-22 17:08:28.294 U Nightlife[2904:70b] [CDVTimer][TotalPluginStartup] 7.965982ms
+2014-04-22 17:08:28.370 U Nightlife[2904:70b] Resetting plugins due to page load.
+2014-04-22 17:08:29.076 U Nightlife[2904:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 17:08:30.632 U Nightlife[2904:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-04-22 17:08:30.635 U Nightlife[2904:70b] THREAD WARNING: ['InAppBrowser'] took '19.648926' ms. Plugin should use a background thread.
+2014-04-22 17:08:32.405 U Nightlife[2904:70b] Alert Shown.
+2014-04-22 17:09:21.279 U Nightlife[3060:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 17:09:21.286 U Nightlife[3060:70b] Unlimited access to network resources
+2014-04-22 17:09:21.313 U Nightlife[3060:70b] [CDVTimer][statusbar] 9.787023ms
+2014-04-22 17:09:21.313 U Nightlife[3060:70b] [CDVTimer][TotalPluginStartup] 10.618985ms
+2014-04-22 17:09:21.390 U Nightlife[3060:70b] Resetting plugins due to page load.
+2014-04-22 17:09:21.679 U Nightlife[3060:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 17:09:24.703 U Nightlife[3060:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-04-22 17:09:24.706 U Nightlife[3060:70b] THREAD WARNING: ['InAppBrowser'] took '19.112793' ms. Plugin should use a background thread.
+2014-04-22 17:09:34.009 U Nightlife[3060:70b] Alert Shown.
+2014-04-22 17:09:59.064 U Nightlife[3060:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-04-22 17:10:02.703 U Nightlife[3060:70b] Alert Shown.
+2014-04-22 17:11:10.000 U Nightlife[3214:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 17:11:10.006 U Nightlife[3214:70b] Unlimited access to network resources
+2014-04-22 17:11:10.032 U Nightlife[3214:70b] [CDVTimer][statusbar] 9.739995ms
+2014-04-22 17:11:10.033 U Nightlife[3214:70b] [CDVTimer][TotalPluginStartup] 10.535002ms
+2014-04-22 17:11:10.109 U Nightlife[3214:70b] Resetting plugins due to page load.
+2014-04-22 17:11:10.545 U Nightlife[3214:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/person/me/feed
+2014-04-22 17:11:12.326 U Nightlife[3214:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-04-22 17:11:12.329 U Nightlife[3214:70b] THREAD WARNING: ['InAppBrowser'] took '19.461182' ms. Plugin should use a background thread.
+2014-04-22 17:11:14.486 U Nightlife[3214:70b] Alert Shown.
+2014-04-22 17:11:56.931 U Nightlife[3366:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 17:11:56.940 U Nightlife[3366:70b] Unlimited access to network resources
+2014-04-22 17:11:56.964 U Nightlife[3366:70b] [CDVTimer][statusbar] 7.786989ms
+2014-04-22 17:11:56.965 U Nightlife[3366:70b] [CDVTimer][TotalPluginStartup] 8.384943ms
+2014-04-22 17:11:57.043 U Nightlife[3366:70b] Resetting plugins due to page load.
+2014-04-22 17:11:57.327 U Nightlife[3366:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 17:11:58.302 U Nightlife[3366:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-04-22 17:11:58.304 U Nightlife[3366:70b] THREAD WARNING: ['InAppBrowser'] took '19.994141' ms. Plugin should use a background thread.
+2014-04-22 17:12:00.718 U Nightlife[3366:70b] Alert Shown.
+2014-04-22 17:12:30.189 U Nightlife[3516:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 17:12:30.196 U Nightlife[3516:70b] Unlimited access to network resources
+2014-04-22 17:12:30.226 U Nightlife[3516:70b] [CDVTimer][statusbar] 9.530008ms
+2014-04-22 17:12:30.226 U Nightlife[3516:70b] [CDVTimer][TotalPluginStartup] 10.215998ms
+2014-04-22 17:12:30.237 U Nightlife[3516:70b] Resetting plugins due to page load.
+2014-04-22 17:12:30.556 U Nightlife[3516:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 17:12:36.841 U Nightlife[3516:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-04-22 17:12:36.844 U Nightlife[3516:70b] THREAD WARNING: ['InAppBrowser'] took '19.461914' ms. Plugin should use a background thread.
+2014-04-22 17:12:38.547 U Nightlife[3516:70b] Alert Shown.
+2014-04-22 17:13:50.664 U Nightlife[3667:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 17:13:50.671 U Nightlife[3667:70b] Unlimited access to network resources
+2014-04-22 17:13:50.697 U Nightlife[3667:70b] [CDVTimer][statusbar] 9.706020ms
+2014-04-22 17:13:50.697 U Nightlife[3667:70b] [CDVTimer][TotalPluginStartup] 10.384977ms
+2014-04-22 17:13:50.776 U Nightlife[3667:70b] Resetting plugins due to page load.
+2014-04-22 17:13:51.027 U Nightlife[3667:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 17:13:52.185 U Nightlife[3667:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-04-22 17:13:52.188 U Nightlife[3667:70b] THREAD WARNING: ['InAppBrowser'] took '20.148926' ms. Plugin should use a background thread.
+2014-04-22 17:13:52.683 U Nightlife[3667:70b] Warning: Attempt to dismiss from view controller <MainViewController: 0xc65f4f0> while a presentation or dismiss is in progress!
+2014-04-22 17:13:58.288 U Nightlife[3667:70b] Alert Shown.
+2014-04-22 17:14:24.706 U Nightlife[3818:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 17:14:24.713 U Nightlife[3818:70b] Unlimited access to network resources
+2014-04-22 17:14:24.813 U Nightlife[3818:70b] [CDVTimer][statusbar] 80.329955ms
+2014-04-22 17:14:24.814 U Nightlife[3818:70b] [CDVTimer][TotalPluginStartup] 81.201017ms
+2014-04-22 17:14:24.890 U Nightlife[3818:70b] Resetting plugins due to page load.
+2014-04-22 17:14:25.225 U Nightlife[3818:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/person/me/feed
+2014-04-22 17:14:27.610 U Nightlife[3818:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-04-22 17:14:27.613 U Nightlife[3818:70b] THREAD WARNING: ['InAppBrowser'] took '20.598877' ms. Plugin should use a background thread.
+2014-04-22 17:14:29.123 U Nightlife[3818:70b] Alert Shown.
+2014-04-22 17:15:58.012 U Nightlife[3966:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 17:15:58.019 U Nightlife[3966:70b] Unlimited access to network resources
+2014-04-22 17:15:58.043 U Nightlife[3966:70b] [CDVTimer][statusbar] 8.397043ms
+2014-04-22 17:15:58.044 U Nightlife[3966:70b] [CDVTimer][TotalPluginStartup] 8.928001ms
+2014-04-22 17:15:58.054 U Nightlife[3966:70b] Resetting plugins due to page load.
+2014-04-22 17:15:58.814 U Nightlife[3966:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 17:16:04.804 U Nightlife[3966:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-04-22 17:16:04.807 U Nightlife[3966:70b] THREAD WARNING: ['InAppBrowser'] took '19.642822' ms. Plugin should use a background thread.
+2014-04-22 17:16:06.897 U Nightlife[3966:70b] Alert Shown.
+2014-04-22 17:16:07.992 U Nightlife[3966:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-04-22 17:16:08.283 U Nightlife[3966:70b] Warning: Attempt to dismiss from view controller <MainViewController: 0xcb765e0> while a presentation or dismiss is in progress!
+2014-04-22 17:16:14.959 U Nightlife[3966:70b] Alert Shown.
+2014-04-22 17:17:29.178 U Nightlife[4120:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-22 17:17:29.186 U Nightlife[4120:70b] Unlimited access to network resources
+2014-04-22 17:17:29.232 U Nightlife[4120:70b] [CDVTimer][statusbar] 30.027986ms
+2014-04-22 17:17:29.233 U Nightlife[4120:70b] [CDVTimer][TotalPluginStartup] 30.776024ms
+2014-04-22 17:17:29.310 U Nightlife[4120:70b] Resetting plugins due to page load.
+2014-04-22 17:17:29.615 U Nightlife[4120:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-22 17:17:31.303 U Nightlife[4120:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-04-22 17:17:31.306 U Nightlife[4120:70b] THREAD WARNING: ['InAppBrowser'] took '19.190918' ms. Plugin should use a background thread.
+2014-04-22 17:17:34.800 U Nightlife[4120:70b] Alert Shown.
+2014-04-23 19:13:45.035 U Nightlife[1434:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-23 19:13:45.611 U Nightlife[1434:70b] Unlimited access to network resources
+2014-04-23 19:13:47.737 U Nightlife[1434:70b] [CDVTimer][statusbar] 277.411044ms
+2014-04-23 19:13:47.737 U Nightlife[1434:70b] [CDVTimer][TotalPluginStartup] 278.329015ms
+2014-04-23 19:13:48.060 U Nightlife[1434:70b] Resetting plugins due to page load.
+2014-04-23 19:13:49.415 U Nightlife[1434:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-23 19:26:29.628 U Nightlife[2646:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-23 19:26:29.762 U Nightlife[2646:70b] Unlimited access to network resources
+2014-04-23 19:26:30.059 U Nightlife[2646:70b] [CDVTimer][statusbar] 95.979989ms
+2014-04-23 19:26:30.060 U Nightlife[2646:70b] [CDVTimer][TotalPluginStartup] 96.647024ms
+2014-04-23 19:26:30.121 U Nightlife[2646:70b] Resetting plugins due to page load.
+2014-04-23 19:26:31.263 U Nightlife[2646:70b] Finished load of: file:///Users/ng225/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/5278F464-B5AA-43B5-89FA-13DF59C03B4C/U%20Nightlife.app/www/index.html#/app/login
+2014-04-23 19:27:49.100 U Nightlife[2646:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-04-23 19:27:49.727 U Nightlife[2646:70b] THREAD WARNING: ['InAppBrowser'] took '1916.467041' ms. Plugin should use a background thread.
+2014-04-23 19:27:57.484 U Nightlife[2646:70b] Alert Shown.
+2014-04-23 19:27:57.526 U Nightlife[2646:70b] THREAD WARNING: ['Console'] took '41.870117' ms. Plugin should use a background thread.

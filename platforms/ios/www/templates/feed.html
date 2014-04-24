@@ -62,25 +62,25 @@
 	  <!--   <button class="button" ng-click="fbLogin()" id="fb-connect">Connect to facebook</button>
             <p>{{userName}}</p> -->
 	    	<scroll style="height:500px">
-	    		<ion-refresher
+	    		<!-- <ion-refresher
                 pulling-text="Pull to refresh..."
                 on-refresh="doRefresh()">
-        </ion-refresher>
+        </ion-refresher> -->
 
 	 				<div ng-repeat="event in events">
-	 					<ion-refresher
+	 					<!-- <ion-refresher
                 pulling-text="Pull to refresh..."
                 on-refresh="doRefresh()">
-        </ion-refresher>
+        </ion-refresher> -->
 
 						 	<!-- <div ng-click="go('#/tab/event/{{event.id}}'')"> -->
-						 	<div id='eventWrapper' ng-click="go_here(event.name)">
-						    <img class="full-image" src="{{event.cover}}">
+						 	<div id='eventWrapper'>
+						    <img class="full-image" src="{{event.cover}}" ng-click="go_here(event.name)">
 				 				<h3>{{event.name}}</h3>
 				        <p>{{event.location}}</p>
 				        <p>{{event.start_time}}</p>
 				        <hr size=1 width="87%">
-				        <button class="button button-clear button-icon icon ion-android-note">
+				        <button class="button button-clear button-icon icon ion-android-note" ng-click="go_here(event.name)">
 				        	<!-- <ion-nav-view name="adopt-tab"> -->
 				        	<!-- </ion-nav-view> -->
 				      	</button>
@@ -97,6 +97,7 @@
 	    </ion-list>
 	  </div>
 	 <!-- </div> -->
+
   </ion-content>
 </ion-view>
 

@@ -64,6 +64,7 @@
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    // [Flurry startSession:@"6XXT84288NJ4FRSRNHT7"];
 
 #if __has_feature(objc_arc)
         self.window = [[UIWindow alloc] initWithFrame:screenBounds];
@@ -87,6 +88,7 @@
 
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+
 
     return YES;
 }
@@ -131,3 +133,6 @@
 }
 
 @end
+//<script>
+// analytics.startTrackerWithId('UA-50330829-1');
+// </script>
