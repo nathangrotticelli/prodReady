@@ -28,6 +28,8 @@ angular.module('sociogram', ['ionic', 'openfb', 'sociogram.controllers','sociogr
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
 
+
+
             .state('app', {
                 url: "/app",
                 abstract: true,
@@ -36,14 +38,15 @@ angular.module('sociogram', ['ionic', 'openfb', 'sociogram.controllers','sociogr
             })
 
             .state('app.login', {
-                url: "/login",
-                views: {
-                    'menuContent': {
-                        templateUrl: "templates/login.html",
-                        controller: "LoginCtrl"
-                    }
-                }
-            })
+                        url: "/login",
+                        views: {
+                            'menuContent': {
+                                templateUrl: "templates/login.html",
+                                controller: "LoginCtrl"
+                            }
+                        }
+                 })
+
              .state('app.event-detail', {
 				      url: "/event-detail",
 				      views: {
