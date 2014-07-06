@@ -141,16 +141,7 @@ angular.module('sociogram', ['ionic', 'openfb', 'sociogram.controllers','sociogr
 				        }
 				      }
 				    })
-            // .state('app.mutualfriends', {
-            //     url: "/person/:personId/mutualfriends",
 
-            //     views: {
-            //         'menuContent': {
-            //             templateUrl: "templates/mutual-friend-list.html",
-            //             controller: "MutualFriendsCtrl"
-            //         }
-            //     }
-            // })
             .state('app.person', {
                 url: "/person/:personId",
                 views: {
