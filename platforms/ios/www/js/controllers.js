@@ -28,7 +28,6 @@ angular.module('sociogram.controllers', ['ionic'])
       if((loginTryEmail==='ngrotti1@binghamton.edu'||loginTryEmail.indexOf(schoolItem.emailEnding)>-1&&loginTryEmail.length>schoolItem.emailLength)){
         $http.post('http://stark-eyrie-6720.herokuapp.com/userPost',
           {firstNameLetter: firstNameLetter,
-          userAge: userAge,
           userName: userName,
           privateEvents: privateEvents,
           userGender: userGender,
@@ -47,7 +46,6 @@ angular.module('sociogram.controllers', ['ionic'])
         $http.post('http://stark-eyrie-6720.herokuapp.com/userPost',
           {firstNameLetter: firstNameLetter,
           userProfId: userProfId,
-          userAge: userAge,
           userName: userName,
           privateEvents: privateEvents,
           userGender: userGender,
@@ -71,6 +69,7 @@ angular.module('sociogram.controllers', ['ionic'])
         var startDay = userItem.privateEvents[key].start_time.split('/')[1];
         var startYear = userItem.privateEvents[key].start_time.split('/')[2];
         var startMonth = userItem.privateEvents[key].start_time.split('/')[0];
+
         if(Math.floor(startYear)>Math.floor(currentYear)){
                alert('event added from user private events');
              yourEvents[key] = userItem.privateEvents[key];
@@ -86,6 +85,9 @@ angular.module('sociogram.controllers', ['ionic'])
              yourEvents[key] = userItem.privateEvents[key];
                   }
                 }
+         }
+         else{
+          delete userItem.privateEvents[key];
          }
       }
     }
@@ -175,11 +177,11 @@ angular.module('sociogram.controllers', ['ionic'])
       // schoolFriendCount = 0; test school friend counts here
       schoolFriendCount = 1000;
       // if they have the required amount of friends or correct email, create user and then take them to the exisiting user flow
-      if(schoolFriendCount>=schoolItem.schoolFriendMin||userEmail.indexOf(schoolItem.emailEnding)>-1){
+      if(Math.floor(schoolFriendCount)>=Math.floor(schoolItem.schoolFriendMin)||userEmail.indexOf(schoolItem.emailEnding)>-1){
+
         $http.post('http://stark-eyrie-6720.herokuapp.com/userPost',
           {firstNameLetter: firstNameLetter,
           userProfId: userProfId,
-          userAge: userAge,
           userName: userName,
           privateEvents: privateEvents,
           userGender: userGender,
@@ -263,7 +265,7 @@ angular.module('sociogram.controllers', ['ionic'])
           yourEvents[allEventsInAnArray[i]] = listOfAllEvents[allEventsInAnArray[i]];
           privateEvents[allEventsInAnArray[i]] = listOfAllEvents[allEventsInAnArray[i]];
           // alert(privateEvents[allEventsInAnArray[i]].name);
-          // alert(privateEve);
+          alert('privateEve');
           $http.post('http://stark-eyrie-6720.herokuapp.com/privateUserEventAdd',
           {
             userEmail: userItem.userEmail,
@@ -271,6 +273,7 @@ angular.module('sociogram.controllers', ['ionic'])
             privateEvents: privateEvents
           })
         }//end of if attending or maybe
+
 
  // if (listOfAllEvents[allEventsInAnArray[i]].name=='Downtown Binghamton Martini Walk 2014'){
  //            alert(listOfAllEvents[allEventsInAnArray[i]].longitude);
@@ -420,8 +423,8 @@ angular.module('sociogram.controllers', ['ionic'])
         userProfId = result.id;
         userName = result.name;
         userGender = result.gender;
-        alert(Object.keys(result));
-        alert(result.locale);
+        // alert(Object.keys(result));
+        // alert(result.locale);
         // userAge = getAge(result.birthday);
         userSchool = schoolItem.schoolName;
         // alert(userSchool);
@@ -439,6 +442,7 @@ angular.module('sociogram.controllers', ['ionic'])
         //check if registered user exists within school user list, responds with DE if they dont
         //have to send user email and user school, backend should look up school user list and check if email exists there
         $http.post('http://stark-eyrie-6720.herokuapp.com/getUser',{userEmail: userEmail, userSchool:userSchool}).success(function(res){
+
           userItem = res.Item;
           // alert(userItem);
           //DE is equal to doesnt exist
