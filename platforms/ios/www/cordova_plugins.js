@@ -34,6 +34,13 @@ module.exports = [
         "clobbers": [
             "analytics"
         ]
+    },
+    {
+        "file": "plugins/com.urbanairship.phonegap.PushNotification/www/PushNotification.js",
+        "id": "com.urbanairship.phonegap.PushNotification.PushNotification",
+        "clobbers": [
+            "PushNotification"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -43,7 +50,8 @@ module.exports.metadata =
     "org.apache.cordova.statusbar": "0.1.3",
     "org.apache.cordova.inappbrowser": "0.3.3",
     "nl.x-services.plugins.socialsharing": "4.0.8",
-    "com.danielcwilson.plugins.googleanalytics": "0.4.1"
+    "com.danielcwilson.plugins.googleanalytics": "0.4.1",
+    "com.urbanairship.phonegap.PushNotification": "2.4.0"
 }
 // BOTTOM OF METADATA
 });

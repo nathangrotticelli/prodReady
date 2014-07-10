@@ -7,6 +7,12 @@ angular.module('sociogram.controllers', ['ionic'])
     OpenFB.logout();
     $state.go('app.login');
   };
+
+  $scope.refresh = function () {
+    $state.go('app.loading');
+    // $scope.noPop='true';
+    // $scope.facebookLogin('schoolItem.schoolName');
+  };
  })
 
  .controller('LoginCtrl', function ($scope, $ionicPopup, $http, $location, OpenFB, $state, $stateParams, PetService) {
@@ -21,27 +27,38 @@ angular.module('sociogram.controllers', ['ionic'])
     });
   };
 
+  $scope.noPop='false';
+
   //used for login2, or manual email login
   $scope.submitForm = function(emailEntry) {
+
     loginTryEmail = emailEntry.toLowerCase();
-    if (schoolItem.schoolName=='Central Florida'||schoolItem.schoolName=='George Washington University'||schoolItem.schoolName=='Oneonta'||schoolItem.schoolName=='Michigan State'||schoolItem.schoolName=='University of Michigan'||schoolItem.schoolName=='University of Hawaii'||schoolItem.schoolName=='Central Michigan'){
+    if (schoolItem.schoolName.indexOf('Binghamton')<0){
+      // alert(loginTryEmail);
       if((loginTryEmail==='ngrotti1@binghamton.edu'||loginTryEmail.indexOf(schoolItem.emailEnding)>-1&&loginTryEmail.length>schoolItem.emailLength)){
+
+        // alert(schoolItem.schoolName);
         $http.post('http://stark-eyrie-6720.herokuapp.com/userPost',
           {firstNameLetter: firstNameLetter,
+          userProfId: userProfId,
           userName: userName,
           privateEvents: privateEvents,
           userGender: userGender,
           userEmail: userEmail,
-          userSchool: schoolName}
-        )
-        PetService.setEvents(yourEvents);
-        $location.path('/app/person/me/feed');
+          entranceEmail: loginTryEmail,
+          userSchool: schoolItem.schoolName}
+        ).then(function(){
+          $scope.noPop='true';
+          $scope.facebookLogin(schoolItem.schoolName);
+
+        })
       }
       else{
         $scope.showAlert("That\'s an invalid email! Make sure you are on the right school portal for your respective university, and that you entered your OWN valid university email. If you are in fact a student at this school, and continue to experience trouble, shoot us an email at UNRepTeam@gmail.com or reach out to us through social media ASAP!");
       }
     }
     else {
+      // alert(loginTryEmail+'fff');
       if(loginTryEmail==='ngrotti1@binghamton.edu'||loginTryEmail.indexOf(schoolItem.emailEnding)>-1&&loginTryEmail.indexOf(' ')<0&&loginTryEmail[0].indexOf(firstNameLetter)>-1&&loginTryEmail.length>=schoolItem.emailLength&&regExNums.test(loginTryEmail)){
         $http.post('http://stark-eyrie-6720.herokuapp.com/userPost',
           {firstNameLetter: firstNameLetter,
@@ -50,10 +67,13 @@ angular.module('sociogram.controllers', ['ionic'])
           privateEvents: privateEvents,
           userGender: userGender,
           userEmail: userEmail,
-          userSchool: schoolName}
-        )
-        PetService.setEvents(yourEvents);
-        $location.path('/app/person/me/feed');
+          entranceEmail: loginTryEmail,
+          userSchool: schoolItem.schoolName}
+        ).then(function(){
+          $scope.noPop='true';
+          $scope.facebookLogin(schoolItem.schoolName);
+
+        })
       }
       else{
         $scope.showAlert("That\'s an invalid email! Make sure you are on the right school portal for your respective university, and that you entered your OWN valid university email. If you are in fact a student at this school, and continue to experience trouble, shoot us an email at UNRepTeam@gmail.com or reach out to us through social media ASAP!");
@@ -71,17 +91,17 @@ angular.module('sociogram.controllers', ['ionic'])
         var startMonth = userItem.privateEvents[key].start_time.split('/')[0];
 
         if(Math.floor(startYear)>Math.floor(currentYear)){
-               alert('event added from user private events');
+               // alert('event added from user private events');
              yourEvents[key] = userItem.privateEvents[key];
         }
         else if(Math.floor(startYear)==Math.floor(currentYear)){
                 if(Math.floor(startMonth)>Math.floor(currentMonth)){
-               alert('event added from user private events');
+               // alert('event added from user private events');
              yourEvents[key] = userItem.privateEvents[key];
                  }
                  else if(Math.floor(startMonth)==Math.floor(currentMonth)){
                   if(Math.floor(startDay)>=Math.floor(currentDay)){
-                    alert('event added from user private events');
+                    // alert('event added from user private events');
              yourEvents[key] = userItem.privateEvents[key];
                   }
                 }
@@ -95,6 +115,9 @@ angular.module('sociogram.controllers', ['ionic'])
     //counts number of current events a school has
     var currentSchoolCheck = function(){
       for(var key in schoolItem.schoolEvents){
+
+
+if(schoolItem.schoolEvents[key].banned!=="banned"){
         var startDay = schoolItem.schoolEvents[key].start_time.split('/')[1];
         var startYear = schoolItem.schoolEvents[key].start_time.split('/')[2];
         var startMonth = schoolItem.schoolEvents[key].start_time.split('/')[0];
@@ -122,6 +145,7 @@ angular.module('sociogram.controllers', ['ionic'])
                 }
          }
 
+        }
       }
 
       return currentSchoolCount;
@@ -154,7 +178,7 @@ angular.module('sociogram.controllers', ['ionic'])
           });
         }
       });
-      alert(schoolFriendCount);
+      // alert(schoolFriendCount);
       return schoolFriendCount;
     }
 
@@ -175,7 +199,7 @@ angular.module('sociogram.controllers', ['ionic'])
     var checkAllowed = function(){
       // userEmail = "fake@fake"; test email
       // schoolFriendCount = 0; test school friend counts here
-      schoolFriendCount = 1000;
+      // schoolFriendCount = 1000;
       // if they have the required amount of friends or correct email, create user and then take them to the exisiting user flow
       if(Math.floor(schoolFriendCount)>=Math.floor(schoolItem.schoolFriendMin)||userEmail.indexOf(schoolItem.emailEnding)>-1){
 
@@ -186,9 +210,9 @@ angular.module('sociogram.controllers', ['ionic'])
           privateEvents: privateEvents,
           userGender: userGender,
           userEmail: userEmail,
-          userSchool: schoolName}
+          userSchool: schoolItem.schoolName}
         ).then(function(){
-          fbInnerFlow()
+          fbInnerFlow();
         })
       }
       else{//cant auto verify as a student, take to manual email login
@@ -205,6 +229,7 @@ angular.module('sociogram.controllers', ['ionic'])
       else{
         var schoolEventsInAnArray = Object.keys(schoolItem.schoolEvents);
         for (i=0;i<schoolEventsInAnArray.length;i++){
+         if(schoolItem.schoolEvents[schoolEventsInAnArray[i]].banned!=="banned"){
           if(schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time){
              //To correct formatting of event start dates
             if(schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time.indexOf('-')>-1){
@@ -239,67 +264,55 @@ angular.module('sociogram.controllers', ['ionic'])
                    }
                   }
                 }
-
-
-
-
-
-            //   else if(startMonth==currentMonth){
-            //     if(startDay>=currentDay){
-            //        alert(yourEvents[schoolEventsInAnArray[i]].name);
-            //  yourEvents[schoolEventsInAnArray[i]] = schoolItem.schoolEvents[schoolEventsInAnArray[i]];
-            //     }
-            //   }
-            // }
             //if it is a current event, add it to the user display
 
           }
+         }
         }
       }//end of else
+
 
       //start of pull from fb result
       var allEventsInAnArray = Object.keys(listOfAllEvents);
       for (i=0;i<allEventsInAnArray.length;i++){
-        //start of if attending of maybe
-        if (listOfAllEvents[allEventsInAnArray[i]].attending||listOfAllEvents[allEventsInAnArray[i]].maybe){
-          yourEvents[allEventsInAnArray[i]] = listOfAllEvents[allEventsInAnArray[i]];
-          privateEvents[allEventsInAnArray[i]] = listOfAllEvents[allEventsInAnArray[i]];
-          // alert(privateEvents[allEventsInAnArray[i]].name);
-          alert('privateEve');
-          $http.post('http://stark-eyrie-6720.herokuapp.com/privateUserEventAdd',
-          {
-            userEmail: userItem.userEmail,
-            userName: userItem.userName,
-            privateEvents: privateEvents
-          })
-        }//end of if attending or maybe
 
 
  // if (listOfAllEvents[allEventsInAnArray[i]].name=='Downtown Binghamton Martini Walk 2014'){
  //            alert(listOfAllEvents[allEventsInAnArray[i]].longitude);
 
  //          }
-
+      if(schoolItem.schoolEvents[allEventsInAnArray[i]]!==listOfAllEvents[allEventsInAnArray[i]]){
         if (listOfAllEvents[allEventsInAnArray[i]].longitude&&listOfAllEvents[allEventsInAnArray[i]].longitude!='Longitude: undefined'){
+
           //defining long and lat values of current event
           longValue = listOfAllEvents[allEventsInAnArray[i]].longitude.split(' ')[1];
           latValue = listOfAllEvents[allEventsInAnArray[i]].latitude.split(' ')[1];
 
           //if in the schools area, add it to the user, and if not private add to school event list
           if (longValue<=schoolItem.schoolLongMax&&longValue>=schoolItem.schoolLongMin&&latValue<=schoolItem.schoolLatMax&&latValue>=schoolItem.schoolLatMin){
+             // alert('here');
+            if(schoolItem.schoolEvents[allEventsInAnArray[i]].banned!=="banned"){
+                 // alert('here2');
             yourEvents[allEventsInAnArray[i]] = listOfAllEvents[allEventsInAnArray[i]];
             //if event is not private
             if(listOfAllEvents[allEventsInAnArray[i]].privacy!='SECRET'){
+                 // alert('here3');
+              // alert(schoolItem.schoolEvents[allEventsInAnArray[i]].name);
+              // alert(schoolItem.schoolEvents[allEventsInAnArray[i]].banned);
+
               schoolItem.schoolEvents[allEventsInAnArray[i]] = listOfAllEvents[allEventsInAnArray[i]];
+
               // alert(schoolItem.schoolEvents[allEventsInAnArray[i]].name);
               $http.post('http://stark-eyrie-6720.herokuapp.com/schoolPost',
                 {
                 schoolName: schoolItem.schoolName,
                 schoolEvents: schoolItem.schoolEvents
                 }.success(function(){
+                     // alert('here4');
                  //when event added, do whatever. alert('school event added')
                 })
               )
+             }
             }
           }
          }// end of if longitude
@@ -309,9 +322,16 @@ angular.module('sociogram.controllers', ['ionic'])
             //if event location includes the school town, add to user events, and if not private add to school events
             // alert('here1');
             if (listOfAllEvents[allEventsInAnArray[i]].location.indexOf(schoolItem.schoolTown)>-1){
+               // alert('here');
              // alert('here2');//if close to school
+             if(schoolItem.schoolEvents[allEventsInAnArray[i]].banned!=="banned"){
+               // alert('here2');
               yourEvents[allEventsInAnArray[i]] = listOfAllEvents[allEventsInAnArray[i]];
+
               if(listOfAllEvents[allEventsInAnArray[i]].privacy!='SECRET'){
+                 // alert('here3');
+                // alert(schoolItem.schoolEvents[allEventsInAnArray[i]].name);
+                // alert(schoolItem.schoolEvents[allEventsInAnArray[i]].banned);
 
                 schoolItem.schoolEvents[allEventsInAnArray[i]] = listOfAllEvents[allEventsInAnArray[i]];
                 // alert(schoolItem.schoolEvents[allEventsInAnArray[i]].name);
@@ -324,8 +344,25 @@ angular.module('sociogram.controllers', ['ionic'])
                   //when event added, do whatever. alert('school event added')
                 })
               }
+             }
             }
           }
+        }//end of if to prevent overwriting of duplicates
+        if(schoolItem.schoolEvents[allEventsInAnArray[i]]!==listOfAllEvents[allEventsInAnArray[i]]){
+        //start of if attending of maybe
+        if (listOfAllEvents[allEventsInAnArray[i]].attending||listOfAllEvents[allEventsInAnArray[i]].maybe){
+          yourEvents[allEventsInAnArray[i]] = listOfAllEvents[allEventsInAnArray[i]];
+          privateEvents[allEventsInAnArray[i]] = listOfAllEvents[allEventsInAnArray[i]];
+          // alert(privateEvents[allEventsInAnArray[i]].name);
+          // alert('privateEve');
+          $http.post('http://stark-eyrie-6720.herokuapp.com/privateUserEventAdd',
+          {
+            userEmail: userItem.userEmail,
+            userName: userItem.userName,
+            privateEvents: privateEvents
+          })
+        }//end of if attending or maybe
+       }//end of if to prevent events that are already school events and/or banned to become private
       }//end of all events in array . length
     }//end of eventpopulator
 
@@ -406,10 +443,11 @@ angular.module('sociogram.controllers', ['ionic'])
         });//end of friends.foreach
       })
       .success(function(){
-        alert('made it to ep');
+        // alert('made it to ep');
         //make new event lists in the event populater
         eventPopulater(listOfAllEvents);
         PetService.setEvents(yourEvents);
+        // alert('made it past ep');
         //allow access to feed
        $location.path('/app/person/me/feed');
       });
@@ -418,6 +456,7 @@ angular.module('sociogram.controllers', ['ionic'])
 
     //gets and sets personal fb info, takes user to loading screen, and then runs user logic
     var fbInnerFlow = function(){
+      $location.path('/app/loading');
       //gets and sets current users fb info
       OpenFB.get('/me', {limit: 30}).success(function (result) {
         userProfId = result.id;
@@ -426,6 +465,7 @@ angular.module('sociogram.controllers', ['ionic'])
         // alert(Object.keys(result));
         // alert(result.locale);
         // userAge = getAge(result.birthday);
+
         userSchool = schoolItem.schoolName;
         // alert(userSchool);
         //if there is an email, set it to lower case
@@ -437,13 +477,20 @@ angular.module('sociogram.controllers', ['ionic'])
         }
         firstNameLetter = result.name[0].toLowerCase();
         //take to loading screen
-        userEmail = "ngtest2@gmail.com";
+        userEmail = "ngtest1233@gmail.com";
         //can experiment with user emails here
         //check if registered user exists within school user list, responds with DE if they dont
         //have to send user email and user school, backend should look up school user list and check if email exists there
         $http.post('http://stark-eyrie-6720.herokuapp.com/getUser',{userEmail: userEmail, userSchool:userSchool}).success(function(res){
 
           userItem = res.Item;
+          // alert(userItem);
+
+          if(userItem.banned==="banned"){
+            $scope.showAlert('Sorry, but you have been banned. Contact us at UNrepteam@gmail.com if you think is a mistake.');
+            $state.go('app.login');
+          }
+          else{
           // alert(userItem);
           //DE is equal to doesnt exist
           if(userEmail=='none'){
@@ -465,14 +512,49 @@ angular.module('sociogram.controllers', ['ionic'])
             else{
               fbQuery();
             }
+             if(userItem.userSchool!==schoolItem.schoolName){
+                $http.post('http://stark-eyrie-6720.herokuapp.com/userSchoolPost',
+                {
+                  userEmail: userEmail,
+                  userName: userName,
+                  userSchool: schoolItem.schoolName
+                })
+             }
           }
+//              var grabEmail = function(description){
+//           // alert('1');
+//           var ret = "none";
+//            // alert('2');
+//           var words = description.split(' ');
+//            // alert('3');
+//             for(i=0;i<=words.length;i++){
+//               // alert('4');
+//             if(words[i].indexOf("@")>-1&&words[i].indexOf(".com")>-1&&words[i].length<=50){
+//               // alert('5');
+//               ret = words[i];
+
+//               // listOfAllEvents[allEventsInAnArray[i]].description=ret;
+//               // alert(ret);
+//               // alert(words[i].length);
+//             }
+//           }
+//           return ret;
+//         }
+// if(singleEvent.description){
+//                  listOfAllEvents[singleEvent.name.replace(/\./g,"")]['description']=grabEmail(singleEvent.description);
+//                }
+
           //registered user does not exist
           else{
+            // alert(userItem.banned);
             //run fb friend/email check
             eduSearch();
+            // alert(userItem.banned);
             //make sure edu search completes, then checkAllowed. THIS CAN BE OPTIMized.
             setTimeout(function() { checkAllowed() },3000);
           }
+        }
+
         }).error(function(){
           //person is not already a user and there was an error connect to db
           $scope.showAlert('Could not connect to server.');
@@ -492,7 +574,7 @@ angular.module('sociogram.controllers', ['ionic'])
       .then(
         function () {
           //start inner fbFlow
-          fbInnerFlow()
+          fbInnerFlow();
         }
       ).error(function(){//if login fails
         $scope.showAlert('Facebook connection could not be acheived, and is required.');
@@ -511,16 +593,24 @@ angular.module('sociogram.controllers', ['ionic'])
     schoolFriendCount = 0;
     currentSchoolCount = 0;
     // today.setSeconds(t.getSeconds() + 10);
-
+// alert($scope.noPop);
+ if($scope.noPop=='false'){
     //get school info
     $http.post('http://stark-eyrie-6720.herokuapp.com/getSchool',{schoolName:schoolName}).success(function(res){
-      schoolItem = res.Item;
       $location.path('/app/loading');
+      schoolItem = res.Item;
+
       //check how many current events exist
       currentSchoolCheck();
       //start the fb login
       fbLoginFlow();
     })
+   }
+   else{
+    fbInnerFlow();
+   }
+
+
 
   }; // end of main/big/overarching fb connect function, run when school is tapped, facebookLogin
  }) // end of login controller
@@ -529,6 +619,10 @@ angular.module('sociogram.controllers', ['ionic'])
  .controller('PetDetailCtrl', function($scope, $stateParams, PetService) {
   //retrieves single event info
   $scope.singleEvent = PetService.getSingle();
+$scope.showEvent = false;
+   $scope.expandEvent= function(theDiv) {
+    $scope.showEvent = !$scope.showEvent;
+ }
   //allows sharing functionaility
   $scope.shareBtn = function(a,b,c,d){
    window.plugins.socialsharing.share(a,b,c,d);

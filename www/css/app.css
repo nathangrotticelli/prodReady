@@ -32,6 +32,41 @@
 
 
 
+
+
+
+.animate-if {
+  background:white;
+  border:1px solid black;
+  padding:10px;
+}
+
+.animate-if.ng-enter, .animate-if.ng-leave {
+   -webkit-transition: all .6s ease-in-out;
+  -moz-transition: all .6s ease-in-out;
+  -o-transition: all .6s ease-in-out;
+  transition: all .6s ease-in-out;
+}
+
+.animate-if.ng-enter,
+.animate-if.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+.animate-if.ng-leave,
+.animate-if.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+
+#eventDiv2{
+	height:auto!important; /*this set the height to auto for those supporting it (not IE)*/
+
+/*width:100px;*/
+/*word-wrap: break-word;*/
+/*display: inline-block;*/
+}
+
 .card .item-divider{
 	/*font-style: bold;*/
 	background-color: beige;
@@ -501,10 +536,10 @@ button{
 	font-size: 44px;
 	color: black;
 	text-align: center;
-	vertical-align: center;
-	top:5px;
-	border:6px solid black;
-	border-top: thick double;
+	/*vertical-align: center;*/
+	/*top:-50px;*/
+	/*border:6px solid black;*/
+	/*border-bottom: thick double;*/
 	border-left: thick double;
 	border-right: thick double;
 	/*border-bottom: 0px;*/
@@ -554,30 +589,35 @@ font-family: 'Gafata', sans-serif;
 
 #singleEventContent{
 	margin: auto;
+	padding-top: 0;
 	/*margin-top: 0px;*/
 /*	padding-left: 30px;
 	padding-right: 30px;*/
-	padding-bottom: 30px;
+	/*padding-bottom: 30px;*/
 	/*margin-bottom: -48px;*/
 /*	padding-top: 15px;*/
-	height: 100%;
+	min-height: 87%;
 	width: 100%;
 
-	/*text-align: center;*/
+	overflow: auto;
 }
 
 .leftShift{
 	float: left;
 }
 
-
+#expandedEventName{
+	padding-top: 5%;
+}
 #singleEventContent img{
-	max-height: 250px;
+	min-height: 20%;
+	max-height:55%;
 	max-width: 100%;
 	display: block;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 5%;
+  /*padding-top: 0;*/
+  /*border-radius: 5%;*/
 	/*margin: auto;
 	padding: auto;*/
 /*	text-align: center;

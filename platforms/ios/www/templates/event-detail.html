@@ -8,23 +8,21 @@
 
 	  <ion-content scroll="false"  padding="false">
 	  <div id='expandedEvent' class='aboutPage'>
-	  <p>
-	  	<p></p>
-	  <a id='eventLink'class="topBtn" href="#/tab/events" animation="slide-right-left-ios7">
-	   <i class="icon ion-arrow-return-left"></i>
-	 	</a>
-	  <a id="shareBtnId" ng-click="shareBtn('Check this event from the U Nightlife App!', singleEvent.name, singleEvent.cover, singleEvent.location)" class="topBtn">
-	      <i class="icon ion-share"></i>
-	 	</a>
-	 </p>
-	 <br>
+
+
 	  		<div id='singleEventContent'>
+
+
+
 	    		<img src="{{singleEvent.cover}}">
-	    		<br>
+
+					<p id="expandedEventName">
+	    			{{ singleEvent.name }}
+	    		</p>
+
+<div class="list card">
 
 
-	    		<p>{{ singleEvent.name }}</p>
-	    		<div class="list card">
 	    			<div class="item item-icon-left item-divider">
 			    			<i class="icon ion-ios7-location"></i>
 			    			{{ singleEvent.location }}</div>
@@ -33,21 +31,44 @@
 			    			<i class="icon ion-android-clock"></i>
 			    			{{ singleEvent.start_time }}</div>
 
-						  <div class="item item-divider item-icon-left">
-						  	<i class="icon ion-clipboard"></i>
+						  <div class="item-text-wrap">
+						  	<div class="item item-icon-left item-divider" ng-click="expandEvent()">
+						  		<i class="icon ion-clipboard"></i>
+						  		Event Info
+						  	</div>
+						  	<div id="eventDiv2" ng-if="showEvent" class="item animate-if">
+	          		 {{ singleEvent.description}}
+	       			 </div>
+						  </div>
+
+
+<!--
+						<div class="list">
+			<div class="item item-divider item-icon-left" ng-click="showDesc=!showDesc" ng-if="singleEvent.description">
+   	      <i class="icon ion-clipboard"></i>
 						    Event Description:
-						  </div>
+   	     </div>
 
-						  <div class="item item-text-wrap">
+   	     	<div collapse="!showDesc">
+   	     		<div class="item">
+	           {{ singleEvent.description}}
+	        </div>
+	      </div>
+	    </div> -->
 
-						    {{ singleEvent.description}}
-						  </div>
 
 
 					</div>
 
 	 			 </div>
-
+ <div>
+	  <a id='eventLink'class="topBtn" href="#/tab/events" animation="slide-right-left-ios7">
+	   <i class="icon ion-arrow-return-left"></i>
+	 	</a>
+	  <a id="shareBtnId" ng-click="shareBtn('Check this event from the U Nightlife App!', singleEvent.name, singleEvent.cover, singleEvent.location)" class="topBtn">
+	      <i class="icon ion-share"></i>
+	 	</a>
+	 </div>
 </div>
 <!--  // script
 	// FlurryAgent.logEvent('Event Opened');

@@ -16,6 +16,44 @@ angular.module('sociogram', ['ionic', 'openfb', 'sociogram.controllers','sociogr
             if (toState.name !== "app.login" && toState.name !== "app.logout" && !$window.sessionStorage['fbtoken']) {
                 $state.go('app.login');
                 event.preventDefault();
+// // Register for any urban airship events
+// document.addEventListener("urbanairship.registration", function (event) {
+//     if (event.error) {
+//         alert('there was an error registering for push notifications');
+//     } else {
+//         alert("Registered with ID: " + event.pushID);
+//     }
+// }, false)
+
+// document.addEventListener("urbanairship.push", function (event) {
+//     alert("Incoming push: " + event.message)
+// }, false)
+
+// // Set tags on a device, that you can push to
+// // https://docs.urbanairship.com/display/DOCS/Server%3A+Tag+API
+// PushNotification.setTags(["loves_cats", "shops_for_games"], function () {
+//     PushNotification.getTags(function (obj) {
+//         obj.tags.forEach(function (tag) {
+//             alert("Tag: " + tag);
+//         });
+//     });
+// });
+
+// // Set an alias, this lets you tie a device to a user in your system
+// // https://docs.urbanairship.com/display/DOCS/Server%3A+iOS+Push+API#ServeriOSPushAPI-Alias
+// PushNotification.setAlias("awesomeuser22", function () {
+//     PushNotification.getAlias(function (alias) {
+//         alert("The user formerly known as " + alias)
+//     });
+// });
+
+// // Check if push is enabled
+// PushNotification.isPushEnabled(function (enabled) {
+//     if (enabled) {
+//         alert("Push is enabled! Fire away!");
+//     }
+// })
+
             }
         });
 
