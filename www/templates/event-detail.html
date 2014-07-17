@@ -21,25 +21,34 @@
 	    		</p>
 
 <div class="list card">
-
-
-	    			<div class="item item-icon-left item-divider">
-			    			<i class="icon ion-ios7-location"></i>
-			    			{{ singleEvent.location }}</div>
-
-			    		<div class="item item-icon-left item-divider">
-			    			<i class="icon ion-android-clock"></i>
-			    			{{ singleEvent.start_time }}</div>
-
-						  <div class="item-text-wrap">
+	  <div class="item-text-wrap">
 						  	<div class="item item-icon-left item-divider" ng-click="expandEvent()">
 						  		<i class="icon ion-clipboard"></i>
 						  		Event Info
 						  	</div>
+						  	<br>
 						  	<div id="eventDiv2" ng-if="showEvent" class="item animate-if">
 	          		 {{ singleEvent.description}}
 	       			 </div>
 						  </div>
+
+
+						  <div ng-click="newEvent()" class="item item-icon-left item-divider">
+			    			<i class="icon ion-android-clock"></i>
+			    			{{ singleEvent.start_time }}</div>
+			    			<br>
+
+
+	    			<div ng-click="mapThis()" class="item item-icon-left item-divider">
+			    			<i class="icon ion-ios7-location"></i>
+			    			{{ singleEvent.location }}</div>
+
+			    			<br>
+
+
+
+
+
 
 
 <!--
@@ -62,10 +71,10 @@
 
 	 			 </div>
  <div>
-	  <a id='eventLink'class="topBtn" href="#/tab/events" animation="slide-right-left-ios7">
+	  <a id='eventLink'class="topBtn" ng-click="goBack()" animation="slide-right-left-ios7">
 	   <i class="icon ion-arrow-return-left"></i>
 	 	</a>
-	  <a id="shareBtnId" ng-click="shareBtn('Check this event from the U Nightlife App!', singleEvent.name, singleEvent.cover, singleEvent.location)" class="topBtn">
+	  <a id="shareBtnId" ng-click="shareBtn('Check out this event I found on the U Nightlife app: '+singleEvent.name+'. It takes place at: '+singleEvent.start_time+'. For more info about this and other events, download the app at: itunes.download.com/downloadus.', 'Sharing an event with you!', singleEvent.cover, singleEvent.location)" class="topBtn">
 	      <i class="icon ion-share"></i>
 	 	</a>
 	 </div>

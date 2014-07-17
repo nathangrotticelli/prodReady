@@ -1,0 +1,69 @@
+<!--
+  This template loads for the 'tab.adopt' state (app.js)
+-->
+<ion-view>
+  <ion-content animation="my-animate" class='adoptBack' scroll="false" has-tabs="false">
+  <!-- <ion-scroll> -->
+  <br>
+  <ion-scroll>
+  <div class="addAnEvent">
+
+      <a  class="unMenu3 button ion-arrow-return-left" href="#/app/addAnEvent"></a>
+<a class="unMenu2 faqMenu ion-navicon" menu-toggle="'right'"></a>
+
+<br><br><br><br>
+
+
+<form id="eForm" action="" method="POST" enctype="multipart/form-data">
+
+
+
+     <h3 class="eventForm">Name of the Event:</h3>
+     <input name="name" type="text" value="" size="30"/> <br />
+
+
+     <h3 class="eventForm">Contact Email:</h3>
+      <input name="email" type="text" value="" size="30"/> <br />
+
+
+      <h3 class="eventForm">Event Photo:</h3>
+      <input type="picture" name="action" value="Choose Photo"/>
+      <br><br>
+
+      <h3 class="eventForm">Date/Start Time:</h3>
+      <input type="date" name="action" value="10/10/2014"/>
+      <br>
+
+      <h3 class="eventForm">Location of the Event:</h3>
+    <input name="address" type="text" value="" size="30"/> <br />
+
+
+    <h3 class="eventForm">Event Info:</h3>
+    <textarea name="message" rows="7" cols="30"> </textarea>
+    <br>
+
+
+    <div class="card">
+  <div class="item thing4 item-text-wrap">
+    By submitting an event, you accept:<br>
+    1. The contact email is valid for the corresponding host of this event, and will be able to answer follow-up emails from the UN team.<br>
+    2. User info will be recorded when an event is submitted, and any abuse or misuse of this form will result in a permanent ban.
+  </div>
+</div>
+<br>
+    <input class="adoptBtn button thing5" type="submit" value="Submit Event"/>
+</form>
+   <!--  <a class="adoptBtnLong button button-stable">
+          Submit an Event
+    </a> -->
+        <p></p>
+    <!-- <button class="adoptBtnLong button button-stable">
+      Frequently Asked Questions
+    </button> -->
+    </div>
+  </ion-scroll>
+
+<!-- </ion-scroll> -->
+  </ion-content>
+</ion-view>
+

@@ -36,10 +36,10 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/com.urbanairship.phonegap.PushNotification/www/PushNotification.js",
-        "id": "com.urbanairship.phonegap.PushNotification.PushNotification",
+        "file": "plugins/nl.x-services.plugins.calendar/www/Calendar.js",
+        "id": "nl.x-services.plugins.calendar.Calendar",
         "clobbers": [
-            "PushNotification"
+            "Calendar"
         ]
     }
 ];
@@ -51,7 +51,7 @@ module.exports.metadata =
     "org.apache.cordova.inappbrowser": "0.3.3",
     "nl.x-services.plugins.socialsharing": "4.0.8",
     "com.danielcwilson.plugins.googleanalytics": "0.4.1",
-    "com.urbanairship.phonegap.PushNotification": "2.4.0"
+    "nl.x-services.plugins.calendar": "4.2.5"
 }
 // BOTTOM OF METADATA
 });

@@ -179,6 +179,15 @@ angular.module('sociogram', ['ionic', 'openfb', 'sociogram.controllers','sociogr
 				        }
 				      }
 				    })
+                        .state('app.newEventForm', {
+                      url: '/newEventForm',
+                      views: {
+                        'menuContent': {
+                          templateUrl: 'templates/newEventForm.html',
+                          controller: 'FeedCtrl'
+                        }
+                      }
+                    })
 
             .state('app.person', {
                 url: "/person/:personId",
@@ -200,7 +209,7 @@ angular.module('sociogram', ['ionic', 'openfb', 'sociogram.controllers','sociogr
             });
 
         // fallback route
-        $urlRouterProvider.otherwise('/app/person/me/feed');
+        $urlRouterProvider.otherwise('/app/login');
 
     });
 

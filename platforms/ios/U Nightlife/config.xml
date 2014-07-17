@@ -33,9 +33,8 @@
     <feature name="UniversalAnalytics">
         <param name="ios-package" value="UniversalAnalyticsPlugin" />
     </feature>
-    <feature name="PushNotificationPlugin">
-        <param name="ios-package" value="PushNotificationPlugin" />
-        <param name="onload" value="true" />
+    <feature name="Calendar">
+        <param name="ios-package" value="Calendar" />
     </feature>
     <name>U Nightlife</name>
     <description>

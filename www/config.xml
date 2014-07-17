@@ -13,17 +13,18 @@
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
-    <!-- Urban Airship app credentials -->
-<!-- <preference name="com.urbanairship.production_app_key" value="5BSVsqvpT-Gmw-sXOo0ZoQ" /> -->
-<!-- <preference name="com.urbanairship.production_app_secret" value="PRODUCTION_APP_SECRET" /> -->
+  <!--  Urban Airship app credentials
+<preference name="com.urbanairship.production_app_key" value="5BSVsqvpT-Gmw-sXOo0ZoQ" />
+<preference name="com.urbanairship.production_app_secret" value="PRODUCTION_APP_SECRET" />
+
 <preference name="com.urbanairship.development_app_key" value="5BSVsqvpT-Gmw-sXOo0ZoQ" />
 <preference name="com.urbanairship.development_app_secret" value="2QSnSw8kRpu_WeFP7cB7FA" />
 
-<!-- If the app is in production or not -->
+If the app is in production or not
 <preference name="com.urbanairship.in_production" value="true | false" />
 
-<!-- Enable push when the application launches (instead of waiting for enablePush js call).  Defaults to false -->
-<preference name="com.urbanairship.enable_push_onlaunch" value="true | false" />
+Enable push when the application launches (instead of waiting for enablePush js call).  Defaults to false
+<preference name="com.urbanairship.enable_push_onlaunch" value="true | false" />  -->
     <feature name="StatusBar">
       <param name="ios-package" value="CDVStatusBar" onload="true" />
     </feature>

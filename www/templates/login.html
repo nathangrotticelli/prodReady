@@ -12,26 +12,46 @@
                 &nbsp;Login with Binghamton
             </button> -->
 
-         <div id='wholeEventsPage' >
+         <div class='wholeEventsPage' >
 
-  	<div id="unLogo">
 
-  		</div>
 <div id='eventList'>
 
-	    	<scroll style="height:500px">
+
   <div class='schoolPage'>
-  	<p></p>
-  	<h1>Pick Your School</h1>
+
+
+
+
+
+
+  <img class="unLogo2" src="./images/logo.png">
+  <select class="schoolSelect form-control selectText" ng-model="schoolName" onchange="this.className=this.options[this.selectedIndex].className"
+  >
+    <option ng-selected="!schoolName" disabled="disabled">Select Your School:</option>
+    <option class="ucfText schoolSelect" style="color:red" ng-value="University of Central Florida">University of Central Florida</option>
+    <option class="cmuText schoolSelect" ng-value="Central Michigan University">Central Michigan University</option>
+    <option class="gwuText schoolSelect" ng-value="George Washington University">George Washington University</option>
+    <option class="sbText schoolSelect" ng-value="SUNY Binghamton">SUNY Binghamton</option>
+    <option class="msuText schoolSelect" ng-value="Michigan State University">Michigan State University</option>
+    <option class="soText schoolSelect" ng-value="SUNY Oneonta">SUNY Oneonta</option>
+    <option class="uhText schoolSelect" ng-value="University of Hawaii">University of Hawaii</option>
+    <option class="uiText schoolSelect" ng-value="University of Illinois at Urbana-Champaign">University of Illinois at Urbana-Champaign</option>
+    <option class="michText schoolSelect" ng-value="University of Michigan">University of Michigan</option>
+  </select>
+    <button ng-hide="!schoolName" ng-click='facebookLogin(schoolName)' value="Enter" class="enterBtn button" >Enter</button>
+
+
 <!-- class="row responsive-sm" -->
-<a class="button button-outline button-light" ng-click="facebookLogin('Binghamton')">
-   SUNY Binghamton
+
+<!-- <a class="button button-outline button-light" ng-click="facebookLogin('Central Florida')">
+   Central Florida
 </a>
 
 <br><br>
  <br>
-
-<a class="button button-outline button-light" ng-click="facebookLogin('Central Michigan')">
+ -->
+<!-- <a class="button button-outline button-light" ng-click="facebookLogin('Central Michigan')">
    Central Michigan
 </a>
 <br><br>
@@ -39,39 +59,79 @@
 <a class="button button-outline button-light" ng-click="facebookLogin('George Washington University')">
    George Washington
 </a>
-<br><br>
-<br>
+<br><br> -->
+<!-- <br> -->
 <!-- <a class="button" ng-click="login3()">Login3</a><br> -->
-<a class="button button-outline button-light" ng-click="facebookLogin('Michigan State')">
+<!-- <a class="button button-outline button-light" ng-click="facebookLogin('Michigan State')">
    Michigan State
 </a>
-<br><br>
+<br><br> -->
 <!--  <button class="button" ng-click="login()">Login using Facebook2222</button> -->
- <br>
-<a class="button button-outline button-light" ng-click="facebookLogin('Oneonta')">
-   SUNY Oneonta
+<!--  <br>
+<a class="button button-outline button-light" ng-click="facebookLogin('Binghamton')">
+   SUNY Binghamton
 </a>
 <br><br>
-<br>
-<a class="button button-outline button-light" ng-click="facebookLogin('Central Florida')">
-   Central Florida
+<br> -->
+<!-- <a class="button button-outline button-light" ng-click="facebookLogin('Oneonta')">
+   SUNY Oneonta
 </a>
 <br><br><br>
 <a class="button button-outline button-light" ng-click="facebookLogin('University of Hawaii')">
    U of Hawaii (Manoa)
 </a>
-<br><br><br>
+<br><br>
+<br>
 <a class="button button-outline button-light" ng-click="facebookLogin('University of Illinois at Urbana-Champaign')">
    U of Illinois (UIUC)
 </a>
 <br><br><br>
 <a class="button button-outline button-light" ng-click="facebookLogin('University of Michigan')">
    U of Michigan
-</a>
+</a> -->
   </div>
     </div>
-    </scroll>
   </div>
+  <script id="company.html" type="text/ng-template">
+
+
+
+  <div class="modal">
+
+    <!-- Modal header bar -->
+    <ion-header-bar class="bar-secondary">
+      <h1 class="title">Purchase More Cards!</h1>
+      <button class="button button-clear button-positive" ng-click="closeComp()">Cancel</button>
+    </ion-header-bar>
+
+    <!-- Modal content area -->
+    <ion-content>
+
+
+
+      <h5>Beginner Expansion Pack</h5><button>.99</button>
+      <h5>Intermediate Expansion Pack</h5><button>.99</button>
+      <h5>Advanced Expansion Pack</h5><button>.99</button>
+      <h5>Mobile Development with Web Technologies Expansion Pack</h5><button>.99</button>
+      <h5>AngularJS Expansion Pack</h5><button>.99</button>
+
+    </ion-content>
+
+  </div>
+  <script type="text/javascript">
+
+
+
+
+
+
+
+
+
+
+  {{html "</sc"+"ript>"}}
+
+</script>
 
 
     </ion-content>

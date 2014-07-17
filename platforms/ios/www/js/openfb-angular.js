@@ -7,9 +7,19 @@
  * @author Christophe Coenraets @ccoenraets
  * @version 0.2
  */
-angular.module('openfb', [])
+angular.module('openfb', ['ionic'])
 
-    .factory('OpenFB', function ($rootScope, $q, $window, $http) {
+    .factory('OpenFB', function ($rootScope, $q, $ionicPopup, $window, $http) {
+
+       var showAlert = function(message) {
+   navigator.notification.alert(
+            'You are the winner!',  // message
+            alertDismissed,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+  };
+
 
         var FB_LOGIN_URL = 'https://www.facebook.com/dialog/oauth',
 
@@ -54,11 +64,13 @@ angular.module('openfb', [])
          */
         function login(fbScope) {
 
+
             if (!fbAppId) {
                 return error({error: 'Facebook App Id not set.'});
             }
 
             var loginWindow;
+
 
             fbScope = fbScope || '';
 
@@ -89,12 +101,28 @@ angular.module('openfb', [])
             // If the app is running in Cordova, listen to URL changes in the InAppBrowser until we get a URL with an access_token or an error
             if (runningInCordova) {
                 loginWindow.addEventListener('loadstart', function (event) {
+                    // alert('hi');
+                    // setTimeout(function() {   loginWindow.close()},2500);
+                    // close();
                     var url = event.url;
+
+                      // setTimeout(function() {   loginWindow.close();},2500);
+
                     if (url.indexOf("access_token=") > 0 || url.indexOf("error=") > 0) {
-                        loginWindow.close();
                         oauthCallback(url);
+
+                         alert('Facebook authentication successful.');
+                         loginWindow.close();
+
+                        // alert('hi');
+                        // var fuck = function(){
+                        //     var it = 1 +=1;
+                        //     console.log(it);
+                        // }
                     }
-                });
+                    });
+
+
 
                 loginWindow.addEventListener('exit', function () {
                     // Handle the situation where the user closes the login window manually before completing the login process
@@ -115,6 +143,7 @@ angular.module('openfb', [])
          * OAuth workflow.
          */
         function oauthCallback(url) {
+
             // Parse the OAuth data received from Facebook
             var queryString,
                 obj;
@@ -124,6 +153,7 @@ angular.module('openfb', [])
                 queryString = url.substr(url.indexOf('#') + 1);
                 obj = parseQueryString(queryString);
                 tokenStore['fbtoken'] = obj['access_token'];
+
                 deferredLogin.resolve();
             } else if (url.indexOf("error=") > 0) {
                 queryString = url.substring(url.indexOf('?') + 1, url.indexOf('#'));
@@ -225,5 +255,6 @@ function oauthCallback(url) {
     var injector = angular.element(document.getElementById('main')).injector();
     injector.invoke(function (OpenFB) {
         OpenFB.oauthCallback(url);
+
     });
 }

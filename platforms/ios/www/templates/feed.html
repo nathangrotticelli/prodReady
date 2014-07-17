@@ -9,17 +9,18 @@
 <ion-view hide-back-button="true">
 
 
-  <ion-content scroll="false" has-tabs="false" animation="slide-left-right-ios7">
+  <content scroll="false" class="mesh" has-tabs="false" animation="slide-left-right-ios7">
 
 
 
 
 
 <!-- <div id='shadow'> -->
-  <div id='wholeEventsPage' >
+<!-- <div class="topDiv">
+  </div> -->
 
-	  	 <button id="unMenu2" class="button button-clear button-icon icon ion-navicon" menu-toggle="'right'">
-	  	 </button>
+	  	 <div class="unMenu2 ion-navicon" menu-toggle="'right'">
+	  	 </div>
 
   <!--     <button id="unMenu2" class="button button-clear button-icon icon ion-navicon" ng-click="open_menu()"></button> -->
 
@@ -44,9 +45,10 @@
       //    fjs.parentNode.insertBefore(js, fjs);
       //  }(document, 'script', 'facebook-jssdk')); -->
 
-     	<div id="unLogo">
 
-  		</div>
+        <!-- <img class="" id="unLogo" src="./images/logo.png"> -->
+
+
   	<!-- 	<i id='#unMenu'class="icon ion-beer"></i>
   	</div> -->
 	 <!--  <div id='eventBack'> -->
@@ -61,44 +63,52 @@
 
 	  <!--   <button class="button" ng-click="fbLogin()" id="fb-connect">Connect to facebook</button>
             <p>{{userName}}</p> -->
-	    	<scroll style="height:500px">
+	    	<ion-scroll scrollbar-y="false">
+         <ion-refresher refreshing-icon="ion-ios7-reloading"  on-refresh="alert2()">
+  </ion-refresher>
+
 	    		<!-- <ion-refresher
                 pulling-text="Pull to refresh..."
                 on-refresh="doRefresh()">
         </ion-refresher> -->
 
-	 				<div ng-repeat="event in events">
+	 				<div class="eventScroller" ng-repeat="event in events">
 	 					<!-- <ion-refresher
                 pulling-text="Pull to refresh..."
                 on-refresh="doRefresh()">
         </ion-refresher> -->
 
 						 	<!-- <div ng-click="go('#/tab/event/{{event.id}}'')"> -->
-						 	<div id='eventWrapper'>
-						    <img class="full-image" src="{{event.cover}}" ng-click="go_here(event.name)">
-				 				<h3>{{event.name}}</h3>
-				        <p>{{event.location}}</p>
+						 <!-- 	<div id='eventWrapper'>
+                 </div> -->
+						    <img class="full-image" src="{{event.cover}}" >
+				 			<div ng-click="go_here(event.name)" class="eventInfoSection">
+                <h3 id="eventName">{{event.name}}</h3>
+				        <p><i class="icon ion-ios7-location"></i> {{event.location}}</p>
 				        <p>{{event.start_time}}</p>
-				        <hr size=1 width="87%">
-				        <button class="button button-clear button-icon icon ion-android-note" ng-click="go_here(event.name)">
-				        	<!-- <ion-nav-view name="adopt-tab"> -->
-				        	<!-- </ion-nav-view> -->
-				      	</button>
+              </div>
+				        <!-- <hr size=1 width="87%"> -->
+				       <!--  <button class="button button-clear button-icon icon ion-android-note" ng-click="go_here(event.name)">
+
+				      	</button> -->
 <!-- <a href="#/tab/event/{{event.id}}"></a> -->
 
-				      </div>
+
 
 
 			<!-- 	      </div> -->
 
 	      	</div>
+          <div class="cushion">
+            <br><br>
+          </div>
 
-	      </scroll>
+	      </ion-scroll>
 	    </ion-list>
-	  </div>
+
 	 <!-- </div> -->
 
-  </ion-content>
+  </content>
 </ion-view>
 
 

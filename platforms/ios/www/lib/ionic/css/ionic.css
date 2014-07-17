@@ -3075,7 +3075,7 @@ a.subdued {
   min-height: 100%;
   max-height: 100%;
   width: 275px;
-  background-color: #fff; }
+  background-color: #000; }
 
 .menu-content {
   -webkit-transform: none;
@@ -3430,11 +3430,15 @@ a.item {
   z-index: 2;
   padding: 15px 40px 15px 15px;
   border: none;
-  background-color: white; }
+  background-color: black;
+  background-image: url("../images/outsideMesh.png");
+  background-size: cover;
+
+  background-position: auto auto; }
 
 a.item-content {
   display: block;
-  color: inherit;
+  color: #00EEEE ;
   text-decoration: none; }
 
 .item-text-wrap .item, .item-text-wrap, .item-text-wrap h1, .item-text-wrap h2, .item-text-wrap h3, .item-text-wrap h4, .item-text-wrap h5, .item-text-wrap h6, .item-text-wrap p, .item-complex.item-text-wrap .item-content, .item-body h1, .item-body h2, .item-body h3, .item-body h4, .item-body h5, .item-body h6, .item-body p {
@@ -3599,7 +3603,7 @@ a.item, button.item, .item[href] .item-content, .item[ng-click] .item-content {
     top: 0;
     right: 11px;
     height: 100%;
-    color: #ccc;
+    color: transparent;
     content: "\f125";
     text-transform: none;
     font-weight: normal;
@@ -4096,7 +4100,8 @@ input, button, select, textarea {
     appearance: none;
     margin: 0;
     padding-right: 24px;
-    background-color: transparent; }
+    background-color: transparent;
+  }
   .item-input .button .icon {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 24px;
@@ -4184,12 +4189,12 @@ input, button, select, textarea {
   flex: 1 0 100px;
   padding: 7px 10px 7px 3px;
   max-width: 200px;
-  color: #444;
+  color: black;
   font-weight: bold;
   font-size: 14px; }
 
 .placeholder-icon {
-  color: #aaa; }
+  color: black; }
   .placeholder-icon:first-child {
     padding-right: 6px; }
   .placeholder-icon:last-child {
@@ -4197,7 +4202,7 @@ input, button, select, textarea {
 
 .item-stacked-label {
   display: block;
-  background-color: transparent;
+  background-color: black;
   box-shadow: none; }
   .item-stacked-label .input-label, .item-stacked-label .icon {
     display: inline-block;
@@ -4211,7 +4216,7 @@ input, button, select, textarea {
   overflow: hidden;
   padding: 4px 8px 3px;
   border: none;
-  background-color: #fff; }
+  background-color: green;}
 
 .item-stacked-label input {
   height: 46px; }
@@ -4220,7 +4225,7 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
   display: block;
   padding-top: 2px;
   height: 34px;
-  color: #111;
+  color: black;
   vertical-align: middle;
   font-size: 14px;
   line-height: 16px; }
@@ -4248,8 +4253,8 @@ select, input[type="file"] {
   line-height: 34px; }
 
 select {
-  border: 1px solid #ddd;
-  background-color: #fff; }
+  border: 2px solid black;
+  background-color: black; }
 
 input:-moz-placeholder, textarea:-moz-placeholder {
   color: #aaaaaa; }
