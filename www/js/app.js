@@ -1,4 +1,4 @@
-angular.module('sociogram', ['ionic', 'openfb', 'sociogram.controllers','sociogram.services'])
+angular.module('sociogram', ['ionic', 'openfb','objectFilters','sociogram.controllers','sociogram.services'])
 
     .run(function ($rootScope, $state, $ionicPlatform, $window, OpenFB) {
 
@@ -9,6 +9,7 @@ angular.module('sociogram', ['ionic', 'openfb', 'sociogram.controllers','sociogr
         //     if (window.StatusBar) {
         //         StatusBar.styleDefault();
         //     }
+
         // });
 
         $rootScope.$on('$stateChangeStart', function(event, toState) {
@@ -62,6 +63,7 @@ angular.module('sociogram', ['ionic', 'openfb', 'sociogram.controllers','sociogr
         });
 
     })
+
 
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider

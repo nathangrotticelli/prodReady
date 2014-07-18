@@ -14,7 +14,8 @@
 
 
 
-	    		<img src="{{singleEvent.cover}}">
+	    		<img ng-show="{{singleEvent.cover}}" src="{{singleEvent.cover}}">
+          <img ng-hide="singleEvent.cover!=undefined" src="http://i62.tinypic.com/2zznq55.jpg" >
 
 					<p id="expandedEventName">
 	    			{{ singleEvent.name }}
@@ -33,8 +34,15 @@
 						  </div>
 
 
-						  <div ng-click="newEvent()" class="item item-icon-left item-divider">
-			    			<i class="icon ion-android-clock"></i>
+						  <div ng-if="singleEvent.timeOfEvent!=null" class="item item-icon-left item-divider">
+			    			<i class="icon ion-ios7-alarm-outline"></i>
+			    			{{ singleEvent.timeOfEvent }}
+			    		</div>
+			    		<br ng-if="singleEvent.timeOfEvent!=null">
+
+
+			    		<div ng-click="newEvent()" class="item item-icon-left item-divider">
+			    			<i class="icon ion-ios7-calendar-outline"></i>
 			    			{{ singleEvent.start_time }}</div>
 			    			<br>
 

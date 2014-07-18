@@ -30,6 +30,55 @@
   100% { opacity: 1; }
 }
 
+.eventDT{
+	/*display: inline;*/
+	/*padding:2%;*/
+}
+
+
+#re1{
+	color:white!important;
+}
+
+
+.popup-head {
+  background-color : black;
+  border-top:1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  border-bottom: none;
+}
+.popup-title{
+	 color:white!important;
+}
+
+
+.popup-body {
+  background-color : black;
+  border-top: none;
+   border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  color:white;
+  text-align: center;
+}
+.popup-buttons .button{
+		/*padding-left: 10%;*/
+	/*padding-right: 10%;*/
+	margin-top:2%;
+	margin-left: 15%;
+	margin-right: 15%;
+	background-color:black!important;
+	color:#00EEEE!important;
+	border: 2px solid #00EEEE!important;
+}
+
+.popup-buttons{
+	background-color : black;
+  border-bottom:1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+}
+
 .eventForm{
 	color:white;
 	font-family: 'Gafata', sans-serif;
@@ -249,6 +298,7 @@ font-family: 'Roboto', sans-serif;
 		margin-bottom: 2%;
 	font-size: 39px!important;
 	border: 1px solid #e71939;
+		line-height: normal!important;
 	/*white-space: nowrap;*/
 
 -webkit-appearance: none;
@@ -706,6 +756,7 @@ html {
 }
 
 #unMenu{
+	-webkit-animation: show 1s 1;
 	float: left;
 	z-index: 999;
 	height:0;
@@ -720,6 +771,7 @@ html {
 }
 
 .unMenu3{
+	-webkit-animation: show 1s 1;
 	background-color: transparent!important;
 	border:none!important;
 	float: left;
@@ -740,7 +792,7 @@ html {
 	/*position: relative;*/
 	/*margin-top: 8%;*/
 	width: 100%;
-	max-height: 85%;
+	max-height: 65%;
 	/*border-radius: 55%;*/
 	/*border-top: 0px;*/
 	/*border-image: url("../images/transimg.gif");*/
@@ -831,9 +883,9 @@ button{
 	padding-right: 10%;
 	margin-left: 5%;
 	margin-right: 5%;
-	background-color:black;
+	background-color:black!important;
 	color:#00EEEE!important;
-	border: 2px solid #00EEEE;
+	border: 2px solid #00EEEE!important;
 }
 .enterBtn{
 	padding-left: 10%;
@@ -842,7 +894,7 @@ button{
 	/*margin-right: 10%;*/
 	background-color:black;
 	color:#00EEEE!important;
-	border: 2px solid #00EEEE;
+	border: 2px solid #00EEEE!important;
 }
 
 .adoptBtnLong{

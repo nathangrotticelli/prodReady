@@ -40,9 +40,13 @@ angular.module('sociogram.controllers', ['ionic'])
     // title: 'Hey '+userName.split(' ')[0]+',',
 
   //used to throw better looking popup messages to user
-  $scope.showAlert = function(message) {
+  $scope.showAlert = function(message,title) {
+    // alert(title);
+    if(title==undefined){
+      title=null;
+    }
     $ionicPopup.alert({
-      title: null,
+      title: title,
       content: message
     }).then(function(res) {
       console.log('Alert Shown.');
@@ -71,10 +75,13 @@ angular.module('sociogram.controllers', ['ionic'])
           $scope.noPop='true';
           $scope.facebookLogin(schoolItem.schoolName);
 
+        }).then(function(){
+           setTimeout(function() { $scope.showAlert('Tap an event photo to bring up an expanded view, navigate the app through the menu icon in the top right hand corner, and if you think we can improve your experience in any way, have an idea or just want to talk, we encourage you to contact us. Enjoy.','Welcome to the U Nightlife app.') },2500);
+
         })
       }
       else{
-        $scope.showAlert("We couldn't verify that as a valid university email. Make sure you are on the right portal for your respective university, and that you entered your OWN valid email. If you are in fact a student at this school, and continue to experience trouble, shoot us an email at UNRepTeam@gmail.com.");
+        $scope.showAlert("We couldn't verify that as a valid university email. Make sure you are on the right portal for your respective university, and that you have entered your OWN valid email. If you are in fact a student at this school, and continue to experience trouble, shoot us an email at UNRepTeam@gmail.com.");
       }
     }
     else {
@@ -92,6 +99,9 @@ angular.module('sociogram.controllers', ['ionic'])
         ).then(function(){
           $scope.noPop='true';
           $scope.facebookLogin(schoolItem.schoolName);
+
+        }).then(function(){
+           setTimeout(function() { $scope.showAlert('Tap an event photo to bring up an expanded view, navigate the app through the menu icon in the top right hand corner, and if you think we can improve your experience in any way, have an idea or just want to talk, we encourage you to contact us. Enjoy.','Welcome to the U Nightlife app.') },2500);
 
         })
       }
@@ -111,11 +121,13 @@ angular.module('sociogram.controllers', ['ionic'])
     schoolName=schoolName;
     //pulls existing users private events
     var currentUserCheck = function(){
+      // alert('here')
       for(var key in privateEvents){
          // alert(userItem.privateEvents[key].name);
         var startDay = privateEvents[key].start_time.split('/')[1];
         var startYear = privateEvents[key].start_time.split('/')[2];
         var startMonth = privateEvents[key].start_time.split('/')[0];
+         // alert('here2')
 
         if(Math.floor(startYear)>Math.floor(currentYear)){
                // alert('event added from user private events');
@@ -207,6 +219,9 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
         }
       });
       // alert(schoolFriendCount);
+       // alert(schoolItem.schoolFriendMin);
+      // schoolFriendCount=30;
+
       return schoolFriendCount;
     }
 
@@ -217,6 +232,8 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
       //if succesful, count the number of friends who go to a school
       .success(function(eduResult){
         friendChecker(eduResult)
+      }).success(function(){
+              checkAllowed();
       }).error(function(){ //if failed, show an alert
         $scope.showAlert('Facebook connection failed.');
         $location.path('app.login');
@@ -225,6 +242,7 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
 
     //allow or deny access based on fb email and number of fb friends at a school
     var checkAllowed = function(){
+      // alert(schoolFriendCount);
       // userEmail = "fake@fake"; test email
       // schoolFriendCount = 0; test school friend counts here
       // schoolFriendCount = 1000;
@@ -239,8 +257,9 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
           userGender: userGender,
           userEmail: userEmail,
           userSchool: schoolItem.schoolName}
-        ).then(function(){
-          fbInnerFlow();
+        ).then(function(){ fbInnerFlow() }).then(function(){
+           setTimeout(function() { $scope.showAlert('Tap an event photo to bring up an expanded view, navigate the app through the menu icon in the top right hand corner, and if you think we can improve your experience in any way, have an idea or just want to talk, we encourage you to contact us. Enjoy.','Welcome to the U Nightlife app.') },2000);
+
         })
       }
       else{//cant auto verify as a student, take to manual email login
@@ -250,60 +269,60 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
 
     //populates event lists for successful fb queries
     var eventPopulater = function(listOfAllEvents){
+      // alert('1');
       //start of pull from school events into a users display
-      if (!schoolItem.schoolEvents){
-        schoolItem.schoolEvents = {};
-      }
-      else{
-        var schoolEventsInAnArray = Object.keys(schoolItem.schoolEvents);
-        for (i=0;i<schoolEventsInAnArray.length;i++){
-         if(schoolItem.schoolEvents[schoolEventsInAnArray[i]].banned!=="banned"){
-          if(schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time){
-             //To correct formatting of event start dates
-            if(schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time.indexOf('-')>-1){
-              var startMonth = schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time.split('-')[1];;
-              var startDay = schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time.split('-')[2].split('T')[0];
-              var startYear = schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time.split('-')[0];
-              schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time=startMonth+"/"+startDay+"/"+startYear;
-            }
+      // if (!schoolItem.schoolEvents){
+      //   schoolItem.schoolEvents = {};
+      // }
+      // else{
+      //   var schoolEventsInAnArray = Object.keys(schoolItem.schoolEvents);
+      //   for (i=0;i<schoolEventsInAnArray.length;i++){
+      //    if(schoolItem.schoolEvents[schoolEventsInAnArray[i]].banned!=="banned"){
+      //     if(schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time){
+      //        //To correct formatting of event start dates
+      //       if(schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time.indexOf('-')>-1){
+      //         var startMonth = schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time.split('-')[1];;
+      //         var startDay = schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time.split('-')[2].split('T')[0];
+      //         var startYear = schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time.split('-')[0];
+      //         schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time=startMonth+"/"+startDay+"/"+startYear;
+      //       }
 
 
-            var startDay = schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time.split('/')[1];
-            var startYear = schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time.split('/')[2];
-            var startMonth = schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time.split('/')[0];
+      //       var startDay = schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time.split('/')[1];
+      //       var startYear = schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time.split('/')[2];
+      //       var startMonth = schoolItem.schoolEvents[schoolEventsInAnArray[i]].start_time.split('/')[0];
 
-              //if it is a current event, add it to the user display
-                if (Math.floor(startYear)>Math.floor(currentYear)){
-               yourEvents[schoolEventsInAnArray[i]] = schoolItem.schoolEvents[schoolEventsInAnArray[i]];
-               // alert('event added from school events');
-               // alert(yourEvents[key].name);
-                }
-                else if(Math.floor(startYear)==Math.floor(currentYear)){
-                  if(Math.floor(startMonth)>Math.floor(currentMonth)){
-                   yourEvents[schoolEventsInAnArray[i]] = schoolItem.schoolEvents[schoolEventsInAnArray[i]];
-                   // alert('event added from school events');
-                   // alert(yourEvents[key].name);
-                  }
-                  else if(Math.floor(startMonth)==Math.floor(currentMonth)){
-                   if(Math.floor(startDay)>=Math.floor(currentDay)){
-                     yourEvents[schoolEventsInAnArray[i]] = schoolItem.schoolEvents[schoolEventsInAnArray[i]];
-                     // alert('event added from school events');
-                     // alert(yourEvents[key].name);
-                   }
-                  }
-                }
-            //if it is a current event, add it to the user display
+      //         //if it is a current event, add it to the user display
+      //           if (Math.floor(startYear)>Math.floor(currentYear)){
+      //          yourEvents[schoolEventsInAnArray[i]] = schoolItem.schoolEvents[schoolEventsInAnArray[i]];
+      //          // alert('event added from school events');
+      //          // alert(yourEvents[key].name);
+      //           }
+      //           else if(Math.floor(startYear)==Math.floor(currentYear)){
+      //             if(Math.floor(startMonth)>Math.floor(currentMonth)){
+      //              yourEvents[schoolEventsInAnArray[i]] = schoolItem.schoolEvents[schoolEventsInAnArray[i]];
+      //              // alert('event added from school events');
+      //              // alert(yourEvents[key].name);
+      //             }
+      //             else if(Math.floor(startMonth)==Math.floor(currentMonth)){
+      //              if(Math.floor(startDay)>=Math.floor(currentDay)){
+      //                yourEvents[schoolEventsInAnArray[i]] = schoolItem.schoolEvents[schoolEventsInAnArray[i]];
+      //                // alert('event added from school events');
+      //                // alert(yourEvents[key].name);
+      //              }
+      //             }
+      //           }
+      //       //if it is a current event, add it to the user display
 
-          }
-         }
-        }
-      }//end of else
+      //     }
+      //    }
+      //   }
+      // }//end of else
 
-
+ // alert('2');
       //start of pull from fb result
       var allEventsInAnArray = Object.keys(listOfAllEvents);
       for (i=0;i<allEventsInAnArray.length;i++){
-
 
  // if (listOfAllEvents[allEventsInAnArray[i]].name=='Downtown Binghamton Martini Walk 2014'){
  //            alert(listOfAllEvents[allEventsInAnArray[i]].longitude);
@@ -318,12 +337,15 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
 
           //if in the schools area, add it to the user, and if not private add to school event list
           if (longValue<=schoolItem.schoolLongMax&&longValue>=schoolItem.schoolLongMin&&latValue<=schoolItem.schoolLatMax&&latValue>=schoolItem.schoolLatMin){
-             // alert('here');
-            if(schoolItem.schoolEvents[allEventsInAnArray[i]].name!==listOfAllEvents[allEventsInAnArray[i]].name){
-
+             alert('here');
+            if(schoolItem.schoolEvents[allEventsInAnArray[i]]==undefined||schoolItem.schoolEvents[allEventsInAnArray[i]].start_time!==listOfAllEvents[allEventsInAnArray[i]].start_time){
+ alert('3');
             yourEvents[allEventsInAnArray[i]] = listOfAllEvents[allEventsInAnArray[i]];
             //if event is not private
             if(listOfAllEvents[allEventsInAnArray[i]].privacy!='SECRET'){
+              OpenFB.get("/529056407221814/invited",{limit:150}).success(function(res){
+              alert(res.data.length);
+            })
                  // alert('here3');
               // alert(schoolItem.schoolEvents[allEventsInAnArray[i]].name);
               // alert(schoolItem.schoolEvents[allEventsInAnArray[i]].banned);
@@ -350,21 +372,23 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
             //if event location includes the school town, add to user events, and if not private add to school events
 
             if (listOfAllEvents[allEventsInAnArray[i]].location.indexOf(schoolItem.schoolTown)>-1){
+               // alert('4');
 
-              // alert(schoolItem.schoolEvents[allEventsInAnArray[i]].name);
+              // alert(schoolItem.schoolEvents[allEventsInAnArray[i]]==undefined);
 
              // alert('here2');//if close to school
-             if(schoolItem.schoolEvents[allEventsInAnArray[i]].name!==listOfAllEvents[allEventsInAnArray[i]].name){
+
+             if(schoolItem.schoolEvents[allEventsInAnArray[i]]==undefined||schoolItem.schoolEvents[allEventsInAnArray[i]].start_time!==listOfAllEvents[allEventsInAnArray[i]].start_time){
                // alert('here2');
                // alert('here1');
               yourEvents[allEventsInAnArray[i]] = listOfAllEvents[allEventsInAnArray[i]];
 
               if(listOfAllEvents[allEventsInAnArray[i]].privacy!='SECRET'){
-                 // alert('here3');
-                // alert(schoolItem.schoolEvents[allEventsInAnArray[i]].name);
-                // alert(schoolItem.schoolEvents[allEventsInAnArray[i]].banned);
+                 OpenFB.get("/"+listOfAllEvents[allEventsInAnArray[i]].id+"/invited",{limit:150}).success(function(res){
+              if(res.data.length>5){
 
-                schoolItem.schoolEvents[allEventsInAnArray[i]] = listOfAllEvents[allEventsInAnArray[i]];
+
+              schoolItem.schoolEvents[allEventsInAnArray[i]] = listOfAllEvents[allEventsInAnArray[i]];
                 // alert(schoolItem.schoolEvents[allEventsInAnArray[i]].name);
                 $http.post('http://stark-eyrie-6720.herokuapp.com/schoolPost',
                   {
@@ -374,19 +398,30 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
                 ).success(function(){
                   //when event added, do whatever. alert('school event added')
                 })
+
+              }
+              else{
+                alert('nope');
+              }
+            })
+                 // alert('here3');
+                // alert(schoolItem.schoolEvents[allEventsInAnArray[i]].name);
+                // alert(schoolItem.schoolEvents[allEventsInAnArray[i]].banned);
+
+
               }
              }
             }
           }
 
         // alert('here2');
-        if(schoolItem.schoolEvents[allEventsInAnArray[i]]!==listOfAllEvents[allEventsInAnArray[i]]){
+        if(schoolItem.schoolEvents[allEventsInAnArray[i]]==undefined){
         //start of if attending of maybe
         // alert('here3');
         if (listOfAllEvents[allEventsInAnArray[i]].attending||listOfAllEvents[allEventsInAnArray[i]].maybe){
               // alert('here');
               if(!privateEvents[allEventsInAnArray[i]]){
-                // alert('here2');
+                // fre2');
                   // alert(privateEvents[allEventsInAnArray[i]].name);
 
                 // if(privateEvents[allEventsInAnArray[i]].name!==listOfAllEvents[allEventsInAnArray[i]].name){
@@ -411,9 +446,20 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
       }//end of all events in array . length
     }//end of eventpopulator
 
+
+ var getFormattedTime = function (fourDigitTime) {
+    var hours24 = parseInt(fourDigitTime.substring(0, 2),10);
+    var hours = ((hours24 + 11) % 12) + 1;
+    var amPm = hours24 > 11 ? 'pm' : 'am';
+    var minutes = fourDigitTime.substring(2);
+
+    return hours + ':' + minutes + amPm;
+};
+
+
     //main event query for fb
     var fbQuery = function(){
-      OpenFB.get("/me?fields=friends.fields(events.fields(description,cover,privacy,start_time,location,name,venue,maybe.user("+userProfId+"), attending.user(" +userProfId+")))",{limit: 600})
+      OpenFB.get("/me?fields=friends.fields(events.fields(description,cover,privacy,start_time,location,attending,name,maybe.user("+userProfId+"), attending.user(" +userProfId+")))",{limit: 600})
         //if fb query is not successful
       .error(function(data) {
         $scope.showAlert("Facebook connection failed. "+data.error.message);
@@ -421,6 +467,8 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
       })
       //if fb query succesful
       .success(function (result2){
+
+
         //proceed to put all events into an object with event names being the keys
          var friends = result2.friends.data.filter( function(friend){
             if (friend.events){
@@ -428,14 +476,32 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
             }
          });
         friends.forEach(function(friend){
+
           setEventsList = friend.events.data.map(function(singleEvent){
+            // alert('here');
+
+            // alert(singleEvent.id);
             startMonth = singleEvent.start_time.split('-')[1];
             startDay = singleEvent.start_time.split('-')[2].split('T')[0];
+            // startTime = singleEvent.start_time.split('-')[2].split('T')[1];
             startYear = singleEvent.start_time.split('-')[0];
 
+            // alert(singleEvent.start_time);
+            if(singleEvent.start_time.indexOf(':')>-1){
+               startTime = singleEvent.start_time.split('-')[2].split('T')[1].replace(":", "").substring(0, 4);
+               singleEvent.timeOfEvent = getFormattedTime(startTime);
+            }
+            else{
+              // startTime=null;
+              singleEvent.timeOfEvent = null;
+            }
+
+
+            // alert(singleEvent.timeOfEvent);
 
               //if it is a current event, add it to the user display
                    if (Math.floor(startYear)>Math.floor(currentYear)){
+
                   //cleans the start times
               singleEvent.start_time=startMonth+"/"+startDay+"/"+startYear;
               //cleans the names of event and adds it to list
@@ -520,18 +586,21 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
         //if there is an email, set it to lower case
         if(result.email){
           userEmail = result.email.toLowerCase();
+          // userSchool = result.email.toLowerCase();
         }
         else{
           userEmail = 'none';
+
         }
         firstNameLetter = result.name[0].toLowerCase();
         //take to loading screen
-        // userEmail = "ngtest12233@gmail.com";
+        // userEmailchange = "ngtestnew6@gmail.com";
         //can experiment with user emails here
         //check if registered user exists within school user list, responds with DE if they dont
         //have to send user email and user school, backend should look up school user list and check if email exists there
         $http.post('http://stark-eyrie-6720.herokuapp.com/getUser',{userEmail: userEmail, userSchool:userSchool}).success(function(res){
-
+          // alert(res.item);
+          // alert(res.Item);
           userItem = res.Item;
           if(userItem.privateEvents==null){
             privateEvents = {};
@@ -554,9 +623,6 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
           //if user exists
           if(userItem!=="DE"){
 
-
-            // $scope.showAlert('Welcome to the U Nightlife app.');
-
             // alert('hi');
              // loginWindow.close();
 
@@ -569,9 +635,11 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
               //then run the query in the background
               fbQuery();
             }
+
             // if school amount is less then 2 events then make user wait for their query to be done
             else{
               $location.path('/app/loading');
+              currentUserCheck();
               fbQuery();
             }
              if(userItem.userSchool!==schoolItem.schoolName){
@@ -579,7 +647,7 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
                 {
                   userEmail: userEmail,
                   userName: userName,
-                  userSchool: schoolItem.schoolName
+                  userSchool: userSchool
                 })
              }
           }
@@ -614,9 +682,8 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
             eduSearch();
             // alert(userItem.banned);
             //make sure edu search completes, then checkAllowed. THIS CAN BE OPTIMized.
-            setTimeout(function() { checkAllowed() },3000);
           }
-        }
+        }//end of else
 
         }).error(function(){
           //person is not already a user and there was an error connect to db
@@ -771,6 +838,7 @@ $scope.showEvent = false;
     //changes page and controller
     $state.go("app.event-detail");
   };
+  $scope.predicate=event.timeOfEvent;
 $scope.alert2 = function(){
   $scope.events = PetService.getEvents();
   // alert(thing);
