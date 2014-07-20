@@ -344,7 +344,9 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
             //if event is not private
             if(listOfAllEvents[allEventsInAnArray[i]].privacy!='SECRET'){
            OpenFB.get("/"+listOfAllEvents[allEventsInAnArray[i]].id+"/invited",{limit:85}).success(function(res){
-              if(res.data.length>80){
+            // schoolItem.inviteNum=80:
+            //last thing you did mofo
+              // if(res.data.length>schoolItem.inviteNum){
 
 
               schoolItem.schoolEvents[allEventsInAnArray[i]] = listOfAllEvents[allEventsInAnArray[i]];
@@ -358,7 +360,7 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
                   //when event added, do whatever. alert('school event added')
                 })
 
-               }//end of if
+               // }//end of if
 
               })
              }
@@ -453,20 +455,8 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
     return hours + ':' + minutes + amPm;
 };
 
-
-    //main event query for fb
-    var fbQuery = function(){
-      OpenFB.get("/me?fields=friends.fields(events.fields(description,cover,privacy,start_time,location,attending,name,maybe.user("+userProfId+"), attending.user(" +userProfId+")))",{limit: 600})
-        //if fb query is not successful
-      .error(function(data) {
-        $scope.showAlert("Facebook connection failed. "+data.error.message);
-        $location.path('app.login');
-      })
-      //if fb query succesful
-      .success(function (result2){
-
-
-        //proceed to put all events into an object with event names being the keys
+var fbWorked = function(result2){
+   //proceed to put all events into an object with event names being the keys
          var friends = result2.friends.data.filter( function(friend){
             if (friend.events){
               return true;
@@ -549,6 +539,66 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
                 }
           });//end of set events list
         });//end of friends.foreach
+      }
+
+
+    //main event query for fb
+    var fbQuery = function(){
+      OpenFB.get("/me?fields=friends.fields(events.fields(description,cover,privacy,start_time,location,attending,name,maybe.user("+userProfId+"), attending.user(" +userProfId+")))",{limit:950})
+        //if fb query is not successful
+      .error(function() {
+        // alert('here');
+        OpenFB.get("/me?fields=friends.fields(events.fields(description,cover,privacy,start_time,location,attending,name,maybe.user("+userProfId+"), attending.user(" +userProfId+")))",{limit: 600}).error(function(){
+          OpenFB.get("/me?fields=friends.fields(events.fields(description,cover,privacy,start_time,location,attending,name,maybe.user("+userProfId+"), attending.user(" +userProfId+")))",{limit: 250}).error(function(){
+            OpenFB.get("/me?fields=friends.fields(events.fields(description,cover,privacy,start_time,location,attending,name,maybe.user("+userProfId+"), attending.user(" +userProfId+")))",{limit: 10}).error(function(data){
+              $scope.showAlert("Facebook connection could not be acheived at this time. "+data.error.message);
+              $location.path('app.login');
+            }).success(function(result2){
+          fbWorked(result2);
+          // alert('made it biatch111');
+        }).success(function(){
+        // alert('made it to ep');
+        //make new event lists in the event populater
+        eventPopulater(listOfAllEvents);
+        PetService.setEvents(yourEvents);
+        // alert('made it past ep');
+        //allow access to feed
+       $location.path('/app/person/me/feed');
+      });
+          }).success(function(result2){
+          fbWorked(result2);
+          // alert('made it biatch');
+        }).success(function(){
+        // alert('made it to ep');
+        //make new event lists in the event populater
+        eventPopulater(listOfAllEvents);
+        PetService.setEvents(yourEvents);
+        // alert('made it past ep');
+        //allow access to feed
+       $location.path('/app/person/me/feed');
+      });
+          // $scope.showAlert("Facebook connection failed. "+data.error.message);
+        // $location.path('app.login');
+        }).success(function(result2){
+          fbWorked(result2);
+          // alert('made it biatch');
+        }).success(function(){
+        // alert('made it to ep');
+        //make new event lists in the event populater
+        eventPopulater(listOfAllEvents);
+        PetService.setEvents(yourEvents);
+        // alert('made it past ep');
+        //allow access to feed
+       $location.path('/app/person/me/feed');
+      });
+        // $scope.showAlert("Facebook connection failed. "+data.error.message);
+        // $location.path('app.login');
+      })
+      //if fb query succesful
+      .success(function (result2){
+        // alert('herse1111');
+        fbWorked(result2);
+        // alert('here1111');
       })
       .success(function(){
         // alert('made it to ep');
@@ -608,7 +658,7 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
           // alert(userItem);
 
           if(userItem.banned==="banned"){
-            $scope.showAlert('Sorry, but you have been banned. Contact us at UNrepteam@gmail.com if you think is a mistake.');
+            $scope.showAlert('This account has been banned for violating our Terms of Use. Contact us at UNrepteam@gmail.com if you think is a mistake.');
             $state.go('app.login');
           }
           else{
@@ -749,7 +799,7 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
       fbLoginFlow();
     }).error(function(){
       // $scope.hide();
-      $scope.showAlert("Connection could not be acheived at this time. Try again at the school list when service increases.")
+      $scope.showAlert("Connection could not be acheived at this time. Try again when service increases.")
       // setTimeout(function() { $location.path('/app/login');},2500);
 
     })

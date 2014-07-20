@@ -30,6 +30,13 @@
   100% { opacity: 1; }
 }
 
+.addSubText{
+	color:white;
+	font-weight: bolder;
+	font-family: 'Gafata', sans-serif;
+	font-size: 13px;
+}
+
 .eventDT{
 	/*display: inline;*/
 	/*padding:2%;*/
@@ -679,7 +686,7 @@ html {
 
 #adoptPic2{
 	margin: auto;
-	margin-top: 20%;
+	margin-top: 5%;
 	padding-left: 28%;
 	padding-right: 25%;
 	padding-top: 15%;
