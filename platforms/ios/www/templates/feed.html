@@ -6,10 +6,10 @@
 
 <!-- title="{{myTitle}}" -->
 <!-- <ion-view  title='Event Info'> -->
-<ion-view hide-back-button="true">
+<ion-view>
 
 
-  <content scroll="false" class="mesh" has-tabs="false" animation="slide-left-right-ios7">
+  <ion-content scroll="false" class="mesh" has-tabs="false" animation="slide-left-right-ios7">
 
 
 
@@ -19,8 +19,6 @@
 <!-- <div class="topDiv">
   </div> -->
 
-	  	 <div class="unMenu2 ion-navicon" menu-toggle="'right'">
-	  	 </div>
 
   <!--     <button id="unMenu2" class="button button-clear button-icon icon ion-navicon" ng-click="open_menu()"></button> -->
 
@@ -57,13 +55,16 @@
 
 
 
+<div class="unMenu2 ion-navicon" menu-toggle="right">
+       </div>
 
 
-	    <ion-list id='eventList'>
+
 
 	  <!--   <button class="button" ng-click="fbLogin()" id="fb-connect">Connect to facebook</button>
             <p>{{userName}}</p> -->
-	    	<ion-scroll scrollbar-y="false">
+	    	<ion-scroll scrollbar-y="false" id="eventList">
+
          <ion-refresher id="re1" refreshing-icon="ion-loading-c"  on-refresh="alert2()">
   </ion-refresher>
 
@@ -72,7 +73,7 @@
                 on-refresh="doRefresh()">
         </ion-refresher> -->
 
-	 				<div class="eventScroller" ng-repeat="event in events | orderObjectBy:'timeOfEvent':true | orderObjectBy:'start_time':false "  >
+	 				<div class="eventScroller" ng-repeat="event in events | orderObjectBy:'timeOfEvent':true | orderObjectBy:'start_time':false " ng-click="go_here(event.name)"  >
 	 					<!-- <ion-refresher
                 pulling-text="Pull to refresh..."
                 on-refresh="doRefresh()">
@@ -82,8 +83,8 @@
 						 <!-- 	<div id='eventWrapper'>
                  </div> -->
 						    <img ng-show="{{event.cover}}" class="full-image" src="{{event.cover}}" >
-                <img ng-hide="event.cover!=undefined" class="full-image" src="http://i60.tinypic.com/15mh35j.jpg" >
-				 			<div ng-click="go_here(event.name)" class="eventInfoSection">
+                <img ng-hide="event.cover!=undefined" ng-click="go_here(event.name)" class="full-image" src="http://i60.tinypic.com/15mh35j.jpg" >
+				 			<div class="eventInfoSection">
                 <h3 id="eventName">{{event.name}}</h3>
 				        <p id="eventLocation"><i class="icon ion-ios7-location"></i> {{event.location}}</p>
 				       <p class="eventDT">{{event.start_time}}</p> <p class="eventDT" ng-if="event.timeOfEvent!=null">{{event.timeOfEvent}}</p>
@@ -105,11 +106,11 @@
           </div>
 
 	      </ion-scroll>
-	    </ion-list>
+
 
 	 <!-- </div> -->
 
-  </content>
+  </ion-content>
 </ion-view>
 
 

@@ -1,7 +1,7 @@
 {
-  "name": "UN App",
-  "version": "1.0.0",
-  "description": "Prod Code for UN App",
+  "name": "U Nightlife",
+  "version": "2.1.0",
+  "description": "Production Code for UN App",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^0.7.1",

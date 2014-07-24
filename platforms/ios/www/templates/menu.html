@@ -14,33 +14,22 @@
         </header> -->
         <ion-content class="mesh2">
 
-  <img class="thing1 item unLogo" src="./images/logo.png">
+  <img class="thing1 item unLogo" src="./images/logo2.1.png">
 
             <ion-list>
 
-                <ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/person/me/feed">
-                    <i class="icon ion-ios7-calendar-outline"></i>
-                    Events
-                </ion-item>
+                <ion-item class="menuItem" item-type="item item-icon-left" nav-clear menu-close ng-click="goEvents()"><i class="menuIcon icon ion-ios7-calendar-outline"></i> <div class="menuIcon2"> Events</div></ion-item>
                <!--  <ion-item item-type="item item-icon-left" nav-clear menu-close ng-click="alert('i dont do much yet')">
                     <i class="icon ion-beer">ion-ios7-world-outline</i>ion-help
-                   Notifications
+                   Notificationsion-upload"><div class="menuIcon2"> Add An Event
                 </ion-item> -->
 
-                <ion-item item-type="item item-icon-left" nav-clear menu-close href="#/app/addAnEvent">
-                    <i class="icon ion-upload"></i>
-                    Add An Event
-                </ion-item>
+                <ion-item class="menuItem" item-type="item item-icon-left" nav-clear menu-close ng-click="goAdd()"><i class="menuIcon icon ion-upload"></i> <div class="menuIcon2"> Add An Event</div></ion-item>
 
-                <ion-item item-type="item item-icon-left" nav-clear menu-close href="#/app/help">
-                    <i class="icon ion-help"></i>
-                    Help/Contact Us
-                </ion-item>
+                <ion-item class="menuItem" item-type="item item-icon-left" nav-clear menu-close ng-click="goHelp()">
+                <i class="menuIcon icon ion-gear-a"></i> <div class="menuIcon2"> Help/Contact Us</div></ion-item>
 
-                <ion-item item-type="item item-icon-left" nav-clear menu-close ng-click="logout()">
-                    <i class="icon ion-log-out"></i>
-                    Logout
-                </ion-item>
+                <ion-item class="menuItem" item-type="item item-icon-left" nav-clear menu-close ng-click="logout()"><i class="menuIcon icon ion-log-out"></i> <div class="menuIcon2"> Logout</div></ion-item>
 
 
 

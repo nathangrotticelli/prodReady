@@ -8,11 +8,16 @@ angular.module('sociogram.controllers', ['ionic'])
     $state.go('app.login');
   };
 
-  $scope.refresh = function () {
-    $state.go('app.loading');
-    // $scope.noPop='true';
-    // $scope.facebookLogin('schoolItem.schoolName');
-  };
+  $scope.goEvents = function(){
+      $state.go('app.feed');
+  }
+  $scope.goAdd = function(){
+      $state.go('app.addAnEvent');
+  }
+    $scope.goHelp = function(){
+      $state.go('app.help');
+  }
+
 
 
  })
@@ -110,17 +115,19 @@ angular.module('sociogram.controllers', ['ionic'])
       }
     }
   };
- $scope.alert2 = function(schoolName){
-  alert(schoolName);
+ $scope.alert2 = function(){
+  $location.path('/app/loading');
  }
+
   //called at school tap
   $scope.facebookLogin = function (schoolName) {
 
-    $location.path('/app/loading');
+    $scope.alert2();
 
     schoolName=schoolName;
     //pulls existing users private events
     var currentUserCheck = function(){
+
       // alert('here')
       for(var key in privateEvents){
          // alert(userItem.privateEvents[key].name);
@@ -344,9 +351,10 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
             //if event is not private
             if(listOfAllEvents[allEventsInAnArray[i]].privacy!='SECRET'){
            OpenFB.get("/"+listOfAllEvents[allEventsInAnArray[i]].id+"/invited",{limit:85}).success(function(res){
+
             // schoolItem.inviteNum=80:
-            //last thing you did mofo
-              // if(res.data.length>schoolItem.inviteNum){
+
+              if(res.data.length>schoolItem.inviteNum){
 
 
               schoolItem.schoolEvents[allEventsInAnArray[i]] = listOfAllEvents[allEventsInAnArray[i]];
@@ -360,7 +368,7 @@ if(schoolItem.schoolEvents[key].banned!=="banned"){
                   //when event added, do whatever. alert('school event added')
                 })
 
-               // }//end of if
+               }//end of if
 
               })
              }
@@ -675,8 +683,10 @@ var fbWorked = function(result2){
 
             if(currentSchoolCount>=2){
               //adds existing private events
-              currentUserCheck();
-              PetService.setEvents(yourEvents);
+              currentUserCheck()
+                PetService.setEvents(yourEvents);
+
+
               //allow feed access
               $location.path('/app/person/me/feed');
               //then run the query in the background
@@ -790,6 +800,7 @@ var fbWorked = function(result2){
       // $scope.hide();
       // $location.path('/app/loading');
       schoolItem = res.Item;
+      // alert(schoolItem.inviteNum);
 
       //check how many current events exist
       currentSchoolCheck();
@@ -878,7 +889,58 @@ $scope.showEvent = false;
  })
 
  //controller for event feed
- .controller('FeedCtrl', function ($scope,$state, $ionicScrollDelegate, $stateParams, OpenFB, PetService, $location, $ionicLoading) {
+ .controller('FeedCtrl', function ($scope,$state,$http, $ionicScrollDelegate,$ionicPopup, $stateParams, OpenFB, PetService, $location, $ionicLoading) {
+analytics.startTrackerWithId('UA-53156722-1');
+analytics.trackView('Event Feed Accessed');
+
+  $scope.showAlert = function(message,title) {
+    // alert(title);
+    if(title==undefined){
+      title=null;
+    }
+    $ionicPopup.alert({
+      title: title,
+      content: message
+    }).then(function(res) {
+      console.log('Alert Shown.');
+    });
+  };
+
+  $scope.newEventSend = function(name,email,date,address,info){
+    // alert(name);
+    // alert(email);
+    // alert(date);
+    // alert(address);
+
+    if(name==undefined||email==undefined||date==undefined||address==undefined){
+     $scope.showAlert("Please make sure you haven't left any fields empty.","Missing Fields.");
+    }
+    else if(email.indexOf('@')<0||email.indexOf('.')<0){
+      $scope.showAlert("Please make sure you have entered a valid email.","Invalid Email");
+    }
+    else{
+      //post
+// alert('here');
+      $http.post('http://stark-eyrie-6720.herokuapp.com/userEventSubmit',
+          {
+          userName: userName,
+          userEmail: userEmail,
+          userSchool: schoolItem.schoolName,
+          eventName: name,
+          eventEmail: email,
+          eventDate: date,
+          eventInfo: info,
+          eventAddress: address
+          }
+        );
+        // ).then(function(){
+        //     // alert('made it goood')
+
+        // })
+       $location.path('/app/person/me/feed');
+    }
+
+  }
   //expands single event
   $scope.go_here = function (eventName) {
     PetService.setSingle(eventName);
@@ -898,7 +960,11 @@ setTimeout(function() { $scope.$broadcast('scroll.refreshComplete'); },2000);
     //changes page and controller
     $state.go("app.newEventForm");
   };
-
+$scope.goAdd = function () {
+    // PetService.setSingle(eventName);
+    //changes page and controller
+    $state.go("app.addAnEvent");
+  };
 
 $scope.scrollBottom = function() {
   alert('hree');
