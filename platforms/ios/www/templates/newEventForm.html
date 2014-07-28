@@ -1,33 +1,32 @@
-<!--
-  This template loads for the 'tab.adopt' state (app.js)
--->
+
 <ion-view>
-  <ion-content animation="my-animate" class='adoptBack' scroll="false" has-tabs="false">
-  <!-- <ion-scroll> -->
+  <ion-content animation="my-animate" class='adoptBack' scroll="false">
   <ion-scroll>
       <a  class="unMenu3 button ion-arrow-return-left" ng-click="goAdd()"></a>
-<a class="unMenu2 faqMenu ion-navicon" menu-toggle="right"></a>
+<!-- <a class="unMenu2 faqMenu2 ion-navicon" menu-toggle="right"></a> -->
 
-<br><br><br><br>
+<br><br><br>
 
 <form id="eForm">
 
 
 
-     <h3 class="eventForm">Name of the Event:</h3>
-     <input type="text" ng-model="eventForm.name"/> <br />
+     <h3 class="eventForm">Name of the Event:*</h3>
+     <input type="text" ng-model="eventForm.name"/>
 
 
-     <h3 class="eventForm">Contact Email:</h3>
-      <input type="text" ng-model="eventForm.email"/> <br />
+     <h3 class="eventForm">Contact Email:*</h3>
+      <input type="email" ng-model="eventForm.email"/>
 
 
-      <h3 class="eventForm">Date/Start Time:</h3>
-      <input type="date" ng-model="eventForm.date"/>
+      <h3 class="eventForm">Date/Start Time:*</h3>
+      <input type="date" class="dateInput" ng-model="eventForm.date"/>
+      <input type="time" class="dateInput" ng-model="eventForm.time"/>
+
       <br>
 
-      <h3 class="eventForm">Address:</h3>
-    <input type="text" ng-model="eventForm.address"/> <br />
+      <h3 class="eventForm">Address:* </h3>
+    <input type="text" ng-model="eventForm.address"/>
 
 
     <h3 class="eventForm">Event Info:</h3>
@@ -38,21 +37,16 @@
   <div class="card">
    <div class="item thing4 item-text-wrap">
     By submitting an event, you understand and accept that:<br><br>
-    1. The contact email is valid for the corresponding host of this event, and will be able to answer follow-up emails from the UN team.<br><br>
-    2. User info will be recorded when an event is submitted, and any abuse or misuse of this form will result in a permanent ban.
+    1. The contact email is valid for a host or spokesperson of the above event, and will be able to answer follow-up emails from U Nightlife.<br><br>
+    2. Any abuse or misuse of this form will result in a permanent ban.
    </div>
 </div>
 <br>
-    <input class="adoptBtn button thing5" ng-click="newEventSend(eventForm.name,eventForm.email,eventForm.date,eventForm.address,eventForm.info)" value="Submit Event"/>
+    <div class="enterBtn button thing5" ng-click="newEventSend(eventForm.name,eventForm.email,eventForm.date,eventForm.time,eventForm.address,eventForm.info)">Submit</div>
 
 </form>
-   <!--  <a class="adoptBtnLong button button-stable">
-          Submit an Event
-    </a> -->
+
         <p></p>
-    <!-- <button class="adoptBtnLong button button-stable">
-      Frequently Asked Questions
-    </button> -->
 
   </ion-scroll>
 

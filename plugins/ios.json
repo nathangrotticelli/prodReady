@@ -39,6 +39,10 @@
                         {
                             "xml": "<feature name=\"Calendar\"><param name=\"ios-package\" value=\"Calendar\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"ios-package\" value=\"CDVSplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
                         }
                     ],
                     "/widget": []
@@ -49,7 +53,7 @@
                     "CoreGraphics.framework": [
                         {
                             "xml": "false",
-                            "count": 1
+                            "count": 2
                         }
                     ],
                     "Social.framework": [
@@ -134,6 +138,9 @@
             "PACKAGE_NAME": "com.ionicframework.starter"
         },
         "nl.x-services.plugins.calendar": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "org.apache.cordova.splashscreen": {
             "PACKAGE_NAME": "com.ionicframework.starter"
         }
     },

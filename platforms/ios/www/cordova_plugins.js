@@ -41,6 +41,13 @@ module.exports = [
         "clobbers": [
             "Calendar"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.splashscreen/www/splashscreen.js",
+        "id": "org.apache.cordova.splashscreen.SplashScreen",
+        "clobbers": [
+            "navigator.splashscreen"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -51,7 +58,8 @@ module.exports.metadata =
     "org.apache.cordova.inappbrowser": "0.3.3",
     "nl.x-services.plugins.socialsharing": "4.0.8",
     "com.danielcwilson.plugins.googleanalytics": "0.4.1",
-    "nl.x-services.plugins.calendar": "4.2.5"
+    "nl.x-services.plugins.calendar": "4.2.5",
+    "org.apache.cordova.splashscreen": "0.3.1"
 }
 // BOTTOM OF METADATA
 });

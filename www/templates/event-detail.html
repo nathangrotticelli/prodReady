@@ -1,18 +1,11 @@
-<!--
-  This template loads for the 'tab.pet-detail' state (app.js)
-  'pet' is a $scope variable created in the PetCtrl controller (controllers.js)
-  The PetCtrl pulls data from the Pets service (service.js)
-  The Pets service returns an array of pet data
--->
+
 <ion-view>
 
-	  <ion-content scroll="false"  padding="false">
+ <ion-content scrollbar-y="false" scroll="false" padding="false">
 
-	  <div id='expandedEvent' class='aboutPage'>
+ <div id='expandedEvent' class='aboutPage2'>
 
-
-	  		<div id='singleEventContent'>
-
+	 <div id='singleEventContent'>
 
 
 	    		<img ng-show="{{singleEvent.cover}}" src="{{singleEvent.cover}}">
@@ -22,9 +15,9 @@
 	    			{{ singleEvent.name }}
 	    		</p>
 
-<div class="list card">
-	  <div class="item-text-wrap">
-						  	<div class="item item-icon-left item-divider" ng-click="expandEvent()">
+		<div class="list card">
+	  				 <div ng-click="expandEvent()" ng-if="singleEvent.description!=null" class="item-text-wrap">
+						  	<div class="item item-icon-left item-divider">
 						  		<i class="icon ion-clipboard"></i>
 						  		Event Info
 						  	</div>
@@ -42,56 +35,29 @@
 			    		<br ng-if="singleEvent.timeOfEvent!=null">
 
 
-			    		<div ng-click="newEvent()" class="item item-icon-left item-divider">
+			    		<div ng-if="singleEvent.start_time!=null" class="item item-icon-left item-divider">
 			    			<i class="icon ion-ios7-calendar-outline"></i>
 			    			{{ singleEvent.start_time }}</div>
 			    			<br>
 
 
-	    			<div ng-click="mapThis()" class="item item-icon-left item-divider">
+	    			<div ng-if="singleEvent.location!=null" ng-click="mapThis()" class="item item-icon-left item-divider">
 			    			<i class="icon ion-ios7-location"></i>
 			    			{{ singleEvent.location }}</div>
-
 			    			<br>
+			</div>
+	 	</div>
 
-
-
-
-
-
-
-<!--
-						<div class="list">
-			<div class="item item-divider item-icon-left" ng-click="showDesc=!showDesc" ng-if="singleEvent.description">
-   	      <i class="icon ion-clipboard"></i>
-						    Event Description:
-   	     </div>
-
-   	     	<div collapse="!showDesc">
-   	     		<div class="item">
-	           {{ singleEvent.description}}
-	        </div>
-	      </div>
-	    </div> -->
-
-
-
-					</div>
-
-	 			 </div>
- <div>
-	  <a id='eventLink'class="topBtn" ng-click="goBack()" animation="slide-right-left-ios7">
+ 	 <div>
+	  <a id='eventLink' class="topBtn" ng-click="goBack()" animation="slide-right-left-ios7">
 	   <i class="icon ion-arrow-return-left"></i>
 	 	</a>
-	  <a id="shareBtnId" ng-click="shareBtn('Check out this event I found on the U Nightlife app: '+singleEvent.name+'. It takes place at: '+singleEvent.start_time+'. For more info about this and other events, download the app at: itunes.download.com/downloadus.', 'Sharing an event with you!', singleEvent.cover, singleEvent.location)" class="topBtn">
+	  <a id="shareBtnId" ng-click="shareBtn('The name of the event is: '+singleEvent.name+', and it starts at: '+singleEvent.timeOfEvent+' on '+singleEvent.start_time+'. For more info about this and other interesting events, download the U Nightlife app in the iPhone App store.', 'Check out this event.', singleEvent.cover, singleEvent.location)" class="topBtn">
 	      <i class="icon ion-share"></i>
 	 	</a>
 	 </div>
 
 </div>
 
-<!--  // script
-	// FlurryAgent.logEvent('Event Opened');
- //    script -->
-  </ion-content>
+ </ion-content>
 </ion-view>

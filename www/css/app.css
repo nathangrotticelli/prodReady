@@ -25,18 +25,30 @@
   width: 96px;
   height: 96px;
 }*/
+@font-face {
+font-family: 'Gafata';
+font-style: normal;
+src: url(../css/Gafata/Gafata-Regular.ttf) format('truetype');
+}
+@font-face {
+font-family: 'Roboto';
+font-style: normal;
+src: url(../css/Roboto/Roboto-Regular.ttf) format('truetype');
+}
+
 @-webkit-keyframes show {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
-.thing10{
-
-}
 
 #unLoginLogo{
 /*margin-right: 100%;*/
-height: 80%;
-width: 80%!important;
+/*height: 80%;*/
+margin: auto;
+/*margin-left:5%;*/
+width: 65%!important;
+margin-left: 15px;
+padding: 0;
 }
 
 .addSubText{
@@ -77,6 +89,7 @@ width: 80%!important;
   border-right: 1px solid gray;
   color:white;
   text-align: center;
+  font-size: 15px;
 }
 .popup-buttons .button{
 		/*padding-left: 10%;*/
@@ -97,7 +110,9 @@ width: 80%!important;
 }
 
 .eventForm{
+	margin-bottom: 5%;
 	color:white;
+	-webkit-animation: show 1.3s 1;
 	font-family: 'Gafata', sans-serif;
 }
 
@@ -122,8 +137,9 @@ width: 80%!important;
 }
 
 .thing5{
-	margin-left: 15%!important;
-	max-width: 70%;
+	/*margin-left: 15%!important;*/
+	width: 80%!important;
+	margin-left: 10%!important;
 	margin-bottom: 35px;
 }
 
@@ -138,16 +154,30 @@ width: 80%!important;
 	bottom: 4px;
 }*/
 .eventScroller{
+
+	/*margin-top: 1%;*/
 	background-color: black;
 	/*background-image: url("../images/outsideMesh.png");*/
 	background-size: cover;
 
 	background-position: auto auto;
-	/*padding-bottom: 0;*/
+/*border-bottom: 1px solid black!important;*/
+/*border-top: 1px solid black!important;;*/
+	/*padding-top: 0px!im;*/
+	/*padding-bottom: 0px!important;*/
 	/*margin-bottom: 0;*/
 }
-html{
-	background-color: black;
+
+.div12{
+	height:1px;
+	padding: 0;
+	margin: 0;
+	color:white;
+	/*background-color: white;*/
+}
+
+body{
+	background-color: black!important;
 }
 
 #eventName{
@@ -172,6 +202,7 @@ font-family: 'Roboto', sans-serif;
 /*color:#bbbdbb;#8DEEEE color:#BADA55; color:#0ff1ce; color:#20c2ff;*/
 .mesh{
 	background-color: black!important;
+	-webkit-animation: show 1.2s 1;
 	/*background-image: url("../images/outsideMesh.png");*/
 	/*background-size: cover;*/
 
@@ -229,11 +260,11 @@ font-family: 'Roboto', sans-serif;
 
 .michText{
 	background-color: #00274c!important;
-	padding: auto!important;
+	padding-left:5%;
 	/*box-shadow: none;*/
 	/*margin: auto!important;*/
 	color:#ffcb05!important;
-	font-size: 25px!important;
+	font-size: 27px!important;
 	white-space: nowrap;
 	border: 1px solid yellow;
 	/*font-weight: normal!important;*/
@@ -247,8 +278,9 @@ font-family: 'Roboto', sans-serif;
 	background-color: #003C7D!important;
 	/*box-shadow: none;*/
 	color:#F47F24!important;
-	font-size: 28px!important;
+	font-size: 30px!important;
 	border: 1px solid #F47F24;
+	padding-left:6%;
 	/*white-space: nowrap;*/
 
 -webkit-appearance: none;
@@ -260,23 +292,13 @@ font-family: 'Roboto', sans-serif;
 	color:white!important;
 	font-size: 24px!important;
 	border: 1px solid white;
+	padding-left: 8%;
 	/*white-space: nowrap;*/
 
 -webkit-appearance: none;
 	/*gloss*/
 }
-.ucfText{
-	background-color: black!important;
-	/*box-shadow: none;*/
-	color:#CC9900!important;
-	font-size: 22px!important;
-	/*font-family:*/
-	border: 1px solid #CC9900;
-	/*white-space: nowrap;*/
 
--webkit-appearance: none;
-	/*gloss*/
-}
 .selectText{
 	background-color: white!important;
 	/*box-shadow: none;*/
@@ -295,7 +317,7 @@ font-family: 'Roboto', sans-serif;
 	background-color: #6a0032!important;
 	/*box-shadow: none;*/
 	color:#ffc82e!important;
-	font-size: 22px!important;
+	font-size: 24px!important;
 	border: 1px solid #ffc82e;
 	/*white-space: nowrap;*/
 
@@ -306,7 +328,7 @@ font-family: 'Roboto', sans-serif;
 	background-color: #024731!important;
 	/*box-shadow: none;*/
 	color:white!important;
-	font-size: 28px!important;
+	font-size: 31px!important;
 	border: 1px solid black;
 	/*white-space: nowrap;*/
 
@@ -317,8 +339,20 @@ font-family: 'Roboto', sans-serif;
 	background-color: #004065!important;
 	/*box-shadow: none;*/
 	color:#ffeebb!important;
-	font-size: 20px!important;
+	font-size: 22px!important;
 	border: 1px solid #ffeebb;
+	/*white-space: nowrap;*/
+
+-webkit-appearance: none;
+	/*gloss*/
+}
+.ucfText{
+	background-color: black!important;
+	/*box-shadow: none;*/
+	color:#CC9900!important;
+	font-size: 24px!important;
+	/*font-family:*/
+	border: 1px solid #CC9900;
 	/*white-space: nowrap;*/
 
 -webkit-appearance: none;
@@ -328,7 +362,7 @@ font-family: 'Roboto', sans-serif;
 	background-color: #005A43!important;
 	/*box-shadow: none;*/
 	color:white!important;
-	font-size: 31px!important;
+	font-size: 34px!important;
 	border: 2px solid white;
 
 	/*white-space: nowrap;*/
@@ -341,8 +375,10 @@ font-family: 'Roboto', sans-serif;
 	background-color: white!important;
 	/*box-shadow: none;*/
 	color:#e71939!important;
-		margin-bottom: 2%;
-	font-size: 39px!important;
+		/*margin-bottom: 4%;*/
+		/*padding-bottom: */
+		padding-left: 7%;
+	font-size: 42px!important;
 	border: 1px solid #e71939;
 		line-height: normal!important;
 	/*white-space: nowrap;*/
@@ -353,9 +389,9 @@ font-family: 'Roboto', sans-serif;
 
 .schoolSelect{
 	margin:auto;
-	margin-top: 3%;
+	margin-top: 2%;
 	margin-bottom:9%;
-	width: 93%;
+	width: 100%;
 	height: 45px;
 	/*background-color: black;*/
 	color:black;
@@ -456,6 +492,10 @@ font-family: 'Roboto', sans-serif;
 #eventDiv2{
 	height:auto!important; /*this set the height to auto for those supporting it (not IE)*/
 	border: none;
+	font-size: 15px;
+	margin-bottom: 5%;
+	margin-left: 3%;
+	/*margin-right: 3%;*/
 /*width:100px;*/
 /*word-wrap: break-word;*/
 /*display: inline-block;*/
@@ -479,6 +519,19 @@ font-family: 'Roboto', sans-serif;
 	background-color: black;
 	/*background-image: url("../images/outsideMesh.png");*/
 }
+.dateInput{
+	max-width: 41%;
+	font-size: 16px!important;
+	height: 20px!important;
+	/*line-height: normal;*/
+	/*text-align: center;*/
+/*white-space: nowrap;*/
+	/*padding-top: 20px;*/
+	margin-right: 5%;
+	float: left;
+	/*text-align: center;*/
+	/*top:10px;*/
+}
 /*#cardID{
 	padding-left: 42px;
 	padding-right: 42px;
@@ -501,6 +554,8 @@ html {
 
 /*border-image-source: url("../images/shadowEvents.png");*/
 .wholeEventsPage{
+	/*-webkit-animation-delay: 4s;*/
+	-webkit-animation: show 4.5s 1;
 	/*margin-top: 3px;*/
 	padding-top:10px;
 	background-color: black;
@@ -528,7 +583,13 @@ html {
 .faqMenu{
 	margin-right: 3.5%;
 	/*padding-top:2%;*/
-	margin-top:0;
+	margin-top:-2px;
+	top:0;
+}
+.faqMenu3{
+	margin-right: 3.5%;
+	/*padding-top:2%;*/
+	margin-top:-2px;
 	top:0;
 }
 	.unLogo{
@@ -536,20 +597,22 @@ html {
 	margin-top: 8%;
 	}
 	.unMenu2{
-		-webkit-animation: show 1s 1;
+		-webkit-animation: show 1.2s 1;
+		/*-webkit-animation: show 1.2s 1;*/
 	float: left;
 	z-index: 999;
 	/*height:0;*/
 	width:5%;
-	font-size: 52px;
+	font-size: 55px;
 	/*top:3%;*/
+	opacity: 1!important;
 	/*padding-right: 7%;*/
 	padding-left: 7%;
 	padding-top: 1%;
 	/*iphone 4 change*/
 	padding-right: 10%;
 	top:0%;
-	max-width: 10%;
+	/*max-width: 10%;*/
 	color: white!important;
 	position: absolute;
 	right:3.5%;
@@ -581,9 +644,15 @@ html {
 	/*iphone 4 change*/
 	height:480px;
 	padding-bottom: 30px;
-	overflow: auto;
-	overflow-scrolling: auto;
-	-webkit-overflow-scrolling: touch;
+	background-color: black;
+}
+.aboutPage2{
+	/*iphone 4 change*/
+	/*margin-bottom: 10%;*/
+	height:100%!important;
+	background-color: black;
+	/*padding-bottom: 30px;*/
+
 }
 
  }
@@ -591,31 +660,45 @@ html {
  @media (device-height:568px) {
 
  	.faqMenu{
+ 		-webkit-animation: show 1.2s 1;
+	float: left;
 	margin-right: 3.5%;
 	/*padding-top:2%;*/
-	margin-top:-4px;
+	margin-top:-7px;
 	top:0;
 }
-
+	.faqMenu2{
+	margin-right: 3.5%;
+	/*padding-top:2%;*/
+	margin-top:-5px;
+	top:0;
+}
+.faqMenu3{
+	margin-right: 3.5%;
+	/*padding-top:2%;*/
+	margin-top:-40px;
+	top:0;
+}
  	#expandedEvent{
- 		height:568px;
+ 		/*height:568px;*/
  		padding-bottom: 50px;
  	}
  	.unMenu2{
+ 		opacity: 1!important;
+ 				-webkit-animation: show 1.2s 1;
 	float: left;
 	z-index: 999;
 	/*height:0;*/
 	width:5%;
-	top:.4%;
+	top:1%;
 	padding-right: 9%;
 	padding-left: 7%;
-	padding-top: 1%;
+	/*padding-top: 1%;*/
 	font-size: 51px;
-	-webkit-animation: show 1s 1;
 	/*iphone 4 change*/
 	/*padding-right: 10%;*/
 	/*top:.5%;*/
-	max-width: 8%;
+	/*max-width: 8%;*/
 	color: white!important;
 	position: absolute;
 	right:7%;
@@ -647,7 +730,7 @@ html {
 }
 .aboutPage{
 	/*iphone 4 change*/
-	margin-top: 10%;
+	/*margin-top: 0%;*/
 	height:568px;
 	background-color: black;
 	padding-bottom: 30px;
@@ -655,6 +738,14 @@ html {
 	/*overflow: auto;*/
 	/*overflow-scrolling: auto;*/
 	/*-webkit-overflow-scrolling: touch;*/
+}
+.aboutPage2{
+	/*iphone 4 change*/
+	/*margin-bottom: 10%;*/
+	height:100%!important;
+	background-color: black;
+	/*padding-bottom: 30px;*/
+
 }
  }
 
@@ -921,6 +1012,7 @@ button{
 }
 
 #expandedEvent{
+	-webkit-animation: show 1s 1;
 
 	background-color: black;
 	/*background-image: url("../images/outsideMesh.png");*/
@@ -928,7 +1020,7 @@ button{
 	background-position: auto auto;
 
 	position: relative;
-	font-size: 11px;
+	font-size: 12px;
 	font-weight: bolder;
 	/*color:red;*/
 	overflow: auto;
@@ -941,9 +1033,15 @@ button{
 #expandedEvent .list{
 	background-color: black;
 	padding-left: 5%;
+	padding-right: 5%;
+	/*padding-bottom: 15%;*/
+}
+#expandedEvent .list .item{
+	/*border-bottom: 1px solid white;*/
 	/*padding-bottom: 15%;*/
 }
 .adoptBack{
+	-webkit-animation: show 1.2s 1;
 	background-color: black;
 	/*background-image: url("../images/outsideMesh.png");*/
 	/*background-size: cover;*/
@@ -966,6 +1064,8 @@ button{
 	padding-left: 10%;
 	padding-right: 10%;
 	margin:auto;
+	margin-left: 5%;
+	width: 52%;
 	/*margin-right: 10%;*/
 	background-color:black;
 	color:#00EEEE!important;
@@ -1062,6 +1162,7 @@ font-family: 'Gafata', sans-serif;
 	color:white;
 	max-width: 80%;
 	margin: auto;
+	z-index: 0;
 }
 #eForm h3{
 font-size: 17px;
@@ -1118,20 +1219,21 @@ font-size: 17px;
 
 #eventLink{
 	float:left;
+	padding-bottom: 5%;
 	/*max-height: 70%;
 	max-width: 60px;*/
 }
 
 
 .schoolPage h1{
-	font-family: 'Alegreya Sans', sans-serif;
+	font-family: 'Gafata', sans-serif;
 	color: white;
 	font-weight: bold;
 }
 
 .schoolPage a{
 	font-size: 18px;
-	font-family: 'Audiowide', cursive;
+	/*font-family: 'Audiowide', cursive;*/
 	float: left;
 }
 

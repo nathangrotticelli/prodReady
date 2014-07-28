@@ -54,6 +54,7 @@
 		6FD266CE149543CF8AE8F7E3 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266E5D6968FD436BAB097AB1 /* EventKit.framework */; };
 		CE7D85DB51ED4A9A962FD85A /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61997B1CF9BF4E53B268F0B3 /* EventKitUI.framework */; };
 		25EA74CBC39849E68D7CFE23 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E35E2421AE14B069E64FA02 /* SystemConfiguration.framework */; };
+		065AA02AACC44CB291394EF9 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D7462979D46A5BF40604F /* CDVSplashScreen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,8 @@
 		266E5D6968FD436BAB097AB1 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "EventKit.framework"; path = "System/Library/Frameworks/EventKit.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 		61997B1CF9BF4E53B268F0B3 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "EventKitUI.framework"; path = "System/Library/Frameworks/EventKitUI.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 		5E35E2421AE14B069E64FA02 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		6A9D7462979D46A5BF40604F /* CDVSplashScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVSplashScreen.m"; path = "org.apache.cordova.splashscreen/CDVSplashScreen.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		59C449027A89493099786291 /* CDVSplashScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVSplashScreen.h"; path = "org.apache.cordova.splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +309,8 @@
 				452C54E84F304F50996875C5 /* GAITracker.h */,
 				2F364E6F933B4655996C1D0C /* Calendar.m */,
 				70F89FAB7DCC4A42A62212E0 /* Calendar.h */,
+				6A9D7462979D46A5BF40604F /* CDVSplashScreen.m */,
+				59C449027A89493099786291 /* CDVSplashScreen.h */,
 			);
 			name = Plugins;
 			path = "U Nightlife/Plugins";
@@ -506,6 +511,7 @@
 				121365A6CA9A4B0EB2B164E4 /* SocialSharing.m in Sources */,
 				620685FFAAD9446B837123E4 /* UniversalAnalyticsPlugin.m in Sources */,
 				BEA51B81E8B741CBA1DE55F7 /* Calendar.m in Sources */,
+				065AA02AACC44CB291394EF9 /* CDVSplashScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

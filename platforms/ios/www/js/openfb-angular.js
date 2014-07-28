@@ -11,14 +11,7 @@ angular.module('openfb', ['ionic'])
 
     .factory('OpenFB', function ($rootScope, $q, $ionicPopup, $window, $http) {
 
-       var showAlert = function(message) {
-   navigator.notification.alert(
-            'You are the winner!',  // message
-            alertDismissed,         // callback
-            'Game Over',            // title
-            'Done'                  // buttonName
-        );
-  };
+
 
 
         var FB_LOGIN_URL = 'https://www.facebook.com/dialog/oauth',
@@ -90,7 +83,7 @@ angular.module('openfb', ['ionic'])
                     if (index > 0) {
                         oauthRedirectURL = document.location.href.substring(0, index) + 'oauthcallback.html';
                     } else {
-                        return alert("Can't reliably infer the OAuth redirect URI. Please specify it explicitly in openFB.init()");
+                        return console.log("Can't reliably infer the OAuth redirect URI. Please specify it explicitly in openFB.init()");
                     }
                 }
             }
