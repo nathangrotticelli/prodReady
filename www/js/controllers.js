@@ -673,39 +673,46 @@ angular.module('sociogram.controllers', ['ionic'])
       });
     };
     //in progress add to calendar
-    // $scope.newEvent = function() {
-    // // alert('here');
-    // // prep some variables
-    // var calendarName = "Nightlife Events";
-    // //replace these with times and then the thing below
-    // var startDate = new Date("July 27, 2014 13:00:00");
-    // var endDate = new Date("July 27, 2014 14:30:00");
-    // // window.plugins.calendar.listCalendars(success,error);
-    // // alert(new Date($scope.singleEvent.start_time+' 13:00:00'));
+    $scope.calAdd = function() {
 
-    // var title = $scope.singleEvent.name;
-    // var location = $scope.singleEvent.location;
-    // var notes = null;
-    // var success = function(message) {
-    // console.log("Calendar Created.");
-    // // alert(calendarName);
-    // window.plugins.calendar.createEventInNamedCalendar(title,location,notes,startDate,endDate,calendarName,success2,error);
-    // };
-    // var success2 = function(message) { alert('hi'); };
-    // var error = function(message) { alert("Calendar Error: " + message); };
-    // // $scope.showAlert('Facebook connection could not be acheived, and is required.');
+        //replace these with times and then the thing below
+        year=$scope.singleEvent.start_time.split("/")[2];
 
-    // // create a calendar (iOS only for now)
-    // // alert('here');
-    // var createCalOptions = window.plugins.calendar.getCreateCalendarOptions();
-    // createCalOptions.calendarName = "Nightlife Events";
-    // createCalOptions.calendarColor = "#000000";
-    // window.plugins.calendar.createCalendar(createCalOptions,success,error);
+        month=$scope.singleEvent.start_time.split("/")[0];
+        month=month-1;
+        day=$scope.singleEvent.start_time.split("/")[1];
+        hour=$scope.singleEvent.timeOfEvent.split(":")[0];
+        hour=Math.floor(hour);
+        ending=minute=$scope.singleEvent.timeOfEvent.split(":")[1].slice(2,4);
+        ending=ending.toLowerCase();
+        if(ending=="pm"&&hour!=12){
+          hour=hour+=12;
+          if(hour!=24){
+           endHour=hour+1;
+          }
+          else{
+           endHour=24;
+          }
+        }
+        else{
+           endHour=hour+1;
+        }
+        minute=$scope.singleEvent.timeOfEvent.split(":")[1].slice(0,2);
+        var startDate = new Date(year,month,day,hour,minute);
+        var endDate = new Date(year,month,day,endHour,minute);
+        var title = $scope.singleEvent.name;
+        var location = $scope.singleEvent.location;
+        var notes = null;
 
-    // // alert('here');
-    // // window.plugins.calendar.listCalendars(success,error);
-    // // window.plugins.calendar.createCalendar(calendarName,success,error);
-    // }
+        var success = function(message) {
+         $scope.showAlert("Event Added to Your Calendar.");
+        };
+
+        // var success2 = function(message) { alert('hi'); };
+        var error = function(message) { console.log("Calendar Error: " + message); };
+
+        window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+    }
 
     $scope.showEvent = false;
 

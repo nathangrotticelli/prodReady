@@ -36,7 +36,7 @@
 
 
 
-			    		<div ng-if="singleEvent.start_time!=null" class="item item-icon-left item-divider">
+			    		<div ng-if="singleEvent.start_time!=null" ng-click="calAdd()" class="item item-icon-left item-divider">
 			    			<i class="icon ion-ios7-calendar-outline"></i>
 			    			{{ singleEvent.start_time }}</div>
 			    			<br>
