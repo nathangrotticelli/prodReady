@@ -28,17 +28,24 @@
 						  </div>
 
 
-						  <div ng-if="singleEvent.timeOfEvent!=null" class="item item-icon-left item-divider">
+						  <div ng-if="singleEvent.timeOfEvent!=null" ng-click="goTicket()" class="item item-icon-left item-divider">
 			    			<i class="icon ion-ios7-alarm-outline"></i>
 			    			{{ singleEvent.timeOfEvent }}
 			    		</div>
 			    		<br ng-if="singleEvent.timeOfEvent!=null">
 
 
+
 			    		<div ng-if="singleEvent.start_time!=null" class="item item-icon-left item-divider">
 			    			<i class="icon ion-ios7-calendar-outline"></i>
 			    			{{ singleEvent.start_time }}</div>
 			    			<br>
+
+			    			 <div ng-if="singleEvent.ticketLink!=null" ng-click="goTicket()" class="item item-icon-left item-divider">
+			    			<i class="icon ion-ios7-barcode"></i>
+			    			Tickets
+			    		</div>
+			    		<br ng-if="singleEvent.ticketLink!=null">
 
 
 	    			<div ng-if="singleEvent.location!=null" ng-click="mapThis()" class="item item-icon-left item-divider">

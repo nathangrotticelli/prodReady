@@ -635,13 +635,24 @@ angular.module('sociogram.controllers', ['ionic'])
   }) // end of login controller
 
   //controller for an expanded single event
-  .controller('PetDetailCtrl', function($scope, $state,$ionicNavBarDelegate,$location,$stateParams,$ionicPopup, PetService) {
+  .controller('PetDetailCtrl', function($scope,$http, $state,$ionicNavBarDelegate,$location,$stateParams,$ionicPopup, PetService) {
 
     //retrieves single event info
     $scope.singleEvent = PetService.getSingle();
 
     $scope.scrollTop = function() {
     $state.go('app.feed');
+    };
+    $scope.goTicket = function() {
+      //go to ticket link
+      window.open($scope.singleEvent.ticketLink,"_system");
+       schoolName = PetService.getSchool();
+
+      $http.post('http://stark-eyrie-6720.herokuapp.com/ticketCount', {schoolName:schoolName}).success(function(){
+        alert("worked!");
+      })
+      //add one to counter
+    // $location.path('/app/person/me/feed');
     };
 
     $scope.goBack = function() {
