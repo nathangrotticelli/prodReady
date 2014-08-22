@@ -749,6 +749,44 @@ html {
 }
  }
 
+@media (min-height: 600px) {
+#unLoginLogo{
+	margin-left:18%!important;
+	/*padding: 20%!important;*/
+}
+ 	.unMenu2{
+ 		opacity: 1!important;
+ 		-webkit-animation: show 1.2s 1;
+	float: left;
+	z-index: 999;
+	/*height:0;*/
+	width:5%;
+	top:1%;
+	padding-right: 9%;
+	padding-left: 7%;
+	/*padding-top: 1%;*/
+	font-size: 80px;
+	/*iphone 4 change*/
+	/*padding-right: 10%;*/
+	/*top:.5%;*/
+	/*max-width: 8%;*/
+	color: white!important;
+	position: absolute;
+	right:7%;
+}
+.schoolSelect{
+	margin-left: 16%;
+	width:50%;
+}
+.schoolPage{
+	padding-left: 12%;
+	margin-top: 10%;
+}
+.eventInfoSection{
+	padding-left: 5%;
+}
+
+}
 
 
 

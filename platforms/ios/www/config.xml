@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ionicframework.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.gomobile.bunightlife" version="2.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>U Nightlife</name>
     <description>
         The future of college nightlife.
     </description>
-    <author email="nathangrotticelli@gmail.com" href="http://unightlife.io/">
+    <author email="nathangrotticelli@gmail.com" href="http://universitynightlife.net/">
       UN Team
     </author>
     <content src="index.html" />
@@ -13,18 +13,6 @@
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
-  <!--  Urban Airship app credentials
-<preference name="com.urbanairship.production_app_key" value="5BSVsqvpT-Gmw-sXOo0ZoQ" />
-<preference name="com.urbanairship.production_app_secret" value="PRODUCTION_APP_SECRET" />
-
-<preference name="com.urbanairship.development_app_key" value="5BSVsqvpT-Gmw-sXOo0ZoQ" />
-<preference name="com.urbanairship.development_app_secret" value="2QSnSw8kRpu_WeFP7cB7FA" />
-
-If the app is in production or not
-<preference name="com.urbanairship.in_production" value="true | false" />
-
-Enable push when the application launches (instead of waiting for enablePush js call).  Defaults to false
-<preference name="com.urbanairship.enable_push_onlaunch" value="true | false" />  -->
     <feature name="StatusBar">
       <param name="ios-package" value="CDVStatusBar" onload="true" />
     </feature>

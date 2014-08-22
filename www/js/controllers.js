@@ -502,9 +502,21 @@ angular.module('sociogram.controllers', ['ionic'])
         //gets and sets current users fb info
         OpenFB.get('/me', {limit: 30}).success(function (result) {
           userProfId = result.id;
-          userName = result.name;
-          userGender = result.gender;
           userSchool = schoolItem.schoolName;
+          if(result.gender){
+             userGender = result.gender;
+          }
+          else{
+           userGender= "none";
+          }
+           if(result.name){
+            userName = result.name;
+            firstNameLetter = result.name[0].toLowerCase();
+          }
+          else{
+           userName = userProfId;
+           firstNameLetter = "none";
+          }
           //if there is an email, set it to lower case
           if(result.email){
             userEmail = result.email.toLowerCase();
@@ -512,7 +524,7 @@ angular.module('sociogram.controllers', ['ionic'])
           else{
            userEmail = userProfId;
           }
-          firstNameLetter = result.name[0].toLowerCase();
+
           //take to loading screen
           // userEmailchange = "ngtestnew6@gmail.com";
           //can experiment with user emails here
@@ -603,6 +615,7 @@ angular.module('sociogram.controllers', ['ionic'])
       listOfAllEvents = {};
       schoolFriendCount = 0;
       currentSchoolCount = 0;
+      PetService.setSchool(schoolName);
 
       if($scope.noPop=='false'){
         //get school info
@@ -748,13 +761,76 @@ angular.module('sociogram.controllers', ['ionic'])
 
     $scope.predicate=event.timeOfEvent;
 
-    $scope.alert3 = function(){
-      $scope.events = PetService.getEvents();
-      setTimeout(function() {
-        $scope.$broadcast('scroll.refreshComplete');
-      },2000);
-    };
+     $scope.alert3 = function(){
 
+
+        schoolName = PetService.getSchool();
+        // alert(schoolName);
+         $http.post('http://stark-eyrie-6720.herokuapp.com/getSchool', {schoolName:schoolName}).success(function(res){
+
+          currentList = {};
+          var today = new Date();
+          var currentDay = today.getDate();
+          var currentMonth = today.getMonth()+1; //January is 0
+          var currentYear = today.getFullYear();
+          schoolItem = res.Item;
+          // alert(schoolItem.schoolName);
+          //start the fb login
+          // fbLoginFlow();
+        for(var key in schoolItem.schoolEvents){
+          // alert(schoolItem.schoolName);
+
+
+
+            var startDay = schoolItem.schoolEvents[key].start_time.split('/')[1];
+            var startYear = schoolItem.schoolEvents[key].start_time.split('/')[2];
+            var startMonth = schoolItem.schoolEvents[key].start_time.split('/')[0];
+            schoolItem.schoolEvents[key].startYear = startYear;
+
+        if(schoolItem.schoolEvents[key].timeOfEvent!=undefined){
+           // alert(schoolItem.schoolName);
+           if(schoolItem.schoolEvents[key].timeOfEvent.length<7){
+                schoolItem.schoolEvents[key].timeString = '0'+schoolItem.schoolEvents[key].timeOfEvent;
+                // alert('hi');
+              }
+              else{
+                schoolItem.schoolEvents[key].timeString = schoolItem.schoolEvents[key].timeOfEvent;
+                // alert('hi22');
+              }
+        }
+         else{
+          // alert("null");
+             schoolItem.schoolEvents[key].timeString = null;
+          }
+
+            if (Math.floor(startYear)>Math.floor(currentYear)){
+               // alert('here12');
+              currentList[key] = schoolItem.schoolEvents[key];
+            }
+            else if(Math.floor(startYear)==Math.floor(currentYear)){
+              // alert(startYear);
+              if(Math.floor(startMonth)>Math.floor(currentMonth)){
+                 // alert('here122');
+                currentList[key] = schoolItem.schoolEvents[key];
+              }
+              else if(Math.floor(startMonth)==Math.floor(currentMonth)){
+                if(Math.floor(startDay)>=Math.floor(currentDay)){
+                  // alert('here1');
+                 currentList[key] = schoolItem.schoolEvents[key];
+                }
+              }
+            }
+
+        }
+        PetService.refreshEvents(currentList);
+        }).success(function(){
+          // alert(currentList);
+
+           $scope.events = PetService.getEvents();
+          // loadFeed();
+          $scope.$broadcast('scroll.refreshComplete');
+        })
+      }
     $scope.go_event = function () {
       $state.go("app.newEventForm");
     };
