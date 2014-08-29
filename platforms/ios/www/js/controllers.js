@@ -1,15 +1,25 @@
 angular.module('sociogram.controllers', ['ionic'])
 
   //for side menu
-  .controller('AppCtrl', function ($scope, $state, OpenFB) {
+  .controller('AppCtrl', function ($scope, $state,$location, OpenFB) {
+
+      $scope.main={};
+      $scope.main.dragContent = true;
+
     //logout functionality
     $scope.logout = function () {
-      OpenFB.logout();
+
+      // if(!$state.is('app.login')){
+        OpenFB.logout();
+
       $state.go('app.login');
+      // }
+
     };
 
     $scope.goEvents = function(){
-      $state.go('app.feed');
+      $location.path('/app/person/me/feed');
+      //allows for scroll position on the event feed to be maintained. Think about doing this for the other menu buttons
     }
 
     $scope.goAdd = function(){
@@ -24,6 +34,8 @@ angular.module('sociogram.controllers', ['ionic'])
 
 
   .controller('LoginCtrl', function ($scope, $ionicPopup, $http, $location, $ionicLoading,OpenFB, $state, $stateParams, PetService) {
+    // $scope.main = {};
+    $scope.main.dragContent = false;
 
     setTimeout(function() {
       navigator.splashscreen.hide();
@@ -636,7 +648,9 @@ angular.module('sociogram.controllers', ['ionic'])
 
   //controller for an expanded single event
   .controller('PetDetailCtrl', function($scope,$http, $state,$ionicNavBarDelegate,$location,$stateParams,$ionicPopup, PetService) {
-
+    // $scope.main = {};
+    $scope.main.dragContent = true;
+    // alert(main.dragContent);
     //retrieves single event info
     $scope.singleEvent = PetService.getSingle();
 
@@ -676,15 +690,14 @@ angular.module('sociogram.controllers', ['ionic'])
     $scope.calAdd = function() {
 
         //replace these with times and then the thing below
-        year=$scope.singleEvent.start_time.split("/")[2];
-
-        month=$scope.singleEvent.start_time.split("/")[0];
-        month=month-1;
-        day=$scope.singleEvent.start_time.split("/")[1];
-        hour=$scope.singleEvent.timeOfEvent.split(":")[0];
-        hour=Math.floor(hour);
-        ending=minute=$scope.singleEvent.timeOfEvent.split(":")[1].slice(2,4);
-        ending=ending.toLowerCase();
+        var year=$scope.singleEvent.start_time.split("/")[2];
+        var month=$scope.singleEvent.start_time.split("/")[0];
+        var month=month-1;
+        var day=$scope.singleEvent.start_time.split("/")[1];
+        var hour=$scope.singleEvent.timeOfEvent.split(":")[0];
+        var hour=Math.floor(hour);
+        var ending=minute=$scope.singleEvent.timeOfEvent.split(":")[1].slice(2,4);
+        var ending=ending.toLowerCase();
         if(ending=="pm"&&hour!=12){
           hour=hour+=12;
           if(hour!=24){
@@ -727,7 +740,9 @@ angular.module('sociogram.controllers', ['ionic'])
 
   //controller for event feed, starts analytics when people enter
   .controller('FeedCtrl', function ($scope,$state,$http, $ionicScrollDelegate,$ionicPopup, $stateParams, OpenFB, PetService, $location, $ionicLoading) {
-
+    // $scope.main = {};
+    $scope.main.dragContent = true;
+    //  alert($scope.main.dragContent);
     analytics.startTrackerWithId('UA-53156722-1');
     analytics.trackView('Event Feed Accessed');
 

@@ -10,13 +10,14 @@ angular.module('sociogram', ['ionic', 'openfb','objectFilters','sociogram.contro
         //     if (window.StatusBar) {
         //         StatusBar.styleDefault();
         //     }
-
+// && toState.name !== "app.logout"
         // });
 
         $rootScope.$on('$stateChangeStart', function(event, toState) {
 
-            if (toState.name !== "app.login" && toState.name !== "app.logout" && toState.name !== "app.loading" && !$window.sessionStorage['fbtoken']) {
+            if (toState.name !== "app.login" && toState.name !== "app.loading" && !$window.sessionStorage['fbtoken']) {
                 $state.go('app.login');
+
                 event.preventDefault();
             }
         });
