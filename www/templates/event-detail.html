@@ -2,8 +2,15 @@
 <ion-view>
 
  <ion-content scrollbar-y="false" scroll="false" padding="false">
-
+ 	<div class = "unMenu2 " id="expandedMenu">
+ 		<a id='backBtnId' class="topBtn" ng-click="goBack()" animation="slide-right-left-ios7">
+	   <i class="icon ion-ios7-arrow-left"></i>
+	 	</a>
+	  <a id="shareBtnId" ng-click="shareBtn('Check out the event '+singleEvent.name+' via U Nightlife http://unightlife.io/app', 'Check out this event.', singleEvent.cover, singleEvent.location)" class="topBtn">
+	      <i class="icon ion-ios7-upload-outline"></i>
+	 	</a></div>
  <div id='expandedEvent' class='aboutPage2'>
+
 
 	 <div id='singleEventContent'>
 
@@ -56,12 +63,7 @@
 	 	</div>
 
  	 <div>
-	  <a id='eventLink' class="topBtn" ng-click="goBack()" animation="slide-right-left-ios7">
-	   <i class="icon ion-arrow-return-left"></i>
-	 	</a>
-	  <a id="shareBtnId" ng-click="shareBtn('The name of the event is: '+singleEvent.name+', and it starts at: '+singleEvent.timeOfEvent+' on '+singleEvent.start_time+'. For more info about this and other interesting events, download the U Nightlife app in the iPhone App store.', 'Check out this event.', singleEvent.cover, singleEvent.location)" class="topBtn">
-	      <i class="icon ion-share"></i>
-	 	</a>
+
 	 </div>
 
 </div>

@@ -1,13 +1,24 @@
 
 <ion-view>
+<!-- <ion-header-bar align-title="left" class="bar-positive">
+  <div class="buttons">
+    <button class="button" ng-click="doSomething()">Left Button</button>
+  </div>
+  <div class="buttons">
+    <button class="button" ng-click="doSomething()">Left Button</button>
+  </div>
+  <div class="buttons">
+    <button class="button">Right Button</button>
+  </div>
+</ion-header-bar> -->
 
 
  <ion-content scroll="false" scrollbar-y="false" class="mesh" animation="slide-left-right-ios7">
 
-  <a class="unMenu2 ion-navicon" menu-toggle="right"></a>
+ <div class = "unMenu2 "> <a class="ion-navicon" menu-toggle="right"></a></div>
   <ion-scroll id="eventList">
 
-  <ion-refresher id="re1" refreshing-icon="ion-loading-c"  on-refresh="alert3()">
+  <ion-refresher id="re1" pulling-icon="none" refreshing-icon="ion-loading-c"  on-refresh="alert3()">
   </ion-refresher>
 
   <hr class="div12">

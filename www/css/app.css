@@ -586,6 +586,11 @@ html {
 	margin-top:-2px;
 	top:0;
 }
+	#expandedEvent{
+ 		/*height:568px;*/
+ 		/*padding-bottom: 50px;*/
+ 		padding-top: 13%;
+ 	}
 .faqMenu3{
 	margin-right: 3.5%;
 	/*padding-top:2%;*/
@@ -597,30 +602,35 @@ html {
 	margin-top: 8%;
 	}
 	.unMenu2{
-		-webkit-animation: show 1.2s 1;
+		/*-webkit-animation: show 1.2s 1;*/
 		/*-webkit-animation: show 1.2s 1;*/
 	float: left;
+	background-color: lightgray;
+	width: 100%!important;
 	z-index: 999;
 	/*height:0;*/
-	width:5%;
-	font-size: 58px;
+	/*width:5%;*/
+	font-size: 45px;
+	font-variant: small-caps;
 	/*top:3%;*/
-	opacity: 1!important;
+	opacity: .9;
 	/*padding-right: 7%;*/
 	padding-left: 7%;
-	padding-top: 1%;
+	/*padding-top: 1%;*/
 	/*iphone 4 change*/
-	padding-right: 10%;
+	/*padding-right: 10%;*/
+	padding-left: 85%;
 	top:0%;
+	height:9%;
 	/*max-width: 10%;*/
-	color: white!important;
+	color: black!important;
 	position: absolute;
-	right:3.5%;
+	/*right:3.5%;*/
 }
 	#eventList{
 	margin: auto;
 	/*margin-top: 0;*/
-	padding-top: 0;
+	padding-top: 12%;
 	padding-left: 0px;
 	padding-right: 0px;
 	padding-bottom: 0;
@@ -682,31 +692,62 @@ html {
  	#expandedEvent{
  		/*height:568px;*/
  		padding-bottom: 50px;
+ 		padding-top: 15%;
  	}
- 	.unMenu2{
- 		opacity: 1!important;
- 				-webkit-animation: show 1.2s 1;
+ 		.unMenu2{
+		/*-webkit-animation: show 1.2s 1;*/
+		/*-webkit-animation: show 1.2s 1;*/
 	float: left;
+	background-color: lightgray;
+	width: 100%!important;
 	z-index: 999;
 	/*height:0;*/
-	width:5%;
-	top:1%;
-	padding-right: 9%;
+	/*width:5%;*/
+	font-size: 45px;
+	font-variant: small-caps;
+	/*top:3%;*/
+	opacity: .9;
+	/*padding-right: 7%;*/
 	padding-left: 7%;
 	/*padding-top: 1%;*/
-	font-size: 58px;
+	/*iphone 4 change*/
+	/*padding-right: 10%;*/
+	padding-left: 85%;
+	padding-top:1%;
+	height:9%;
+	/*max-width: 10%;*/
+	color: black!important;
+	position: absolute;
+	/*right:3.5%;*/
+}
+/* 	.unMenu2{
+ 		opacity: 1!important;
+ 		/*		-webkit-animation: show 1.2s 1;*/
+/*	float: left;
+	z-index: 999;
+	/*height:0;*/
+/*	width:5%;
+	top:1%;
+	padding-right: 9%;
+	padding-left: 7%*/
+	/*padding-top: 1%;*/
+	/*font-size: 59px;*/
 	/*iphone 4 change*/
 	/*padding-right: 10%;*/
 	/*top:.5%;*/
 	/*max-width: 8%;*/
-	color: white!important;
-	position: absolute;
-	right:7%;
-}
+	/*color: white!important;*/
+	/*position: absolute;*/
+	/*right:7%;*/
+/*}*/
+
+
+
+
 	#eventList{
 	margin: auto;
 	/*margin-top: 0;*/
-	padding-top: 0;
+	padding-top: 14.8%;
 	padding-left: 0px;
 	padding-right: 0px;
 	background-color: black;
@@ -750,41 +791,54 @@ html {
  }
 
 @media (min-height: 600px) {
-#unLoginLogo{
-	margin-left:18%!important;
-	/*padding: 20%!important;*/
-}
- 	.unMenu2{
- 		opacity: 1!important;
- 		-webkit-animation: show 1.2s 1;
+	#unLoginLogo{
+		margin-left:12%!important;
+		/*margin: auto!important;*/
+		/*width:400px!important;*/
+		/*padding: 20%!important;*/
+	}
+	 		.unMenu2{
+		/*-webkit-animation: show 1.2s 1;*/
+		/*-webkit-animation: show 1.2s 1;*/
 	float: left;
+	background-color: lightgray;
+	width: 100%!important;
 	z-index: 999;
 	/*height:0;*/
-	width:5%;
-	top:1%;
-	padding-right: 9%;
+	/*width:5%;*/
+	font-size: 50px;
+	font-variant: small-caps;
+	/*top:3%;*/
+	opacity: .9;
+	/*padding-right: 7%;*/
 	padding-left: 7%;
 	/*padding-top: 1%;*/
-	font-size: 80px;
 	/*iphone 4 change*/
 	/*padding-right: 10%;*/
-	/*top:.5%;*/
-	/*max-width: 8%;*/
-	color: white!important;
+	padding-left: 85%;
+	top:0%;
+	height:9%;
+	/*max-width: 10%;*/
+	color: black!important;
 	position: absolute;
-	right:7%;
+	/*right:3.5%;*/
 }
-.schoolSelect{
-	margin-left: 16%;
-	width:50%;
-}
-.schoolPage{
-	padding-left: 12%;
-	margin-top: 10%;
-}
-.eventInfoSection{
-	padding-left: 5%;
-}
+
+	.enterBtn{
+		margin-left:17%!important;
+	}
+	.schoolSelect{
+		margin-left: 9%;
+		width:70%;
+		padding-left:14%;
+	}
+	.schoolPage{
+		padding-left: 12%;
+		margin-top: 10%;
+	}
+	.eventInfoSection{
+		padding-left: 5%;
+	}
 
 }
 
@@ -1056,7 +1110,6 @@ button{
 	/*background-image: url("../images/outsideMesh.png");*/
 	background-size: cover;
 	background-position: auto auto;
-
 	position: relative;
 	font-size: 12px;
 	font-weight: bolder;
@@ -1118,11 +1171,20 @@ button{
 	font-family: 'Gafata', sans-serif;
 }
 
+#expandedMenu{
+	padding-left: 6%;
+	padding-right: 6%;
 
-#expandedEvent .topBtn{
-	font-size: 44px;
-	color: white;
+	opacity: .9;
+
+	/*margin-bottom: 20%;*/
+}
+.topBtn{
+	font-size: 30px;
+	color: black!important;
 	text-align: center;
+	/*float:left;*/
+	/*font-variant: small-caps;*/
 	/*vertical-align: center;*/
 	/*top:-50px;*/
 	/*border:6px solid black;*/
@@ -1214,7 +1276,7 @@ font-size: 17px;
 	/*height:auto!important;*/
 }
 .helpPage{
-	margin-top: 15%;
+	margin-top: 20%;
 	width: auto;
 }
 
@@ -1251,8 +1313,14 @@ font-size: 17px;
 
 #shareBtnId{
 	float: right;
+	padding-top: 2.5%;
 	/*font-size: 5px;*/
 	/*right:10px;*/
+}
+#backBtnId{
+	float: left;
+	padding-top: 2.5%;
+	/*margin-top: 20%!important;*/
 }
 
 #eventLink{

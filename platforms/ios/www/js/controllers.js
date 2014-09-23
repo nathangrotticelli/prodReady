@@ -87,10 +87,10 @@ angular.module('sociogram.controllers', ['ionic'])
         else{
           $scope.showAlert("We couldn't verify that as a valid university email. Make sure you are on the right portal for your respective university, and that you have entered your OWN valid email. If you are in fact a student at this school, and continue to experience trouble, shoot us an email at UNightlifeTeam@gmail.com.");
         }
-      }
+      }//&&loginTryEmail[0].indexOf(firstNameLetter)>-1
       else {
         var regExNums = /[0-9]/g;
-        if(loginTryEmail==='ngrotti1@binghamton.edu'||loginTryEmail.indexOf(schoolItem.emailEnding)>-1&&loginTryEmail[0].indexOf(firstNameLetter)>-1&&loginTryEmail.length>=schoolItem.emailLength&&regExNums.test(loginTryEmail)){
+        if(loginTryEmail==='ngrotti1@binghamton.edu'||loginTryEmail.indexOf(schoolItem.emailEnding)>-1&&loginTryEmail.length>=schoolItem.emailLength&&regExNums.test(loginTryEmail)){
           $http.post('http://stark-eyrie-6720.herokuapp.com/userPost',
           {firstNameLetter: firstNameLetter,
           userProfId: userProfId,
@@ -354,7 +354,7 @@ angular.module('sociogram.controllers', ['ionic'])
                 privateEvents[allEventsInAnArray[i]] = listOfAllEvents[allEventsInAnArray[i]];
                 $http.post('http://stark-eyrie-6720.herokuapp.com/privateUserEventAdd',
                 {userEmail: userItem.userEmail,
-                userName: userItem.userName,
+
                 privateEvents: privateEvents
                 })
               }
@@ -526,7 +526,7 @@ angular.module('sociogram.controllers', ['ionic'])
             firstNameLetter = result.name[0].toLowerCase();
           }
           else{
-           userName = userProfId;
+           userName = "none";
            firstNameLetter = "none";
           }
           //if there is an email, set it to lower case
@@ -734,6 +734,8 @@ angular.module('sociogram.controllers', ['ionic'])
     };
     //allows sharing functionaility
     $scope.shareBtn = function(a,b,c,d){
+      analytics.trackEvent('button', 'click', 'share button', 1);
+      // ga('send', 'event', 'button', 'click', 'share button', 1);
      window.plugins.socialsharing.share(a,b,c,d);
     };
   })
@@ -799,7 +801,9 @@ angular.module('sociogram.controllers', ['ionic'])
 
         schoolName = PetService.getSchool();
         // alert(schoolName);
-         $http.post('http://stark-eyrie-6720.herokuapp.com/getSchool', {schoolName:schoolName}).success(function(res){
+         $http.post('http://stark-eyrie-6720.herokuapp.com/getSchool', {schoolName:schoolName}).error(function(){
+          $scope.$broadcast('scroll.refreshComplete');
+        }).success(function(res){
 
           currentList = {};
           var today = new Date();

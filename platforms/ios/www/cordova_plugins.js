@@ -48,6 +48,13 @@ module.exports = [
         "clobbers": [
             "navigator.splashscreen"
         ]
+    },
+    {
+        "file": "plugins/nl.x-services.plugins.launchmyapp/www/ios/LaunchMyApp.js",
+        "id": "nl.x-services.plugins.launchmyapp.LaunchMyApp",
+        "clobbers": [
+            "window.plugins.launchmyapp"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -59,7 +66,8 @@ module.exports.metadata =
     "nl.x-services.plugins.socialsharing": "4.0.8",
     "com.danielcwilson.plugins.googleanalytics": "0.4.1",
     "nl.x-services.plugins.calendar": "4.2.5",
-    "org.apache.cordova.splashscreen": "0.3.1"
+    "org.apache.cordova.splashscreen": "0.3.1",
+    "nl.x-services.plugins.launchmyapp": "3.2.0"
 }
 // BOTTOM OF METADATA
 });

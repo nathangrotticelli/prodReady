@@ -118,6 +118,16 @@
                         }
                     ]
                 }
+            },
+            "*-Info.plist": {
+                "parents": {
+                    "CFBundleURLTypes": [
+                        {
+                            "xml": "<array><dict><key>CFBundleURLSchemes</key><array><string>unightlife</string></array></dict></array>",
+                            "count": 1
+                        }
+                    ]
+                }
             }
         }
     },
@@ -142,6 +152,10 @@
         },
         "org.apache.cordova.splashscreen": {
             "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "nl.x-services.plugins.launchmyapp": {
+            "URL_SCHEME": "unightlife",
+            "PACKAGE_NAME": "com.gomobile.bunightlife"
         }
     },
     "dependent_plugins": {}
