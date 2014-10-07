@@ -56,6 +56,10 @@
 		C7A7A02584FF47239736B9C8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 103C573197414E1A963347E5 /* libz.dylib */; };
 		CE7D85DB51ED4A9A962FD85A /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61997B1CF9BF4E53B268F0B3 /* EventKitUI.framework */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
+		C9DF8236263741A4A7F5E10C /* CDVVibration.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD86DCB913A47FC90B24B2E /* CDVVibration.m */; };
+		B3E8EC8B3DA24E4CB587B72E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8C6690F1A1E4C01ACD6F008 /* AudioToolbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0A314AB1E94E4DBA99843DA1 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DAB41F07E04245B4AAF7A7 /* CDVNotification.m */; };
+		1C19D063891740BDAFD2FE2C /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C50288C138E94683B179779B /* CDVNotification.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +158,12 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F667D9BAA267426383F2C30F /* CDVDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVDevice.h; path = org.apache.cordova.device/CDVDevice.h; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "U Nightlife/config.xml"; sourceTree = "<group>"; };
+		0AD86DCB913A47FC90B24B2E /* CDVVibration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVVibration.m"; path = "org.apache.cordova.vibration/CDVVibration.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		1646D583F202467C9725732A /* CDVVibration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVVibration.h"; path = "org.apache.cordova.vibration/CDVVibration.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		C8C6690F1A1E4C01ACD6F008 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		99DAB41F07E04245B4AAF7A7 /* CDVNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVNotification.m"; path = "org.apache.cordova.dialogs/CDVNotification.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		080B3E4710974068B5E4B3D1 /* CDVNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVNotification.h"; path = "org.apache.cordova.dialogs/CDVNotification.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		C50288C138E94683B179779B /* CDVNotification.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "CDVNotification.bundle"; path = "CDVNotification.bundle"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +186,7 @@
 				6FD266CE149543CF8AE8F7E3 /* EventKit.framework in Frameworks */,
 				CE7D85DB51ED4A9A962FD85A /* EventKitUI.framework in Frameworks */,
 				25EA74CBC39849E68D7CFE23 /* SystemConfiguration.framework in Frameworks */,
+				B3E8EC8B3DA24E4CB587B72E /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +272,7 @@
 				308D052D1370CCF300D202BF /* icons */,
 				308D05311370CCF300D202BF /* splash */,
 				8D1107310486CEB800E47090 /* U Nightlife-Info.plist */,
+				C50288C138E94683B179779B /* CDVNotification.bundle */,
 			);
 			name = Resources;
 			path = "U Nightlife/Resources";
@@ -283,6 +295,7 @@
 				266E5D6968FD436BAB097AB1 /* EventKit.framework */,
 				61997B1CF9BF4E53B268F0B3 /* EventKitUI.framework */,
 				5E35E2421AE14B069E64FA02 /* SystemConfiguration.framework */,
+				C8C6690F1A1E4C01ACD6F008 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -318,6 +331,10 @@
 				70F89FAB7DCC4A42A62212E0 /* Calendar.h */,
 				6A9D7462979D46A5BF40604F /* CDVSplashScreen.m */,
 				59C449027A89493099786291 /* CDVSplashScreen.h */,
+				0AD86DCB913A47FC90B24B2E /* CDVVibration.m */,
+				1646D583F202467C9725732A /* CDVVibration.h */,
+				99DAB41F07E04245B4AAF7A7 /* CDVNotification.m */,
+				080B3E4710974068B5E4B3D1 /* CDVNotification.h */,
 			);
 			name = Plugins;
 			path = "U Nightlife/Plugins";
@@ -487,6 +504,7 @@
 				7E7966E11810823500FA85AD /* icon-50@2x.png in Resources */,
 				7E7966E51810823500FA85AD /* icon-76@2x.png in Resources */,
 				30FC414916E50CA1004E6F35 /* icon-72@2x.png in Resources */,
+				1C19D063891740BDAFD2FE2C /* CDVNotification.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +543,8 @@
 				620685FFAAD9446B837123E4 /* UniversalAnalyticsPlugin.m in Sources */,
 				BEA51B81E8B741CBA1DE55F7 /* Calendar.m in Sources */,
 				065AA02AACC44CB291394EF9 /* CDVSplashScreen.m in Sources */,
+				C9DF8236263741A4A7F5E10C /* CDVVibration.m in Sources */,
+				0A314AB1E94E4DBA99843DA1 /* CDVNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

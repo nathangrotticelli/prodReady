@@ -1,0 +1,52 @@
+
+
+<ion-view>
+
+     <ion-content scroll="true" scrollbar-y="false" animation="slide-left-right-ios7">
+      <div class='friendPage'>
+
+    <a class="unMenu3 button ion-ios7-arrow-left" ng-href="#/app/person/me/feed"></a>
+<!-- <a class="unMenu2 faqMenu3 ion-navicon" menu-toggle="right"></a> -->
+<br><br><br>
+<!-- $location.path('/app/person/me/feed'); -->
+ <!--  <ion-scroll id=""> -->
+
+  <ion-refresher pulling-icon="none" refreshing-icon="ion-loading-c"  on-refresh="alert3()">
+  </ion-refresher>
+
+  <!-- <hr class="div12"> -->
+ <!--  <h1>hi</h1> -->
+   <hr>
+    <!-- <h1>{{unFriends}}</h1> -->
+  <div class="friendFinder" ng-repeat="friend in unFriends" ng-click="go_here()">
+    <h1>{{friend.userName}}</h1>
+    <button>Follow</button>
+    <!-- <h1>hello2</h1> -->
+    <!-- <img ng-show="{{event.cover}}" class="full-image" src="{{event.cover}}" > -->
+    <!-- <img ng-hide="event.cover!=undefined" ng-click="go_here(event)" class="full-image" src="http://i62.tinypic.com/2zznq55.jpg" > -->
+   <!--  <div class="eventInfoSection">
+      <h3 id="eventName">{{event.name}}</h3>
+      <p id="eventLocation" ng-if="event.location!=null"><i class="icon ion-ios7-location"></i> {{event.location}}</p>
+      <p class="eventDT" ng-if="event.start_time!=null">{{event.start_time}}</p> <p class="eventDT" ng-if="event.timeOfEvent!=null">{{event.timeOfEvent}}</p>
+    </div> -->
+ <hr>
+
+   </div>
+
+<br>
+   <div>
+    <hr>
+    Invite Friends
+   </hr>
+   </div>
+
+
+  <!-- </ion-scroll> -->
+
+
+</div>
+
+  </ion-content>
+</ion-view>
+
+

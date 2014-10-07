@@ -1,14 +1,15 @@
 
 <ion-view>
 
- <ion-content scrollbar-y="false" scroll="false" padding="false">
+
  	<div class = "unMenu2 " id="expandedMenu">
  		<a id='backBtnId' class="topBtn" ng-click="goBack()" animation="slide-right-left-ios7">
 	   <i class="icon ion-ios7-arrow-left"></i>
 	 	</a>
-	  <a id="shareBtnId" ng-click="shareBtn('Check out the event '+singleEvent.name+' via U Nightlife http://unightlife.io/app', 'Check out this event.', singleEvent.cover, singleEvent.location)" class="topBtn">
+	  <a id="shareBtnId" ng-click="shareBtn('Check out the event &quot;'+singleEvent.name+'&quot; via U Nightlife http://unightlife.io/app', 'Check out this event.', null, singleEvent.location)" class="topBtn">
 	      <i class="icon ion-ios7-upload-outline"></i>
 	 	</a></div>
+	 	 <ion-content scrollbar-y="false" scroll="true" padding="false" class="blackBack">
  <div id='expandedEvent' class='aboutPage2'>
 
 
@@ -23,7 +24,7 @@
 	    		</p>
 
 		<div class="list card">
-	  				 <div ng-click="expandEvent()" ng-if="singleEvent.description!=null" class="item-text-wrap">
+	  				 <div ng-click="showAlert1()" ng-if="singleEvent.description!=null" class="item-text-wrap">
 						  	<div class="item item-icon-left item-divider">
 						  		<i class="icon ion-clipboard"></i>
 						  		Event Info

@@ -15,7 +15,9 @@
 
  <ion-content scroll="false" scrollbar-y="false" class="mesh" animation="slide-left-right-ios7">
 
- <div class = "unMenu2 "> <a class="ion-navicon" menu-toggle="right"></a></div>
+ <div class = "unMenu2 ">
+  <button class="profileBtn" ng-click="openPopover($event)">Open</button>
+<a class="ion-navicon" menu-toggle="right"></a></div>
   <ion-scroll id="eventList">
 
   <ion-refresher id="re1" pulling-icon="none" refreshing-icon="ion-loading-c"  on-refresh="alert3()">
@@ -38,6 +40,24 @@
   </div>
 
   </ion-scroll>
+  <script id="my-popover.html" type="text/ng-template">
+  <ion-popover-view >
+  <ion-content>
+      <h1 class="profHead">My Profile</h1>
+       <img class="feedPic" src="./images/nathanpic2BW.jpg">
+       <h4 class="followNum">6<button  ng-click="findFriends()" class="friendBtn">Find Friends</button></h4>
+       <p class="followTxt">Following </p>
+       <hr>
+       <div class="notifications">
+       <h5 class="ion-navicon"> Fake notification!</h5>
+       <h5 class="ion-navicon"> Fake notification!</h5>
+       <h5 class="ion-navicon"> Fake notification!</h5>
+       </div>
+
+
+    </ion-content>
+  </ion-popover-view>
+</script>
 
  </ion-content>
 </ion-view>

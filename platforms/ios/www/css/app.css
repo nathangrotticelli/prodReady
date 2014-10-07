@@ -25,6 +25,61 @@
   width: 96px;
   height: 96px;
 }*/
+.profileBtn{
+position: absolute!important;
+left: 40%;
+}
+.notifications{
+	padding: 5%;
+}
+.friendFinder{
+	background-color: white!important;
+}
+.friendPage{
+	background-color: black;
+}
+.followNum{
+	padding-left: 5%;
+	margin-left: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+.friendBtn{
+	float:right;
+background-color:transparent;
+	color:black;
+	border-radius: 5%;
+	border: 2px solid gray;
+padding-top: 2%;
+padding-bottom: 2%;
+margin-right: 5%;
+margin-top:3%;
+font-family: 'Gafata', sans-serif;
+}
+.feedPic{
+	border-radius: 100%;
+	/*text-align: center;*/
+	width: 100%;
+	/*height: 100%;*/
+	max-width: 105px;
+	max-height: 105px;
+	border: black 13.5px solid inset;
+	margin-left: 32%;
+}
+.profHead{
+font-family: 'Gafata', sans-serif;
+font-size: 22px;
+text-align: center;
+}
+.followTxt{
+	font-size: 20px;
+	margin-left: 0;
+	padding-left: 5%;
+	font-family: 'Gafata', sans-serif;
+}
+.blackBack{
+	background-color: black!important;
+}
 @font-face {
 font-family: 'Gafata';
 font-style: normal;
@@ -112,7 +167,7 @@ padding: 0;
 .eventForm{
 	margin-bottom: 5%;
 	color:white;
-	-webkit-animation: show 1.3s 1;
+	/*-webkit-animation: show 1.3s 1;*/
 	font-family: 'Gafata', sans-serif;
 }
 
@@ -202,7 +257,7 @@ font-family: 'Roboto', sans-serif;
 /*color:#bbbdbb;#8DEEEE color:#BADA55; color:#0ff1ce; color:#20c2ff;*/
 .mesh{
 	background-color: black!important;
-	-webkit-animation: show 1.2s 1;
+	/*-webkit-animation: show 1.2s 1;*/
 	/*background-image: url("../images/outsideMesh.png");*/
 	/*background-size: cover;*/
 
@@ -211,7 +266,7 @@ font-family: 'Roboto', sans-serif;
 }
 .mesh2{
 	background-color: black!important;
-	margin-bottom: 2%;
+	/*margin-bottom: 2%;*/
 
 }
 .menuItem{
@@ -555,7 +610,7 @@ html {
 /*border-image-source: url("../images/shadowEvents.png");*/
 .wholeEventsPage{
 	/*-webkit-animation-delay: 4s;*/
-	-webkit-animation: show 4.5s 1;
+	/*-webkit-animation: show .5s 1;*/
 	/*margin-top: 3px;*/
 	padding-top:10px;
 	background-color: black;
@@ -670,7 +725,7 @@ html {
  @media (device-height:568px) {
 
  	.faqMenu{
- 		-webkit-animation: show 1.2s 1;
+ 		/*-webkit-animation: show 1.2s 1;*/
 	float: left;
 	margin-right: 3.5%;
 	/*padding-top:2%;*/
@@ -1104,7 +1159,7 @@ button{
 }
 
 #expandedEvent{
-	-webkit-animation: show 1s 1;
+	/*-webkit-animation: show 1s 1;*/
 
 	background-color: black;
 	/*background-image: url("../images/outsideMesh.png");*/
@@ -1132,7 +1187,7 @@ button{
 	/*padding-bottom: 15%;*/
 }
 .adoptBack{
-	-webkit-animation: show 1.2s 1;
+	/*-webkit-animation: show 1.2s 1;*/
 	background-color: black;
 	/*background-image: url("../images/outsideMesh.png");*/
 	/*background-size: cover;*/

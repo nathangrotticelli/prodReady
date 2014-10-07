@@ -70,6 +70,15 @@ angular.module('sociogram', ['ionic', 'openfb','objectFilters','sociogram.contro
                     }
                 }
             })
+              .state('app.friends', {
+                url: "/friends",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/friends.html",
+                        controller: "FeedCtrl"
+                    }
+                }
+            })
 
             .state('app.profile', {
                 url: "/profile",

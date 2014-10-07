@@ -514,6 +514,8 @@ angular.module('sociogram.controllers', ['ionic'])
         //gets and sets current users fb info
         OpenFB.get('/me', {limit: 30}).success(function (result) {
           userProfId = result.id;
+          PetService.setUserId(userProfId);
+          // alert(PetService.getUserId());
           userSchool = schoolItem.schoolName;
           if(result.gender){
              userGender = result.gender;
@@ -673,6 +675,19 @@ angular.module('sociogram.controllers', ['ionic'])
     $location.path('/app/person/me/feed');
     };
 
+
+    // Show a custom alertDismissed
+    //
+    $scope.showAlert1 = function() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            alert('hi'),         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+    }
+
+
     $scope.link = "maps://?q="+$scope.singleEvent.location;
 
     $scope.mapThis = function(){
@@ -741,12 +756,59 @@ angular.module('sociogram.controllers', ['ionic'])
   })
 
   //controller for event feed, starts analytics when people enter
-  .controller('FeedCtrl', function ($scope,$state,$http, $ionicScrollDelegate,$ionicPopup, $stateParams, OpenFB, PetService, $location, $ionicLoading) {
+  .controller('FeedCtrl', function ($scope,$state,$http, $ionicScrollDelegate,$ionicPopup, $ionicPopover,$stateParams, OpenFB, PetService, $location, $ionicLoading) {
     // $scope.main = {};
     $scope.main.dragContent = true;
     //  alert($scope.main.dragContent);
     analytics.startTrackerWithId('UA-53156722-1');
     analytics.trackView('Event Feed Accessed');
+     $ionicPopover.fromTemplateUrl('my-popover.html', {
+    scope: $scope,
+  }).then(function(popover) {
+    $scope.popover = popover;
+  });
+  $scope.openPopover = function($event) {
+    $scope.popover.show($event);
+  };
+  $scope.closePopover = function() {
+    $scope.popover.hide();
+  };
+  //Cleanup the popover when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.popover.remove();
+  });
+  userProfId = PetService.getUserId();
+
+$scope.unFriends = PetService.getUNFriends();
+  $scope.findFriends = function(){
+     // alert("error");
+     OpenFB.get("/"+userProfId+"?fields=friends",{limit:1300}).success(function(res){
+      fbFriends = res.friends.data;//this is an array with friend objects
+         $http.post('http://stark-eyrie-6720.herokuapp.com/findFriends', {userProfId:userProfId, fbFriends:fbFriends}).error(function(){
+          alert("error");
+        }).success(function(res){
+          // alert("success");
+          // alert(userProfId);
+          // alert(res);
+          // alert(res.userIds);
+          // alert(res.userIds[0].userName);
+          // alert(res.userIds[1].userName);
+          PetService.setUNFriends(res.userIds);
+           $state.go("app.friends");
+          // .success(function(res){
+
+          // });
+           // $scope.unFriends = res.userIds;
+          // $state.go("app.friends");
+          // alert(res.userIds[2].userName);
+           // res.json({Item: user});
+        });
+     })
+
+    //send an array of all fb friends in a request that returns an array of user objects that match existing people
+
+    //set the list in services and display that list
+  };
 
     $scope.showAlert = function(message,title) {
       if(title==undefined){

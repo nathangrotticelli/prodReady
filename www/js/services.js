@@ -3,6 +3,10 @@ angular.module('sociogram.services', [])
   var events = {};
   var single = {};
   var school = "";
+  var unFriends = [];
+  var userProfId = "";
+  // var unFriends = [];
+  // var notifications = {};
 
   return {
    				getEvents: function () {
@@ -22,6 +26,23 @@ angular.module('sociogram.services', [])
             },
             getSchool: function () {
                 return school;
+            },
+              setUserId: function(userId) {
+                // alert('setting id');
+                // alert(userProfId);
+                userProfId = userId;
+            },
+            getUserId: function () {
+                return userProfId;
+            },
+             setUNFriends: function(friends) {
+                // alert('setting id');
+                // alert(userProfId);
+                unFriends = friends;
+
+            },
+            getUNFriends: function () {
+                return unFriends;
             },
              refreshEvents: function(value) {
 
