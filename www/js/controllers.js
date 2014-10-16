@@ -762,11 +762,13 @@ angular.module('sociogram.controllers', ['ionic'])
     //  alert($scope.main.dragContent);
     analytics.startTrackerWithId('UA-53156722-1');
     analytics.trackView('Event Feed Accessed');
+
      $ionicPopover.fromTemplateUrl('my-popover.html', {
     scope: $scope,
   }).then(function(popover) {
     $scope.popover = popover;
   });
+
   $scope.openPopover = function($event) {
     $scope.popover.show($event);
   };
@@ -777,10 +779,14 @@ angular.module('sociogram.controllers', ['ionic'])
   $scope.$on('$destroy', function() {
     $scope.popover.remove();
   });
-  userProfId = PetService.getUserId();
+
+  $scope.userProfId = PetService.getUserId();
+  // userProfId = PetService.getUserId();
 
 $scope.unFriends = PetService.getUNFriends();
+
   $scope.findFriends = function(){
+    userProfId = PetService.getUserId();
      // alert("error");
      OpenFB.get("/"+userProfId+"?fields=friends",{limit:1300}).success(function(res){
       fbFriends = res.friends.data;//this is an array with friend objects
@@ -855,6 +861,135 @@ $scope.unFriends = PetService.getUNFriends();
       //changes page and controller
       $state.go("app.event-detail");
     };
+// $scope.followed1 = friendFollowed(friend)
+
+//     $scope.friendFollowed = function (friend) {
+
+//          if(friend.followers.indexOf(userProfId)>-1){//if u follow them
+//           for(q=0;q<$scope.unFriends.length;q++){
+//             if($scope.unFriends[q].userProfId == friend.userProfId){
+//                return true;
+//             }
+
+//         //display as followed
+
+//         //
+//       }
+//     }
+//     else{
+//                 return false;
+//           }
+// };
+
+
+  // var followingId = friend.userProfId;
+      // var count=0;
+
+
+$scope.countFollowers = function(){
+  $scope.followCount = 'n/a';
+  $http.post('http://stark-eyrie-6720.herokuapp.com/followCount',
+        {userProfId:userProfId}).error(function(){
+          $scope.showAlert("Connection to the server could not be acheived at this time. Increase your WiFi/service or try again later.","Failed.");
+        }).success(function(res){
+          // return res.count;
+          // count = res.count;
+          // alert(res.count);
+          $scope.followCount = res.count;
+          // $state.go("app.friends");
+          // alert("worked!");
+          // alert();
+        });
+
+  // for(q=0;q<$scope.unFriends.length;q++){
+  //       // if($scope.unFriends[q].userProfId==followingId){
+  //         if($scope.unFriends[q].followers.indexOf(userProfId)>-1){
+  //           alert('count');
+  //           count++;
+  //         }
+  //     }
+
+};
+
+
+$scope.countFollowers();
+
+
+    // $scope.followed1 = friendFollowed(friend);
+      // alert();
+      //check if friend is followed,
+      //add to both arrays, then change
+      //   $http.post('http://stark-eyrie-6720.herokuapp.com/getSchool', {schoolName:schoolName}).error(function(){
+      //     $scope.$broadcast('scroll.refreshComplete');
+      //   }).success(function(res){})
+
+      // PetService.setSingle(eventName);
+      // //changes page and controller
+      // $state.go("app.event-detail");
+    $scope.followAction = function (friend) {
+      // unFriends = PetService.getUNFriends();
+      // alert(unFriends[0].userName);
+      // alert(JSON.stringify(unFriends[0]));
+      // alert(unFriends[key]);
+      // alert(unFriends[friend.userName].userName);
+
+
+    //   // var unFriends = PetService.getUNFriends();
+    //   alert(friend.userName);
+    //   alert(friend.followers.indexOf(userProfId)>-1);
+    //   if(friend.followers.indexOf(userProfId)>-1){//if you follow them
+    //     alert(friend.userName);
+    //    // add to array locally,
+    //    for(i=0;i<$scope.unFriends.length;i++){//for all un friends
+    //       if($scope.unFriends[i].followers.indexOf(userProfId)>-1){//if
+    //          // alert(friend.followers.indexOf(userProfId)>-1);
+
+    //      $scope.unFriends[i].followers.pop(userProfId);
+    //      PetService.setUNFriends($scope.unFriends);
+    //      alert($scope.unFriends[i].userName);
+    //      alert($scope.unFriends[i].followers);
+    //      // PetService.setUNFriends(unFriends);
+
+    //        // $scope.unFriends = unFriends;
+    //     //
+    //   }
+    //  }
+    // }
+    var followingId = friend.userProfId;
+
+      for(q=0;q<$scope.unFriends.length;q++){
+        if($scope.unFriends[q].userProfId==followingId){
+          if($scope.unFriends[q].followers.indexOf(userProfId)>-1){
+            $scope.unFriends[q].followers.pop(userProfId);
+            $http.post('http://stark-eyrie-6720.herokuapp.com/unfollow',
+        {userProfId:userProfId,
+          followingId:followingId}).error(function(){
+          $scope.showAlert("Connection to the server could not be acheived at this time. Increase your WiFi/service or try again later.","Failed.");
+        }).success(function(res){
+          // $state.go("app.friends");
+          // alert("worked!");
+          // alert();
+        });
+       }
+            else{
+         $scope.unFriends[q].followers.push(userProfId);
+            $http.post('http://stark-eyrie-6720.herokuapp.com/follow',
+        {userProfId:userProfId,
+          followingId:followingId}).error(function(){
+          $scope.showAlert("Connection to the server could not be acheived at this time. Increase your WiFi/service or try again later.","Failed.");
+        }).success(function(res){
+           // add notification that you added a follower
+
+          // $state.go("app.friends");
+          // alert("worked!");
+          // alert();
+        });
+
+      }
+     }
+    }
+
+   };
 
     $scope.predicate=event.timeOfEvent;
 
@@ -942,5 +1077,6 @@ $scope.unFriends = PetService.getUNFriends();
       $scope.events = PetService.getEvents();
     };
 
+    // $scope.countFollowers();
     loadFeed();
   });

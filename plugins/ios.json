@@ -43,14 +43,6 @@
                         {
                             "xml": "<feature name=\"SplashScreen\"><param name=\"ios-package\" value=\"CDVSplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Vibration\"><param name=\"ios-package\" value=\"CDVVibration\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
-                            "count": 1
                         }
                     ],
                     "/widget": []
@@ -125,12 +117,7 @@
                             "count": 1
                         }
                     ],
-                    "AudioToolbox.framework": [
-                        {
-                            "xml": "true",
-                            "count": 2
-                        }
-                    ]
+                    "AudioToolbox.framework": []
                 }
             },
             "*-Info.plist": {
@@ -169,12 +156,6 @@
         },
         "nl.x-services.plugins.launchmyapp": {
             "URL_SCHEME": "unightlife",
-            "PACKAGE_NAME": "com.gomobile.bunightlife"
-        },
-        "org.apache.cordova.vibration": {
-            "PACKAGE_NAME": "com.gomobile.bunightlife"
-        },
-        "org.apache.cordova.dialogs": {
             "PACKAGE_NAME": "com.gomobile.bunightlife"
         }
     },

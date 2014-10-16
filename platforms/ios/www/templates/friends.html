@@ -18,9 +18,11 @@
  <!--  <h1>hi</h1> -->
    <hr>
     <!-- <h1>{{unFriends}}</h1> -->
-  <div class="friendFinder" ng-repeat="friend in unFriends" ng-click="go_here()">
+  <div class="friendFinder" ng-repeat="friend in unFriends">
     <h1>{{friend.userName}}</h1>
-    <button>Follow</button>
+
+    <button ng-show="friend.followers.indexOf(userProfId)>-1" ng-click="followAction({{friend}})">Unfollow</button>
+    <button ng-hide="friend.followers.indexOf(userProfId)>-1" ng-click="followAction({{friend}})">Follow</button>
     <!-- <h1>hello2</h1> -->
     <!-- <img ng-show="{{event.cover}}" class="full-image" src="{{event.cover}}" > -->
     <!-- <img ng-hide="event.cover!=undefined" ng-click="go_here(event)" class="full-image" src="http://i62.tinypic.com/2zznq55.jpg" > -->
